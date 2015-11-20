@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :vote do
+  factory :stash do
     
   end
 
