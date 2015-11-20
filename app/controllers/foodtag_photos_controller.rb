@@ -1,4 +1,4 @@
-class FoodtagPhotoController < ApplicationController
+class FoodtagPhotosController < ApplicationController
 
   def new
     @foodtag_photo = FoodtagPhoto.new
@@ -7,8 +7,10 @@ class FoodtagPhotoController < ApplicationController
   def create
     @foodtag_photo = FoodtagPhoto.new(foodtag_photo_params)
     if @foodtag_photo.save
+      render json: @foodtag_photo.to_json
       #render something?
     else
+      render :new
       #stay on photo saving page
     end
   end

@@ -1,4 +1,4 @@
-class RestaurantController < ApplicationController
+class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new

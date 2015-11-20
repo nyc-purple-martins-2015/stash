@@ -1,4 +1,4 @@
-class FoodtagController < ApplicationController
+class FoodtagsController < ApplicationController
 
   def new
     @foodtag = Foodtag.new
