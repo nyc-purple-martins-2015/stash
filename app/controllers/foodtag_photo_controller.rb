@@ -14,7 +14,7 @@ class FoodtagPhotoController < ApplicationController
   end
 
   def show_foodtag_photos
-    foodtag_photos = Photos.where( foodtag: foodtag_photo_params[:foodtag_id] )
+    foodtag_photos = Photos.where( foodtag: foodtag_photo_params[:foodtag] )
 
     foodtag_photos = foodtag_photos.map { |photo| photo.image }
     render json: foodtag_photos.to_json
@@ -23,7 +23,7 @@ class FoodtagPhotoController < ApplicationController
   private
 
   def foodtag_photo_params
-    params.require(:foodtag_photo).permit(:photo_id, :foodtag_id)
+    params.require(:foodtag_photo).permit(:photo_id, :foodtag)
   end
 
 
