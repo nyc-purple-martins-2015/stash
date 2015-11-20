@@ -6,7 +6,6 @@ class PhotosController < ApplicationController
 
   def create
     @photo = current_user.photos.new(photo_params)
-    byebug
     if @photo.save
       render json: @photo.to_json
     else
