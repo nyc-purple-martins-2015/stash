@@ -1,12 +1,13 @@
 class Photo < ActiveRecord::Base
 
-  belongs_to :user
-  belongs_to :restaurant
-  has_many :votes
-  has_one :photo_pricetag
-  has_one :pricetag, through: :photo_pricetag
-  has_many :foodtags, through: :foodtag_photos
-  has_many :foodtag_photos
+  belongs_to        :user
+  belongs_to        :restaurant
+  belongs_to        :stash
+  has_many          :votes
+  has_one           :photo_pricetag
+  has_one           :pricetag, through: :photo_pricetag
+  has_many          :foodtags, through: :foodtag_photos
+  has_many          :foodtag_photos
 
   has_attached_file :image,
                     #url: "/system/:hash.:extension",
@@ -23,5 +24,9 @@ class Photo < ActiveRecord::Base
   validates_attachment :image, presence: true,
                        content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
                        size: { in: 0..500.kilobytes }
+
+  # def stash_count
+  #   self.
+  # end
 
 end
