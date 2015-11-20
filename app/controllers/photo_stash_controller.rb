@@ -1,0 +1,2 @@
+class PhotoStashController < ApplicationController
+end
