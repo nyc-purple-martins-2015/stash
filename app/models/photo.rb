@@ -17,8 +17,8 @@ class Photo < ActiveRecord::Base
                     convert_options: { thumb: "-quality 75 -strip",
                                        original: "-quality 85 -strip" },
                     storage: :s3,
-                    s3_credentials: {access_key_id: ENV["AWS_KEY"], secret_access_key: ENV["AWS_SECRET"]},
-                    bucket: "bodrov_sitepoint"
+                    s3_credentials: {access_key_id: ENV["STASH_AWS_KEY"], secret_access_key: ENV["STASH_AWS_SECRET"]},
+                    bucket: "dbc-martins-stash"
 
   validates_attachment :image, presence: true,
                        content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] },
