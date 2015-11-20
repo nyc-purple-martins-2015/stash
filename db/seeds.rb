@@ -24,9 +24,7 @@ end
 
 users.each do |user|
   5.times do
-    user.Photo.create(restaurant: restaurants[rand(0..9)]  user: user, stash_count: Rand(10), lng: rand(90), lat: rand(90))
-
-
+    user.Photo.create(restaurant: restaurants[rand(0..14)]  user: user, stash_count: Rand(10), lng: rand(90), lat: rand(90))
   end
 end
 
