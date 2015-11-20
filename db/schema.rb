@@ -94,4 +94,8 @@ ActiveRecord::Schema.define(version: 20151120205232) do
     t.datetime "updated_at",       null: false
   end
 
+  add_foreign_key "photo_stashes", "photos"
+  add_foreign_key "photo_stashes", "stashes"
+  add_foreign_key "photos", "users"
+  add_foreign_key "stashes", "users"
 end
