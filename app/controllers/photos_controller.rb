@@ -14,6 +14,9 @@ class PhotosController < ApplicationController
   end
 
   def show
+    @photo = Photo.find(params[:id])
+    render :show, @photo.to_json
+    redirect_to photo_path
   end
 
   private
