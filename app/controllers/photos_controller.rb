@@ -22,8 +22,8 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    restaurant_id = Retaurant.find_by(params[:restaurant][:name])
-    params.require(:photo).permit(:image).merge(restaurant_id: restaurant_id, lng: from_swift, lat: from_swift)
+    restaurant = Restaurant.find_by(name: params[:restaurant][:name])
+    params.require(:photo).permit(:image)
   end
 
 end

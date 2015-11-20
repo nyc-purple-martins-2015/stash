@@ -13,7 +13,7 @@ class PhotoPricetagController < ApplicationController
   end
 
   def show_pricetag_photos
-    photo_pricetags = Photos.where( pricetag: photo_pricetag_params[:pricetag_id])
+    photo_pricetags = Photos.where( pricetag: photo_pricetag_params[:pricetag])
 
     photo_pricetags = photo_pricetags.map { |photo| photo.image }
     render json: photo_pricetags.to_json
@@ -22,7 +22,7 @@ class PhotoPricetagController < ApplicationController
   private
 
   def photo_pricetag_params
-    params.require(:photo_pricetag).permit(:photo_id, :pricetag_id)
+    params.require(:photo_pricetag).permit(:photo, :pricetag)
   end
 
 end
