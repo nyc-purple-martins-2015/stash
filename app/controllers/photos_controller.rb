@@ -7,16 +7,15 @@ class PhotosController < ApplicationController
   def create
     @photo = current_user.photos.new(photo_params)
     if @photo.save
-      redirect_to photo_path(@photo)
+      render json: @photo.to_json
     else
-      render :new, @photo.to_json
+      render :new
     end
   end
 
   def show
     @photo = Photo.find(params[:id])
-    render :show, @photo.to_json
-    redirect_to photo_path(@photo)
+    render json: @photo.to_json
   end
 
   private

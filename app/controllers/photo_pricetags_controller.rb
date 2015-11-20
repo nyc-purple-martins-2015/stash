@@ -1,4 +1,4 @@
-class PhotoPricetagController < ApplicationController
+class PhotoPricetagsController < ApplicationController
   def new
     @photo_pricetag = PhotoPricetag.new
   end

@@ -1,4 +1,4 @@
-class PhotoStashController < ApplicationController
+class PhotoStashesController < ApplicationController
   def new
     @photostash = Photostash.new
   end
@@ -8,14 +8,14 @@ class PhotoStashController < ApplicationController
     if @photostash.save
       redirect_to root_path
     else
-      render :new, @photostash.to_json
+      render json: @photostash.to_json
     end
   end
 
   def show
     @photostash = Photostash.find(params[:id])
     @stash_count = stash_count(@photostash.photo)
-    render :show, @photostash.to_json
+    render json: @photostash.to_json
   end
 
   private

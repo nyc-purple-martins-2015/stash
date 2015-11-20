@@ -1,0 +1,2 @@
+class StashesController < ApplicationController
+end
