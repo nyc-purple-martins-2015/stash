@@ -21,7 +21,7 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    restaurant = Restaurant.find_by(name: params[:restaurant][:name])
+    # restaurant = Restaurant.find_by(name: params[:restaurant][:name])
     params.require(:photo).permit(:image)
   end
 
