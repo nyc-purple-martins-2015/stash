@@ -1,8 +1,8 @@
 class CreatePhotoPricetags < ActiveRecord::Migration
   def change
     create_table :photo_pricetags do |t|
-      t.references  :photo, null: false, foreign_key: true
-      t.references  :pricetag, null: false, foreign_key: true
+      t.references  :photo, null: false
+      t.references  :pricetag, null: false
 
       t.timestamps null: false
     end

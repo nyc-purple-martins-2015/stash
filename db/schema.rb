@@ -38,13 +38,16 @@ ActiveRecord::Schema.define(version: 20151120205232) do
 
   create_table "photo_stashes", force: :cascade do |t|
     t.integer  "photo_id",   null: false
-    t.integer  "stash_id"
+    t.integer  "stash_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "photo_stashes", ["photo_id"], name: "index_photo_stashes_on_photo_id", using: :btree
+  add_index "photo_stashes", ["stash_id"], name: "index_photo_stashes_on_stash_id", using: :btree
+
   create_table "photos", force: :cascade do |t|
-    t.integer  "restaurant_id",                               null: false
+    t.integer  "restaurant_id"
     t.integer  "user_id",                                     null: false
     t.decimal  "lng",                precision: 10, scale: 6
     t.decimal  "lat",                precision: 10, scale: 6
@@ -55,6 +58,9 @@ ActiveRecord::Schema.define(version: 20151120205232) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+
+  add_index "photos", ["restaurant_id"], name: "index_photos_on_restaurant_id", using: :btree
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "pricetags", force: :cascade do |t|
     t.float    "price"
@@ -71,10 +77,12 @@ ActiveRecord::Schema.define(version: 20151120205232) do
   end
 
   create_table "stashes", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "stashes", ["user_id"], name: "index_stashes_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"
