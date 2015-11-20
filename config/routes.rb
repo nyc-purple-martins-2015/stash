@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root to: "home#show"
 
   resources :photos, only: [:new, :create, :show]
+  resources :photo_stashes, only: [:show, :new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
