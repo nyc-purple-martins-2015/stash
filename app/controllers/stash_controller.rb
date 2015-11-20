@@ -1,0 +1,2 @@
+class StashController < ApplicationController
+end
