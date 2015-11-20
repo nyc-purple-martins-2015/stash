@@ -1,0 +1,2 @@
+class PricetagController < ApplicationController
+end

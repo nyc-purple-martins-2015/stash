@@ -1,0 +1,2 @@
+module FoodtagHelper
+end
