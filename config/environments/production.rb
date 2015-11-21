@@ -2,6 +2,15 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
+
+  config.paperclip_defaults = { :storage => :s3,
+  :bucket => 'dbc-martins-stash',
+  :s3_credentials => {
+    :access_key_id => ENV['STASH_AWS_KEY'],
+    :secret_access_key => ENV['STASH_AWS_SECRET']
+    }
+  }
+
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
