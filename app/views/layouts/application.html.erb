@@ -5,6 +5,17 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
   <% if @error %>
@@ -18,11 +29,11 @@
       <%= link_to "Sign out", signout_path, id: "sign_out" %>
 
       <div class="nav_bar">
-        <%= link_to 'Home', root_path, class: "home" %>
-        <%= link_to 'Search' %>
-        <%= link_to 'Camera' %>
+        <%= link_to 'Home', root_path, class: "home btn btn-primary btn-md" %>
+        <%= link_to 'Search', class: "search" %>
+        <%= link_to 'Camera', class: "camera" %>
         <%= link_to 'My Stash', user_stashes_path(current_user), class: "my_stash" %>
-        <%= link_to 'My Profile', user_path(current_user), class: "my_profile", id: "current_user.stash.id"  %>
+        <%= link_to 'My Profile', user_path(current_user), class: "my_profile", id: "current_user.stash.id" %>
       </div>
 
     <% else %>
