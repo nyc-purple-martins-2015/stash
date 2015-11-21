@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resources :stashes, only: [:new, :create, :show]
 
-  root to: "home#show"
+  root to: "home#index"
 
   resources :photos, only: [:new, :create, :show]
   resources :photo_stashes, only: [:show, :new, :create]
