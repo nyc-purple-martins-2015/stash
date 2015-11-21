@@ -6,8 +6,10 @@ class PhotoPricetagsController < ApplicationController
   def create
     @photo_pricetag = PhotoPricetag.new(photo_pricetag_params)
     if @photo_pricetag.save
+      render json: @photo_pricetag.to_json
       #render something?
     else
+      render :new
       #stay on photosaving page
     end
   end

@@ -7,6 +7,7 @@ class PhotosController < ApplicationController
   def create
     @photo = current_user.photos.new(photo_params)
     if @photo.save
+
       render json: @photo.to_json
     else
       render :new
@@ -21,8 +22,12 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    # restaurant = Restaurant.find_by(name: params[:restaurant][:name])
-    params.require(:photo).permit(:image)
+    restaurant = Restaurant.find_by(name: params[:restaurant])
+    params.require(:photo).permit(:image).merge(restaurant_id: restaurant.id)
   end
+
+  # def photo_foodtag_params
+  #   params.require(:photo).permit(:foodtag)
+  # end
 
 end

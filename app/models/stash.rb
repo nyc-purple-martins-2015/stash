@@ -3,7 +3,8 @@ class Stash < ActiveRecord::Base
   has_many   :photo_stashes
   has_many   :photos, through: :photo_stashes
 
-  def my_stash
+  def show_my_stash
     self.find_by( user: current_user )
   end
+
 end

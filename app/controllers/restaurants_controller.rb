@@ -1,5 +1,8 @@
 class RestaurantsController < ApplicationController
 
+  # Restaurants are kind of created in the NEW PHOTO form. How can we save
+  # a new instance of the restaurant if it is inside the photo form?
+
   def new
     @restaurant = Restaurant.new
   end

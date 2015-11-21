@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :votes
+  has_one :stash
   has_many :photos
   has_one :stash
 

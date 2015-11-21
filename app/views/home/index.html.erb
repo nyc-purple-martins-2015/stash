@@ -1,0 +1,18 @@
+<h1> You hit the homepage </h1>
+
+<div class="photo_stream">
+  <script id="photostream-template" type="text/x-handlebars-template">
+    {{#each photos}}
+      <div class="photo_view"><a href={{image.url}}></a></div>
+    {{/each}}
+  </script>
+</div>
+
+<div class="my_stash">
+  <script id="mystash-template" type="text/x-handlebars-template">
+    {{#each photos}}
+      <div class="stash_view"><a href={{image.url}}></a></div>
+    {{/each}}
+  </script>
+</div>
+

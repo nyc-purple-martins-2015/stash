@@ -5,12 +5,15 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :sessions, only: [:create, :destroy]
-  resource :home, only: [:show]
+  resources :home, only: [:show]
+  resources :users, only: [:new, :create, :show]
+  resources :stashes, only: [:new, :create, :show]
 
-  root to: "home#show"
+  root to: "home#index"
 
   resources :photos, only: [:new, :create, :show]
   resources :photo_stashes, only: [:show, :new, :create]
+  resources :foodtags, only: [:new, :create, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
