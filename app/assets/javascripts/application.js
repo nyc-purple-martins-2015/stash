@@ -15,3 +15,7 @@
 //= require_tree .
 //= require handlebars-205c61c
 
+function hideAllContainersExcept(divNotHidden) {
+  $('div[class*="container"]').hide();
+  $(divNotHidden).show()
+};
