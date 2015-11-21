@@ -19,7 +19,8 @@ class PhotosController < ApplicationController
     url = @photo.image.url
     pricetag = @photo.pricetag.price
     foodtags = @photo.foodtags
-    render json: @photo.to_json
+    object = [@photo, pricetag, foodtags]
+    render json: object.to_json
   end
 
   private
