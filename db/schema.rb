@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20151120205232) do
   create_table "photos", force: :cascade do |t|
     t.integer  "restaurant_id"
     t.integer  "user_id",                                     null: false
+    t.string   "dish_name"
     t.decimal  "lng",                precision: 10, scale: 6
     t.decimal  "lat",                precision: 10, scale: 6
     t.datetime "created_at",                                  null: false

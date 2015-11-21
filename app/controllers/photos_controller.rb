@@ -7,21 +7,20 @@ class PhotosController < ApplicationController
   def create
     @photo = current_user.photos.new(photo_params)
     if @photo.save
-
       render json: @photo.to_json
     else
       render :new
     end
   end
 
+  def index
+    @photos = current_user.photos
+    render json: @photo.to_json
+  end
+
   def show
     @photo = Photo.find(params[:id])
-    url = @photo.image.url
-    pricetag = @photo.pricetag.price
-    # @photo.merge(pricetag)
-    foodtags = @photo.foodtags
-    object = [@photo, pricetag, foodtags]
-    render json: object.to_json
+    render json: @photo.to_json(:include => { :foodtags => {:only => :description}, :pricetag => {:only => :price}})
   end
 
   private
