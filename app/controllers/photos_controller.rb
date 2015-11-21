@@ -18,6 +18,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     url = @photo.image.url
     pricetag = @photo.pricetag.price
+    # @photo.merge(pricetag)
     foodtags = @photo.foodtags
     object = [@photo, pricetag, foodtags]
     render json: object.to_json
