@@ -26,7 +26,9 @@ end
 
 users.each do |user|
   5.times do
-   photos << Photo.create(restaurant: restaurants[rand(0..14)],  user: user, lng: rand(90), lat: rand(90), image_file_name: "pi5XAn4iB.jpeg", image_content_type: "image/jpeg", image_file_size: 12397)
+   photos << Photo.create(restaurant: restaurants[rand(0..14)],
+    user: user, lng: rand(90), lat: rand(90),
+    image: File.new(Rails.root.join('seed_photos','kitten.jpg')))
   end
 end
 

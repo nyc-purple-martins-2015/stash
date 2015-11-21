@@ -23,7 +23,11 @@ class Photo < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 
-  def photo_url
-    photo.url(:medium)
+  def image_url
+    image.url(:medium)
+  end
+
+  def image_path
+    image.path(:medium)
   end
 end
