@@ -18,6 +18,7 @@ users = [matt, nick, rachel, june]
 
 photos = []
 restaurants = []
+
 15.times do
   restaurants << Restaurant.create(name: Faker::Company.name, lng: rand(-100.00..100.00).round(4), lat: rand(-100.00..100.00).round(4))
 end
@@ -25,17 +26,23 @@ end
 
 users.each do |user|
   5.times do
-   Photo.create(restaurant: restaurants[rand(0..14)],  user: user, lng: rand(90), lat: rand(90))
+   photos << Photo.create(restaurant: restaurants[rand(0..14)],  user: user, lng: rand(90), lat: rand(90), image_file_name: "pi5XAn4iB.jpeg", image_content_type: "image/jpeg", image_file_size: 12397)
   end
 end
 
-
-10.times do
-  Foodtag.create(description: Faker::App.name)
+photos.each do |photo|
+  3.times do
+   photo.foodtags << Foodtag.find_or_create_by(description: Faker::App.name)
+  end
 end
 
-10.times do
-  Pricetag.create(price: rand(1.00..50.00).round(2))
+photos.each do |photo|
+   photo.pricetag = Pricetag.create(price: rand(1.00..50.00).round(2))
+end
+
+users.each do |user|
+  stash = Stash.create(user: user)
+  5.times { stash.photos << Photo.find(rand(1..20))}
 end
 
 
