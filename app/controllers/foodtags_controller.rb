@@ -1,5 +1,11 @@
 class FoodtagsController < ApplicationController
 
+  def index
+    @foodtags = Foodtag.all
+    render json: @foodtags.to_json
+  end
+
+
   def new
     @foodtag = Foodtag.new
   end
