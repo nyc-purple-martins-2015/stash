@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require handlebars-latest
+//= require handlebars-205c61c
+
+$(document).ready(function)(){
+  $("#new_photo_form").on("submit", function(event){
+    event.preventDefault();
+
+  });
+}
