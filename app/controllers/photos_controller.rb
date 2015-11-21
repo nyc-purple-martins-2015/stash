@@ -26,8 +26,8 @@ class PhotosController < ApplicationController
     params.require(:photo).permit(:image).merge(restaurant_id: restaurant.id)
   end
 
-  def photo_foodtag_params
-    params.require(:photo).permit(:description)
-  end
+  # def photo_foodtag_params
+  #   params.require(:photo).permit(:foodtag)
+  # end
 
 end
