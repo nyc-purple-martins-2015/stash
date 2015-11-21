@@ -1,7 +1,24 @@
-<%= form_for photo, url: photos_path, html: { multipart: true } do |form| %>
+<div class="new_photo_form">
+  <%= form_tag photos_path, multipart: true do %>
+  <p>
+    <%= file_field_tag :image %></br>
+  </p>
 
+  <p>
+    <%= text_field_tag :restaurant, nil, :placeholder => "restaurant" %></br>
+  </p>
 
-  <%= form.file_field :image %>
-  <%= form.submit 'Add Photo' %>
-<% end %>
+  <p>
+    <%= text_field_tag :foodtags, nil, :placeholder => "foodtags" %></br>
+  </p>
+
+  <p>
+    <%= text_field_tag :pricetag, nil, :placeholder => "pricetag" %></br>
+  </p>
+
+  <p>
+    <%= submit_tag 'Add Photo' %></br>
+  </p>
+  <% end %>
+</div>
 
