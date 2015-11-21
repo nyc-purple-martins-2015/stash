@@ -3,15 +3,15 @@
 <div class="photo_stream_container">
   <script id="photostream-template" type="text/x-handlebars-template">
     {{#each photos}}
-      <div class="photo_view"><a href="/photos/{{id}}"><img src="{{image_url}}"</a></div>
+      <div class="photo_view"><a href={{image.url}}></a></div>
     {{/each}}
   </script>
 </div>
 
-<div class="my_stash">
+<div class="my_stash_container">
   <script id="mystash-template" type="text/x-handlebars-template">
     {{#each photos}}
-      <div class="stash_view"><a href={{image_file_name}}></a></div>
+      <div class="stash_view"> <span>{{image_file_name}}</span> </div>
     {{/each}}
   </script>
 </div>

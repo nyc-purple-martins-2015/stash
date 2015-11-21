@@ -14,7 +14,7 @@ class StashesController < ApplicationController
   end
 
   def show
-    stash = Stash.find_by(user: current_user)
+    stash = Stash.find_by(user: current_user).photos
     if stash
       render json: stash.to_json
     else

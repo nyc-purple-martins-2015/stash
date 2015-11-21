@@ -5,7 +5,7 @@ $(document).ready(function() {
     var template = Handlebars.compile(templateSource);
     var output = template(locals);
     // console.log(output);
-    debugger
+    // debugger
     $(".photo_stream_container").html(output);
 
   });

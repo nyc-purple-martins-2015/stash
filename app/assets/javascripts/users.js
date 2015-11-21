@@ -4,22 +4,15 @@
 $(document).ready(function() {
   $(".my_stash").on("click", function(event) {
     event.preventDefault();
-
-    $(".photo_stream").hide();
-
-    $.get("/stashes/show").done(function(data) {
-    debugger
+    var userPath = $('.my_stash').attr('href')
+    hideAllContainersExcept(".my_stash_container")
+    $.get(userPath+"/stashes/show").done(function(data) {
       var locals = {photos: data}
       var templateSource = $("#mystash-template").html();
-
       var template = Handlebars.compile(templateSource);
       var output = template(locals);
-      $(".my_stash").html(output);
-
+      $(".my_stash_container").html(output);
+      $('.my_stash').hide();
     })
-
   })
-
-
-
-})
+});
