@@ -21,8 +21,8 @@
         <%= link_to 'Home', root_path, class: "home" %>
         <%= link_to 'Search' %>
         <%= link_to 'Camera' %>
-        <%= link_to 'My Stash', user_path(current_user), class: "my_stash" %>
-        <%= link_to 'My Profile', user_path(current_user), class: "my_profile" %>
+        <%= link_to 'My Stash', user_stashes_path(current_user), class: "my_stash" %>
+        <%= link_to 'My Profile', user_path(current_user), class: "my_profile", id: "current_user.stash.id"  %>
       </div>
 
     <% else %>

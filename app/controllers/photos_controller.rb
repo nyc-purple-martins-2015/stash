@@ -7,21 +7,20 @@ class PhotosController < ApplicationController
   def create
     @photo = current_user.photos.new(photo_params)
     if @photo.save
-
       render json: @photo.to_json
     else
       render :new
     end
   end
 
+  def index
+    @photos = current_user.photos
+    render json: @photo.to_json
+  end
+
   def show
-    @photo = Photo.find_by(user: current_user)
-    if @photo
-      render json: @photo.to_json
-    else
-      @error = {message: "You don't have any photos! Go out and eat!"}
-      render json: @error
-    end
+    @photo = Photo.find(params[:id])
+    render json: @photo.to_json(:include => { :foodtags => {:only => :description}, :pricetag => {:only => :price}})
   end
 
   private
