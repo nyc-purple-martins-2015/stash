@@ -17,4 +17,14 @@ class UsersController < ApplicationController
 
   end
 
+  def my_photos
+    @photo = Photo.find_by(user: current_user)
+    if @photo
+      render json: @photo.to_json
+    else
+      @error = {message: "You don't have any photos! Go out and eat!"}
+      render json: @error
+    end
+  end
+
 end
