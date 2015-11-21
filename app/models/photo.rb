@@ -24,7 +24,7 @@ class Photo < ActiveRecord::Base
 
 
   def image_url
-    image.url(:medium)
+    self.image.url
   end
 
   def image_path
