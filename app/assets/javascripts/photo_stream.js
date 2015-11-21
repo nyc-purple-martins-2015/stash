@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  //test page to load up all images, click each image, and show image infos
   $.get("/home/show").done(function(data){
     var locals = { photos: data};
     var templateSource = $("#photostream-template").html();
@@ -10,6 +11,7 @@ $(document).ready(function() {
     $(" .photo_stream_container").html(output);
 
     });
+
   //click home button to show photo stream
   $(".home").on("click", function(event) {
     event.preventDefault();
@@ -27,9 +29,30 @@ $(document).ready(function() {
 
   });
 
-  //show mystash button to my stash
+  //click my profile to show my profile, needs to write userpage handlebars format
+  $(".my_profile").on("click", function(event){
+    event.preventDefault();
+    // debugger
+    var url = $(this).attr("href");
+    var request = $.ajax({
+      method: "get",
+      url: url,
+      data: $(this).serialize()
+    });
+
+    // request.done(function(data){
+    //   var locals = {};
+    //   var templateSource = $("");
+    //   var template = Handlebars.compile(templateSource);
+    //   var output = template(locals);
+
+    //   $().html(output);
+    // });
+  });
+
+  //click mystash button to show my stash
   $(".my_stash").on("click", function(event){
-    event.preventDefault()
+    event.preventDefault();
     var url = $(this).attr("href");
     var request = $.ajax({
       method: "get",
