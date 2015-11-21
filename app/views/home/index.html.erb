@@ -1,4 +1,10 @@
-<h1> You hit the homepage </h1>
+<h1> stash </h1>
+
+<div class="errors_container">
+  <script id="error-template" type="text/x-handlebars-template">
+    <div class="error_message"><span></span></div>
+  </script>
+</div>
 
 <div class="photo_stream_container">
   <script id="photostream-template" type="text/x-handlebars-template">
@@ -8,10 +14,27 @@
   </script>
 </div>
 
+
 <div class="my_stash_container">
   <script id="mystash-template" type="text/x-handlebars-template">
     {{#each photos}}
       <div class="stash_view"> <span>{{image_file_name}}</span> </div>
+    {{/each}}
+  </script>
+</div>
+
+
+<div class="my_info_container">
+  <script id="profile-template" type="text/x-handlebars-template">
+    {{name}}
+  </script>
+</div>
+
+
+<div class="my_photos_container">
+  <script id="user-photos-template" type="text/x-handlebars-template">
+    {{#each photos}}
+      <div><span>{{image_file_name}}></span></div>
     {{/each}}
   </script>
 </div>
