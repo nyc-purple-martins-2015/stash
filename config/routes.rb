@@ -9,16 +9,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show] do
     resources :photos, only: [:new, :create, :show]
+    resources :stashes , only: [:show]
   end
 
   resources :stashes, only: [:new, :create, :show]
 
   root to: "home#index"
 
-  resources :users, only: [:show] do
-    resources :stashes , only: [:show]
-  end
-  # get 'my_stash' => 'users#stash'
 
   resources :photo_stashes, only: [:show, :new, :create]
   resources :foodtags, only: [:new, :create, :show]
