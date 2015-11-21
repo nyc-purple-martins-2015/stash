@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if @error %>
+      <div><%= @error %></div>
+  <% end %>
+
 
   <div>
     <% if current_user %>
@@ -17,7 +21,7 @@
         <%= link_to 'Home', root_path %>
         <%= link_to 'Search' %>
         <%= link_to 'Camera' %>
-        <%= link_to 'My Stash', user_path(current_user) %>
+        <%= link_to 'My Stash', user_path(current_user), class: "my_stash" %>
         <%= link_to 'My Profile' %>
       </div>
 

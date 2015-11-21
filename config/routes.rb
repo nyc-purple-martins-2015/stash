@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
+  # get 'my_stash' => 'users#stash'
+
   resources :photos, only: [:new, :create, :show]
   resources :photo_stashes, only: [:show, :new, :create]
   resources :foodtags, only: [:new, :create, :show]

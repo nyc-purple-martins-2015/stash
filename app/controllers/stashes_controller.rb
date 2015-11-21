@@ -14,12 +14,12 @@ class StashesController < ApplicationController
   end
 
   def show
-    @my_stash = show_my_stash
-    if @stash.any?
-      render json: @stash.to_json
+    stash = Stash.find_by(user: current_user)
+    if stash
+      render json: stash.to_json
     else
-      @error = { message: "There's no food in your stash." }
-      render json: @error.to_json
+      @error = "There's no food in your stash."
+      render json: @error.to_json, layout: false
     end
   end
 

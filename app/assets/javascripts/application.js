@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require_tree .
 //= require handlebars-205c61c
+
