@@ -13,4 +13,8 @@ class UsersController < ApplicationController
     render json: @user.to_json
   end
 
+  def stash
+
+  end
+
 end
