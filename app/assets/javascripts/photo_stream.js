@@ -1,12 +1,16 @@
 $(document).ready(function() {
-  $.get("/home/show").done(function(data){
+  $(".home").on("click", function(event) {
+    event.preventDefault();
+
+    $.get("/home/show").done(function(data){
     var locals = { photos: data};
     var templateSource = $("#photostream-template").html();
     var template = Handlebars.compile(templateSource);
     var output = template(locals);
     // console.log(output);
     // debugger
-    $(".photo_stream_container").html(output);
+    $(" .photo_stream_container").html(output);
 
+    });
   });
 });
