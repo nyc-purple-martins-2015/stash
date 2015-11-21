@@ -61,25 +61,25 @@ $(document).ready(function() {
 
   })
 
-  // $(".my_stash_container .stash_view").on(click, function(event){
-  //   event.preventDefault();
-  //   var id = $(this).attr("data-id")
-  //   var url = '/photos/' + 'id'
-  //   var request = $.ajax({
-  //     method: "get",
-  //     url: url,
-  //     data: $(this).serialize()
-  //   });
+  $(".my_stash_container .stash_view").on(click, function(event){
+    event.preventDefault();
+    var id = $(this).children().attr("data-id")
+    var url = '/photos/' + 'id'
+    var request = $.ajax({
+      method: "get",
+      url: url,
+      data: $(this).serialize()
+    });
 
-  //   request.done(function(data){
-  //     var locals = { photos: data};
-  //     var templateSource = $("#photo_show_tempalte").html();
-  //     var template = Handlebars.compile(templateSource);
-  //     var output = template(locals);
+    request.done(function(data){
+      var locals = { photos: data};
+      var templateSource = $("#photo_show_tempalte").html();
+      var template = Handlebars.compile(templateSource);
+      var output = template(locals);
 
-  //     $(".photo_stream_container").hide();
-  //     $(".my_stash").hide();
-  //     $(".photo_container").html(output);
-  //   });
-  // });
+      $(".photo_stream_container").hide();
+      $(".my_stash").hide();
+      $(".photo_container").html(output);
+    });
+  });
 });
