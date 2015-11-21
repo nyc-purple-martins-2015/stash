@@ -21,4 +21,9 @@ class Photo < ActiveRecord::Base
                        size: { in: 0..500.kilobytes }
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+
+  def photo_url
+    photo.url(:medium)
+  end
 end
