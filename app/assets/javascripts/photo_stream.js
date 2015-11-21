@@ -61,7 +61,7 @@ $(document).ready(function() {
 
   })
 
-  $(".my_stash_container .stash_view").on(click, function(event){
+  $(".my_stash_container .stash_view").on("click", function(event){
     event.preventDefault();
     var id = $(this).children().attr("data-id")
     var url = '/photos/' + 'id'
@@ -72,7 +72,7 @@ $(document).ready(function() {
     });
 
     request.done(function(data){
-      var locals = { photos: data};
+      var locals = { photo: data};
       var templateSource = $("#photo_show_tempalte").html();
       var template = Handlebars.compile(templateSource);
       var output = template(locals);
