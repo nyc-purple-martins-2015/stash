@@ -15,8 +15,13 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @photo = Photo.find(params[:id])
-    render json: @photo.to_json
+    @photo = Photo.find_by(user: current_user)
+    if @photo
+      render json: @photo.to_json
+    else
+      @error = {message: "You don't have any photos! Go out and eat!"}
+      render json: @error
+    end
   end
 
   private
