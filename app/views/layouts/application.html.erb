@@ -18,11 +18,11 @@
       <%= link_to "Sign out", signout_path, id: "sign_out" %>
 
       <div class="nav_bar">
-        <%= link_to 'Home', root_path %>
+        <%= link_to 'Home', root_path, class: "home" %>
         <%= link_to 'Search' %>
         <%= link_to 'Camera' %>
         <%= link_to 'My Stash', user_path(current_user), class: "my_stash" %>
-        <%= link_to 'My Profile' %>
+        <%= link_to 'My Profile', user_path(current_user), class: "my_profile" %>
       </div>
 
     <% else %>

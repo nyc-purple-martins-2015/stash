@@ -6,17 +6,17 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
   resources :home, only: [:index, :show]
-  resources :users, only: [:new, :create, :show]
+
+  resources :users, only: [:new, :create, :show] do
+    resources :photos, only: [:new, :create, :show]
+    resources :stashes , only: [:show]
+  end
+
   resources :stashes, only: [:new, :create, :show]
 
   root to: "home#index"
 
-  resources :users, only: [:show] do
-    resources :stashes , only: [:show]
-  end
-  # get 'my_stash' => 'users#stash'
 
-  resources :photos, only: [:new, :create, :show]
   resources :photo_stashes, only: [:show, :new, :create]
   resources :foodtags, only: [:new, :create, :show]
   # The priority is based upon order of creation: first created -> highest priority.
