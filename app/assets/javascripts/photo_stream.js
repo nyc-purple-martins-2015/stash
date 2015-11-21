@@ -113,7 +113,7 @@ $(document).ready(function() {
       var template = Handlebars.compile(source);
       var locals = { photo: data };
       var output = template(locals);
-      debugger
+      // debugger
 
       $(".photo_container").hide();
       $(".photo_info_container").html(output);
