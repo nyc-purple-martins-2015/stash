@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HotOrRot</title>
+  <title>stash</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <div>
+    <div class="nav_bar">
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Search' %>
+      <%= link_to 'Camera' %>
+      <%= link_to 'My Stash', user_pat %>
+      <%= link_to 'My Profile' %>
+    </div>
     <% if current_user %>
       Signed in as <strong><%= current_user.name %></strong>!
       <%= link_to "Sign out", signout_path, id: "sign_out" %>
