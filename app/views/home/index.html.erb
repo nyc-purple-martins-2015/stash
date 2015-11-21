@@ -54,10 +54,12 @@
     {{dish_name}}
   </p>
   <p>
-    {{foodtags}}
+    {{#each foodtags}}
+      <span>{{description}}</span>
+    {{/each}}
   </p>
   <p>
-    {{pricetag}}
+    {{pricetag.price}}
   </p>
   {{/photo}}
   </script>
