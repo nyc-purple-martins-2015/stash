@@ -16,6 +16,7 @@ june = User.create(provider: "etsy", uid: "234", name: "june", oauth_token: "why
 
 users = [matt, nick, rachel, june]
 
+photos = []
 restaurants = []
 15.times do
   restaurants << Restaurant.create(name: Faker::Company.name, lng: rand(-100.00..100.00).round(4), lat: rand(-100.00..100.00).round(4))
@@ -24,7 +25,7 @@ end
 
 users.each do |user|
   5.times do
-    user.Photo.create(restaurant: restaurants[rand(0..14)]  user: user, stash_count: Rand(10), lng: rand(90), lat: rand(90))
+   Photo.create(restaurant: restaurants[rand(0..14)],  user: user, lng: rand(90), lat: rand(90))
   end
 end
 
