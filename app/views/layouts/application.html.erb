@@ -24,7 +24,7 @@
 <nav class="navbar navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href= "<%= user_stashes_path(current_user) %>">stash</a>
+      <a class="navbar-brand"</a>
     </div>
     <div>
       <ul class="nav navbar-nav">
@@ -32,7 +32,7 @@
       <% if current_user %>
 
         <li class="#"><%= link_to image_tag("search.png"), foodtags_path, class: "search" %></li>
-        <li class="#"><%= link_to image_tag("camera.png"), class: "camera" %></li>
+        <li class="#"><%= link_to image_tag("camera.png"), new_photo_path, class: "camera" %></li>
         <li class="#"><%= link_to image_tag("dining-set.png"), user_stashes_path(current_user), class: "my_stash" %></li>
         <li class="#"><%= link_to image_tag("user.png"), user_path(current_user), class: "my_profile", id: "current_user.stash.id" %></li>
       </ul>
