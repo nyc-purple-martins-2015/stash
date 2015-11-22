@@ -43,6 +43,15 @@ pricetags = ['$', '$$', '$$$', '$$$$']
     
 pricetags.map! { |tag| Pricetag.create(price: tag) }
 
+# photos.each do |photo|
+#   photo.pricetag = Pricetag.find(rand(1..4))
+# end
+
+price_tags = Pricetag.all
+
+price_tags.each do |tag|
+  PhotoPricetag.create(pricetag: tag, photo: rand(1..(Photo.all.count)))
+end
 
 users.each do |user|
   stash = Stash.create(user: user)

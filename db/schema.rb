@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 20151120205232) do
     t.datetime "updated_at",  null: false
   end
 
+  add_index "photo_pricetags", ["photo_id"], name: "index_photo_pricetags_on_photo_id", using: :btree
+  add_index "photo_pricetags", ["pricetag_id"], name: "index_photo_pricetags_on_pricetag_id", using: :btree
+
   create_table "photo_stashes", force: :cascade do |t|
     t.integer  "photo_id",   null: false
     t.integer  "stash_id",   null: false
