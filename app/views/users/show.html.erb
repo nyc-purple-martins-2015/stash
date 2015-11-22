@@ -1,8 +1,9 @@
 <div class="container">
   <div class="user_profile_container">
     <% if @error %>
-      <p><%= @error[:message] %></p>
-    <% end %>
+        <p><%= @error %></p>
+  
+    <% else %>
       <p>
         Number of uploaded photos: <%= @photos.length %>
       </p>
@@ -12,11 +13,10 @@
 
       <div class="user_photos_container">
         <% @photos.each do |photo|%>
-          <span data-id="<%= photo.id %>">
-            <img src="<%= photo.image_url %>" >
-          </span>
+          <span><%= link_to image_tag(photo.image_url), photo_path(photo) %></span>
         <% end %>
       </div>
+    <% end %>
 
   </div>
 

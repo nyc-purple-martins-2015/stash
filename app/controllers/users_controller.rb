@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   def show
-    if current_user.photos
-      @photos = current_user.photos
+      # byebug
+    if current_user.photos == []
+      @error = "You don't have any photos! Go out and eat!"
     else
-      @error = {message: "You don't have any photos! Go out and eat!"}
-      @photos = []
+      @photos = current_user.photos
     end
   end
 end
