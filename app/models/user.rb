@@ -13,10 +13,6 @@ class User < ActiveRecord::Base
     u
   end
 
-  def user_stash_count
-    current_user.stash.photos.count
-  end
-
   private
   def provider_params
     auth_params = auth.require(:provider)
