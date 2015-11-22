@@ -9,18 +9,9 @@ class UsersController < ApplicationController
   # end
 
   def show
-    @user = User.find(current_user)
-    render json: @user.to_json
-  end
-
-  def stash
-
-  end
-
-  def my_photos
-    @photo = Photo.find_by(user: current_user)
-    if @photo
-      render json: @photo.to_json
+    @photos = current_user.photos
+    if @photos.any?
+      render json: @photos.to_json(methods: [:user_stash_count])
     else
       @error = {message: "You don't have any photos! Go out and eat!"}
       render json: @error
