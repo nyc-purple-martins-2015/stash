@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show] do
     resources :stashes , only: [:show, :index]
-    resources :photos, only: [:index]
   end
 
   resources :photos, only: [:new, :create, :show]
