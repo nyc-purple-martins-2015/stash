@@ -2,7 +2,7 @@ class PricetagController < ApplicationController
 
   def index
     @pricetags = Pricetag.all
-    byebug
+    render json: @pricetags.to_json
   end
 
   def new
@@ -15,15 +15,9 @@ class PricetagController < ApplicationController
       # Pricetag is saved after the photo is saved. This should
       # render the user profile
     else
-
       render :new
-
   end
 
   #to show all price tags on search page
-  # def show
-  #   @pricetags = Pricetag.all
-  #   render json: @pricetags.to_json
-  # end
 
 end
