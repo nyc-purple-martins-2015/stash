@@ -1,6 +1,44 @@
 $(document).ready(function() {
-  $(".home").on("click", function(event){
-    debugger
+  // alert $('.photo_stream_container').data('data-photostream
+
+  if ($('.photo_stream_container').length !== 0) {
+    var cont = new StreamController($('.photo_stream_container').data('photostream'));
+    cont.photostream.convertPhotos();
+    cont.initDisplay();
+
+    // $('.photo_stream_container').on("click", ".photo_container", function(){
+
+    $(".photo_container").flip({
+        axis: "x",
+        trigger:'click'
+      });
+    // })
+
+    $('.photo_container').draggable({
+      revert : function(event, ui) {
+
+            $(this).data("uiDraggable").originalPosition = {
+                top : 0,
+                left : 0
+            };
+            return !event;
+            // that evaluate like this:
+            // return event !== false ? false : true;
+        }
+
+
+    });
+
+    $('.stream_stash').droppable({
+      drop: function(event, ui) {
+        cont.displayNext();
+      }
+
+    })
+
+  };
+  // $(".home").on("click", function(event){
+  //   debugger
     // $('.photo_container').draggable({
     //   connectToDroppable: "#stash"
     // });
@@ -9,7 +47,7 @@ $(document).ready(function() {
 
     //   };
     // })
-  });
+  // });
 });
 
 
