@@ -1,13 +1,5 @@
 class UsersController < ApplicationController
 
-  #Taken care of by omniauth?
-
-  # def new
-  # end
-
-  # def create
-  # end
-
   def show
     @photos = current_user.photos
     if @photos.any?
