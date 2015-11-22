@@ -19,5 +19,26 @@ $(document).ready(function() {
 
     });
   });
+
+  $(document).on("click", ".foodtags", function(event) {
+    event.preventDefault();
+
+    hideAllContainersExcept(".filtered_photos_container")
+    // $(".photo_stream_container").html("");
+
+    var foodtag_photos_id = $(".foodtags").attr("data-id")
+
+    $.get("/foodtags/" + foodtag_photos_id).done(function(data) {
+      var locals = { photos: data};
+      var templateSource = $("#filter-template").html();
+      var template = Handlebars.compile(templateSource);
+      var output = template(locals);
+      // debugger
+
+      $(" .filtered_photos_container").html(output);
+    })
+
+
+  })
 });
 

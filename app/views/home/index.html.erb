@@ -10,7 +10,7 @@
   <div class="photo_stream_container">
     <script id="photostream-template" type="text/x-handlebars-template">
       {{#each photos}}
-        <div class="photo_view" data-id="{{id}}"><a href={{image.url}}><img src="{{image_url}}"></a></div>
+        <div class="photo_view" data-id="{{id}}"><a href={{image_url}}><img src="{{image_url}}"></a></div>
       {{/each}}
     </script>
   </div>
@@ -70,7 +70,15 @@
   <div class="foodtag_container">
     <script id="foodtag-template" type="text/x-handlebars-template">
       {{#each foodtags}}
-        <div class="foodtags" data-id="{{id}}">{{description}}</div>
+        <div class="foodtags" data-id="{{id}}"><a href="/foodtags/{{id}}">{{description}}</a></div>
+      {{/each}}
+    </script>
+  </div>
+
+  <div class="filtered_photos_container">
+    <script id="filter-template" type="text/x-handlebars-template">
+      {{#each photos}}
+        <div class="filtered_photos" data-id="{{id}}"><img src={{image_url}}></div>
       {{/each}}
     </script>
   </div>

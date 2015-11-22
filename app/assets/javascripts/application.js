@@ -16,7 +16,6 @@
 //= require handlebars-205c61c
 
 function hideAllContainersExcept(divNotHidden) {
-
   $('div.container > [class*="container"]').hide();
   $(divNotHidden).show()
 };
