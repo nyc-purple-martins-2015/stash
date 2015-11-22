@@ -24,7 +24,7 @@ $(document).ready(function() {
     var template = Handlebars.compile(templateSource);
     var output = template(locals);
     // debugger
-    $(" .photo_stream_container").html(output);
+    $(".photo_stream_container").html(output);
 
     });
 
