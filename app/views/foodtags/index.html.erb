@@ -1,0 +1,10 @@
+
+
+<!-- <p>THIS IS THE SEARCH PAGE</p> -->
+
+<div class="container">
+  <% @foodtags.each do |tag| %>
+    <span class="tag"><%= link_to tag.description, foodtag_path(tag) %></span>
+  <% end %>
+</div>
+ 
