@@ -23,23 +23,32 @@
   <% end %>
 
 
-  <div>
-    <% if current_user %>
-      Signed in as <strong><%= current_user.name %></strong>!
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">stash</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to 'Home', root_path, class: "home btn btn-primary btn-md" %></li>
+      <% if current_user %>
 
-      <div class="nav_bar">
-        <%= link_to 'Home', root_path, class: "home btn btn-primary btn-md" %>
-        <%= link_to 'Search', foodtags_path, class: "search" %>
-        <%= link_to 'Camera', class: "camera" %>
-        <%= link_to 'My Stash', user_stashes_path(current_user), class: "my_stash" %>
-        <%= link_to 'My Profile', user_path(current_user), class: "my_profile", id: "current_user.stash.id" %>
-      </div>
+        <li class="#"><%= link_to 'Search', foodtags_path, class: "search" %></li>
+        <li class="#"><%= link_to 'Camera', class: "camera" %></li>
+        <li class="#"><%= link_to 'My Stash', user_stashes_path(current_user), class: "my_stash" %></li>
+        <li class="#"><%= link_to 'My Profile', user_path(current_user), class: "my_profile", id: "current_user.stash.id" %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+      </ul>
+      <% else %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Sign In with Facebook', "/auth/facebook", id: "sign_in" %></li>
+      </ul>
+      <% end %>
 
-    <% else %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-    <% end %>
-  </div>
+</nav>
+
 <%= yield %>
 
 </body>
