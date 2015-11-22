@@ -30,25 +30,25 @@ $(document).ready(function() {
   });
 
   //click my profile to show my profile, needs to write userpage handlebars format
-  $(".my_profile").on("click", function(event){
-    event.preventDefault();
-    // debugger
-    var url = $(this).attr("href");
-    var request = $.ajax({
-      method: "get",
-      url: url,
-      data: $(this).serialize()
-    });
+  // $(".my_profile").on("click", function(event){
+  //   event.preventDefault();
+  //   // debugger
+  //   var url = $(this).attr("href");
+  //   var request = $.ajax({
+  //     method: "get",
+  //     url: url,
+  //     data: $(this).serialize()
+  //   });
 
-    // request.done(function(data){
-    //   var locals = {};
-    //   var templateSource = $("");
-    //   var template = Handlebars.compile(templateSource);
-    //   var output = template(locals);
+  //   request.done(function(data){
+  //     var locals = { photos: data};
+  //     var templateSource = $("#user_photo_show_template");
+  //     var template = Handlebars.compile(templateSource);
+  //     var output = template(locals);
 
-    //   $().html(output);
-    // });
-  });
+  //     $(".user_profile_container").html(output);
+  //   });
+  // });
 
   //click mystash button to show my stash
   $(".my_stash").on("click", function(event){
