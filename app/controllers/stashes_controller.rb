@@ -1,14 +1,17 @@
 class StashesController < ApplicationController
 
   def index
-
-    @stash = current_user.stash.photos
-    if @stash.any?
-      render json: @stash.to_json
+    if current_user.stash != nil
+      @stash = current_user.stash.photos
     else
-      @error ="There's no food in your stash."
-      render json: @error.to_json
+      @stash = []
     end
+    # if @stash.any?
+    #   render json: @stash.to_json
+    # else
+    #   @error ="There's no food in your stash."
+    #   render json: @error.to_json
+    # end
   end
 
   def new
