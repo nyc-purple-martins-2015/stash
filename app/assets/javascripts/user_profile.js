@@ -50,6 +50,7 @@ $(document).ready(function() {
       var output = template(locals);
 
     debugger
+      $(".photo_stream_container").hide();
       $(".user_profile_container").html(output);
     });
   });
