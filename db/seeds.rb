@@ -49,9 +49,9 @@ pricetags.map! { |tag| Pricetag.create(price: tag) }
 
 price_tags = Pricetag.all
 
-price_tags.each do |tag|
-  PhotoPricetag.create(pricetag: tag, photo: rand(1..(Photo.all.count)))
-end
+# price_tags.each do |tag|
+#   PhotoPricetag.create(pricetag: tag, photo: rand(1..(Photo.all.count)))
+# end
 
 users.each do |user|
   stash = Stash.create(user: user)
