@@ -1,6 +1,5 @@
 class PricetagController < ApplicationController
 
-<<<<<<< 93285d2391df3d6dc310f6904a9adf89291b907e
   def index
     @pricetags = Pricetag.all
     render json: @pricetags.to_json
@@ -16,7 +15,4 @@ class PricetagController < ApplicationController
   def pricetag_search_params
     params[:id]
   end
-
-=======
->>>>>>> Cleanup pricetag model, seeds, and controller.
 end
