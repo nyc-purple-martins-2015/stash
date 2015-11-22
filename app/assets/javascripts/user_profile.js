@@ -35,6 +35,7 @@ $(document).ready(function() {
     //   }
 
     // })
+    // hideAllContainersExcept(".user_profile_container")
     event.preventDefault();
     var url = $(this).attr("href");
     var request = $.ajax({
@@ -50,7 +51,7 @@ $(document).ready(function() {
       var output = template(locals);
 
     // debugger
-      $(".photo_stream_container").hide();
+      // $(".photo_stream_container").hide();
       $(".user_profile_container").html(output);
     });
   });
