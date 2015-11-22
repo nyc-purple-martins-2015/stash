@@ -5,19 +5,15 @@ class PricetagController < ApplicationController
     render json: @pricetags.to_json
   end
 
-  def new
-    @pricetag = Pricetag.new
-  end
-
-  def create
-    @pricetag = Pricetag.new(pricetag_params)
-    if @pricetag.save
-      # Pricetag is saved after the photo is saved. This should
-      # render the user profile
-    else
-      render :new
+  def show
+    @photo_pricetags = Pricetag.find(pricetag_search_params)
   end
 
   #to show all price tags on search page
+  private
+
+  def pricetag_search_params
+    params[:id]
+  end
 
 end
