@@ -5,9 +5,12 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = current_user.photos.new(photo_params)
+    restaurant = Restaurant.find_or_create_by(name: restaurant_params[:restaurant])
+    @photo = current_user.photos.new(image: photo_params[:image], dish_name: photo_params[:dish_name], restaurant_id: restaurant.id)
     if @photo.save
-      render json: @photo.to_json
+      @photo.pricetag = Pricetag.find_or_create_by(price: pricetag_params[:pricetag])
+      @photo.associate_to_foodtags(foodtag_params[:foodtags].split(","))
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -26,20 +29,19 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    # maybe find or create by
-    restaurant = Restaurant.find_by(name: params[:restaurant])
-
-    params.require(:photo).permit(:image, :dish_name).merge(restaurant_id: restaurant.id)
+    params.require(:photo).permit(:image, :dish_name)
   end
 
   def pricetag_params
-    params.require(:photo).permit()
+    params.require(:photo).permit(:pricetag)
   end
 
+  def restaurant_params
+    params.require(:photo).permit(:restaurant)
+  end
 
-  # method to create the associations with the photo
   def foodtag_params
-    params.require(:photo).permit()
+    params.require(:photo).permit(:foodtags)
   end
 
   # def photo_foodtag_params
