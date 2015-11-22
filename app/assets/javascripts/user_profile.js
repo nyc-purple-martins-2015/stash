@@ -35,8 +35,8 @@ $(document).ready(function() {
     //   }
 
     // })
-    // hideAllContainersExcept(".user_profile_container")
     event.preventDefault();
+    hideAllContainersExcept(".user_profile_container")
     var url = $(this).attr("href");
     var request = $.ajax({
       method: "get",
