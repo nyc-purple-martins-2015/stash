@@ -1,17 +1,21 @@
 <div class="user_profile_container">
-  <script id="user_photo_show_template" type="text/x-handlebars-template">
-  {{photos.message}}
   <p>
-  {{photos.length}}
+  <% if @error.any? %>
+    <%= @error %>
+  <% end %>
   </p>
   <p>
-  {{photos.user_stash_count}}
+    <%= @photos.length %>
   </p>
   <p>
-  {{#each photos}}
-    <div><span data-id="{{id}}"><img src={{image_url}}></span></div>
-  {{/each}}
-  <p>
-  </script>
+    <%= user_stash_count %>
+  </p>
+  <div class="user_photos_container">
+    <% @photos.each do |photo|%>
+      <span data-id="<%= photo.id %>">
+        <img src="<%= photo.image_url %>" >
+      </span>
+    <% end %>
+  </div>
 </div>
 
