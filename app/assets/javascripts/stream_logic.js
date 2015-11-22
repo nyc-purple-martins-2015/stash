@@ -13,11 +13,30 @@ Photostream.prototype.convertPhotos = function() {
   }
 }
 
-Photostream.prototype.displayPhoto = function() {
+Photostream.prototype.choosePhoto = function() {
   var i = Math.floor(Math.random() * this.stream.length);
   var nextPhoto = this.stream[i];
   this.stream.splice(i, 1);
   this.streamShown.push(nextPhoto);
+}
+
+var View = function(){
 
 }
 
+View.prototype.displayPhoto(photo) {
+  $('.photo_container').html(photo);
+
+}
+
+
+var Controller = function(view, photostream){
+  this.view = view;
+  this.photostream = photostream;
+}
+
+Controller.prototype.initDisplay = function() {
+  this.photostream.convertPhotos();
+  var photo = this.phtostream.choosePhoto();
+  this.view.displayPhoto(photo);
+}
