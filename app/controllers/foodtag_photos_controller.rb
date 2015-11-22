@@ -1,4 +1,7 @@
 class FoodtagPhotosController < ApplicationController
+  def index
+
+  end
 
   def new
     @foodtag_photo = FoodtagPhoto.new
@@ -15,12 +18,6 @@ class FoodtagPhotosController < ApplicationController
     end
   end
 
-  def show_foodtag_photos
-    foodtag_photos = Photos.where( foodtag: foodtag_photo_params[:foodtag] )
-
-    foodtag_photos = foodtag_photos.map { |photo| photo.image }
-    render json: foodtag_photos.to_json
-  end
 
   private
 
