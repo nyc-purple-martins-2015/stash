@@ -18,6 +18,7 @@
 
   <div class="my_stash_container">
     <script id="mystash-template" type="text/x-handlebars-template">
+    {{photos.message}}
       {{#each photos}}
         <div class="stash_view" data-id="{{id}}"> <span>{{image_file_name}}</span> </div>
       {{/each}}
