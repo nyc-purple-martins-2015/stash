@@ -78,6 +78,7 @@ $(document).ready(function() {
   //show photo info when it is clicked
   $(".photo_container").on("click", function(event){
     event.preventDefault();
+    hideAllContainersExcept(".photo_info_container")
     // debugger
     var id = $(this).children().attr("data-id")
     var url = '/photos/' + id
@@ -94,7 +95,6 @@ $(document).ready(function() {
       var output = template(locals);
       // debugger
 
-      $(".photo_container").hide();
       $(".photo_info_container").html(output);
     });
 
