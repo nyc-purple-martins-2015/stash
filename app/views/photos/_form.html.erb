@@ -3,7 +3,7 @@
   <p><%= f.file_field :image %></p>
   <p><%= f.text_field :restaurant, value: nil, :placeholder => "Restaurant" %></p>
   <p><%= f.text_field :foodtags, value: nil, :placeholder => "Foodtags" %></p>
-  <p>Price Range: <%= f.select  :pricetag_id, [['$0..$10', 1 ], ['$10..$15', 2 ], ['$15..$20', 3 ],['$20+', 4 ]] %></p>
+  <p>Price Range: <%= f.select :pricetag, [['$0..$10', 1 ], ['$10..$15', 2 ], ['$15..$20', 3 ],['$20+', 4 ]] %></p>
   <p><%= f.text_field :dish_name, value: nil, :placeholder => "Dish Name" %></p>
   <p><%= submit_tag 'Add Photo' %></br>
 
