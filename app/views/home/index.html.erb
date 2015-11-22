@@ -92,4 +92,20 @@
     </div> -->
 
 
+<div class="user_profile_container">
+  <script id="user_photo_show_template" type="text/x-handlebars-template">
+  <p>
+  {{photos.length}}
+  </p>
+  <p>
+  {{photos.user_stash_count}}
+  </p>
+  <p>
+  {{#each photos}}
+    <span id="user_individual_photo" data-id="{{id}}"><img src={{image_url}}></span>
+  {{/each}}
+  <p>
+  </script>
+</div>
+>>>>>>> Add user profile container
 </div>
