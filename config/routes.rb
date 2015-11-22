@@ -8,12 +8,11 @@ Rails.application.routes.draw do
   resources :home, only: [:index]
 
   resources :users, only: [:new, :create, :show] do
-    resources :stashes , only: [:show]
+    resources :stashes , only: [:index]
   end
 
   resources :photo_pricetags, only: [:new, :create]
   resources :photos, only: [:new, :create, :show]
-  resources :stashes, only: [:new, :create, :show]
 
   root to: "home#index"
 
