@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :stashes , only: [:index]
   end
 
-  resources :photo_pricetags, only: [:new, :create]
+  # resources :photo_pricetags, only: [:new, :create]
   resources :photos, only: [:new, :create, :show]
 
   root to: "home#index"
