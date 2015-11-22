@@ -1,3 +1,40 @@
+<!-- Photostream script -->
+<script id="photostream-template" type="text/x-handlebars-template">
+  {{#each photos}}
+    <div class="photo_view" data-id="{{id}}"><a href={{image_url}}><img src="{{image_url}}"></a></div>
+  {{/each}}
+</script>
+
+<!-- Individual photo show script -->
+<script id="photo_show_template" type="text/x-handlebars-template">
+  {{#photo}}
+  <span id="individual_photo" data-id="{{id}}"><img src={{image_url}}></span>
+  {{/photo}}
+</script>
+
+<!-- Individual photo info script -->
+<script id="photo_show_info_template" type="text/x-handlebars-template">
+  {{#photo}}
+  <p>
+    {{dish_name}}
+  </p>
+  <p>
+    {{#each foodtags}}
+      <span>{{description}}</span>
+    {{/each}}
+  </p>
+  <p>
+    {{pricetag.price}}
+  </p>
+  {{/photo}}
+</script>
+
+<!-- Filtered photo script -->
+<script id="filter-template" type="text/x-handlebars-template">
+  {{#each photos}}
+    <div class="filtered_photos" data-id="{{id}}"><img src={{image_url}}></div>
+  {{/each}}
+</script>
 
 <div class="container">
   <h1> stash </h1>
@@ -7,107 +44,12 @@
     </script>
   </div>
 
-  <div class="photo_stream_container">
-    <script id="photostream-template" type="text/x-handlebars-template">
-      {{#each photos}}
-        <div class="photo_view" data-id="{{id}}"><a href={{image_url}}><img src="{{image_url}}"></a></div>
-      {{/each}}
-    </script>
-  </div>
+  <div class="photo_stream_container"></div>
 
+  <div class="photo_container"></div>
 
-  <div class="my_stash_container">
-    <script id="mystash-template" type="text/x-handlebars-template">
-    {{photos.message}}
-      {{#each photos}}
-        <div class="stash_view" data-id="{{id}}"> <span>{{image_file_name}}</span> </div>
-      {{/each}}
-    </script>
-  </div>
+  <div class="photo_info_container"></div>
 
-
-  <div class="my_info_container">
-    <script id="profile-template" type="text/x-handlebars-template">
-      {{name}}
-    </script>
-  </div>
-
-
-  <div class="my_photos_container">
-    <script id="user-photos-template" type="text/x-handlebars-template">
-      {{#each photos}}
-        <div><span><img src={{image_url}}></span></div>
-      {{/each}}
-    </script>
-  </div>
-
-  <div class="photo_container">
-    <script id="photo_show_template" type="text/x-handlebars-template">
-    {{#photo}}
-    <span id="individual_photo" data-id="{{id}}"><img src={{image_url}}></span>
-    {{/photo}}
-    </script>
-  </div>
-
-  <div class="photo_info_container">
-    <script id="photo_show_info_template" type="text/x-handlebars-template">
-    {{#photo}}
-    <p>
-      {{dish_name}}
-    </p>
-    <p>
-      {{#each foodtags}}
-        <span>{{description}}</span>
-      {{/each}}
-    </p>
-    <p>
-      {{pricetag.price}}
-    </p>
-    {{/photo}}
-    </script>
-  </div>
-
-
-  <div class="foodtag_container">
-    <script id="foodtag-template" type="text/x-handlebars-template">
-      {{#each foodtags}}
-        <div class="foodtags" data-id="{{id}}"><a href="/foodtags/{{id}}">{{description}}</a></div>
-      {{/each}}
-    </script>
-  </div>
-
-  <div class="filtered_photos_container">
-    <script id="filter-template" type="text/x-handlebars-template">
-      {{#each photos}}
-        <div class="filtered_photos" data-id="{{id}}"><img src={{image_url}}></div>
-      {{/each}}
-    </script>
-  </div>
-
-    <!-- <div class="pricetag_container">
-      <script id="search-template" type="text/x-handlebars-template">
-        {{#each tags}}
-          <div class="photo_view" data-id="{{id}}"><a href={{image.url}}><img src="{{image_url}}"></a></div>
-        {{/each}}
-      </script>
-    </div> -->
-
-
-<div class="user_profile_container">
-  <script id="user_photo_show_template" type="text/x-handlebars-template">
-  {{photos.message}}
-  <p>
-  {{photos.length}}
-  </p>
-  <p>
-  {{photos.user_stash_count}}
-  </p>
-  <p>
-  {{#each photos}}
-    <span id="user_individual_photo" data-id="{{id}}"><img src={{image_url}}></span>
-  {{/each}}
-  <p>
-  </script>
-</div>
+  <div class="filtered_photos_container"></div>
 
 </div>
