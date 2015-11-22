@@ -38,9 +38,11 @@ photos.each do |photo|
   end
 end
 
-photos.each do |photo|
-   photo.pricetag = Pricetag.create(price: rand(1.00..50.00).round(2))
-end
+
+pricetags = ['$', '$$', '$$$', '$$$$']
+    
+pricetags.map! { |tag| Pricetag.create(price: tag) }
+
 
 users.each do |user|
   stash = Stash.create(user: user)
