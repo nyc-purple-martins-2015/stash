@@ -22,7 +22,7 @@ class FoodtagPhotosController < ApplicationController
   private
 
   def foodtag_photo_params
-    params.require(:foodtag_photo).permit(:photo_id, :foodtag)
+    params.require(:foodtag_photo).permit(:photo, :foodtag)
   end
 
 
