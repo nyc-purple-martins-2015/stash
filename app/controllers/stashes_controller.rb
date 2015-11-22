@@ -14,19 +14,6 @@ class StashesController < ApplicationController
     # end
   end
 
-  def new
-    @stash = Stash.new
-  end
-
-  def create
-    @stash = Stash.new(stash_params)
-    if @stash.save
-      render json: @stash.to_json
-    else
-      render :new
-    end
-  end
-
   # def show
   #   stash = Stash.find_by(user: current_user).photos
   #   if stash
