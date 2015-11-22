@@ -38,7 +38,29 @@ $(document).ready(function() {
       $(" .filtered_photos_container").html(output);
     })
 
-
   })
+
+  $(document).on("click", ".filtered_photos_container", function(event){
+    event.preventDefault();
+    hideAllContainersExcept(".photo_container")
+    var id = $(this).children().attr("data-id")
+    var url = '/photos/' + id
+    var request = $.ajax({
+      method: "get",
+      url: url,
+      data: $(this).serialize()
+    });
+
+    request.done(function(data){
+      var locals = { photo: data };
+      var templateSource = $("#photo_show_template").html();
+      var template = Handlebars.compile(templateSource);
+      var output = template(locals);
+
+
+      $(".photo_container").html(output);
+    });
+  });
+
 });
 
