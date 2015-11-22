@@ -15,5 +15,4 @@ class PricetagController < ApplicationController
   def pricetag_search_params
     params[:id]
   end
-
 end
