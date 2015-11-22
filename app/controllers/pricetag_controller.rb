@@ -6,7 +6,7 @@ class PricetagController < ApplicationController
   end
 
   def show
-    @photo_pricetags = Pricetag.find(pricetag_search_params)
+    @photo_pricetags = Pricetag.find(pricetag_search_params).photos
   end
 
   #to show all price tags on search page
