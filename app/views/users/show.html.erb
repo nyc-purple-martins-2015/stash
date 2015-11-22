@@ -20,3 +20,14 @@
   <% end %>
 </div>
 
+
+<div class="my_photos_container">
+  <script id="user-photos-template" type="text/x-handlebars-template">
+    {{#each photos}}
+      <div><span><img src={{image_url}}></span></div>
+    {{/each}}
+  </script>
+</div>
+
+<div><%= link_to "Sign out", signout_path, id: "sign_out" %></div>
+
