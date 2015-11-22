@@ -2,7 +2,9 @@ class FoodtagsController < ApplicationController
 
   def index
     @foodtags = Foodtag.all
-    render json: @foodtags.to_json
+
+    # render foodtags_path
+    # render json: @foodtags.to_json
   end
 
 
@@ -24,8 +26,8 @@ class FoodtagsController < ApplicationController
 
   #
   def show
-    foodtag_photos = Foodtag.find(foodtag_params).photos
-    render json: foodtag_photos.to_json(methods: [:image_url])
+    @foodtag_photos = Foodtag.find(foodtag_params).photos
+    # render json: foodtag_photos.to_json(methods: [:image_url])
   end
 
   def parse_foodtags(photo, foodtag_params)
