@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20151120205232) do
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "pricetags", force: :cascade do |t|
-    t.float    "price"
+    t.string   "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

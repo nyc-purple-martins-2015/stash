@@ -1,12 +1,16 @@
+<div class="container">
 <h2>Explore Your Options</h2>
 
-<div class="container">
 <h3>By Food Type</h3>
+
   <% @foodtags.each do |tag| %>
     <span class="tag"><%= link_to tag.description, foodtag_path(tag) %></span>
   <% end %>
-</div>
+
  
 <h3>By Price</h3>
-  <%= render partial: "pricetags/index" %>
+  <span><%= link_to '$', pricetag_path(1) %></span>
+  <span><%= link_to '$$', pricetag_path(2) %></span>
+  <span><%= link_to '$$$', pricetag_path(3) %></span>
+  <span><%= link_to '$$$$', pricetag_path(4) %></span>
 </div>
