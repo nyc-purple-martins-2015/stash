@@ -1,7 +1,8 @@
 class StashesController < ApplicationController
 
   def index
-    @stash = Stash.find_by(user: current_user).photos
+
+    @stash = current_user.stash.photos
     if @stash.any?
       render json: @stash.to_json
     else

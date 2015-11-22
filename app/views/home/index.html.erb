@@ -18,6 +18,7 @@
 
   <div class="my_stash_container">
     <script id="mystash-template" type="text/x-handlebars-template">
+    {{photos.message}}
       {{#each photos}}
         <div class="stash_view" data-id="{{id}}"> <span>{{image_file_name}}</span> </div>
       {{/each}}
@@ -91,5 +92,22 @@
       </script>
     </div> -->
 
+
+<div class="user_profile_container">
+  <script id="user_photo_show_template" type="text/x-handlebars-template">
+  {{photos.message}}
+  <p>
+  {{photos.length}}
+  </p>
+  <p>
+  {{photos.user_stash_count}}
+  </p>
+  <p>
+  {{#each photos}}
+    <span id="user_individual_photo" data-id="{{id}}"><img src={{image_url}}></span>
+  {{/each}}
+  <p>
+  </script>
+</div>
 
 </div>

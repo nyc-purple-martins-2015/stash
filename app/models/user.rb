@@ -8,14 +8,18 @@ class User < ActiveRecord::Base
     u.name = auth.info.name
     u.oauth_token = auth.credentials.token
     u.oauth_expires_at = Time.at(auth.credentials.expires_at)
+    u.stash.create!
     u.save!
     u
+  end
+
+  def user_stash_count
+    current_user.stash.photos.count
   end
 
   private
   def provider_params
     auth_params = auth.require(:provider)
-
   end
 
 end
