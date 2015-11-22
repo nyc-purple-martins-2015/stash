@@ -13,22 +13,22 @@ $(document).ready(function() {
     });
 
   //click home button to show photo stream
-  $(".home").on("click", function(event){
-    event.preventDefault();
+  // $(".home").on("click", function(event){
+  //   event.preventDefault();
 
-    hideAllContainersExcept(".photo_stream_container")
+  //   hideAllContainersExcept(".photo_stream_container")
 
-    $.get("/home/index").done(function(data){
-    var locals = { photos: data};
-    var templateSource = $("#photostream-template").html();
-    var template = Handlebars.compile(templateSource);
-    var output = template(locals);
-    // debugger
-    $(".photo_stream_container").html(output);
+  //   $.get("/home/index").done(function(data){
+  //   var locals = { photos: data};
+  //   var templateSource = $("#photostream-template").html();
+  //   var template = Handlebars.compile(templateSource);
+  //   var output = template(locals);
+  //   // debugger
+  //   $(".photo_stream_container").html(output);
 
-    });
+  //   });
 
-  });
+  // });
 
 
   //show one photo from photostream when it is clicked
@@ -56,10 +56,10 @@ $(document).ready(function() {
   });
 
 
-  //show photo info when it is clicked
+  // //show photo info when it is clicked
   $(".photo_container").on("click", function(event){
     event.preventDefault();
-    hideAllContainersExcept(".photo_info_container")
+    // hideAllContainersExcept(".photo_info_container")
     // debugger
     var id = $(this).children().attr("data-id")
     var url = '/photos/' + id
