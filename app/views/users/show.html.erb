@@ -1,34 +1,24 @@
-<div class="container">
-  <div class="my_info_container">
-    <script id="profile-template" type="text/x-handlebars-template">
-      {{name}}
-    </script>
-  </div>
-
-
-  <div class="user_profile_container">
-    <script id="user_photo_show_template" type="text/x-handlebars-template">
-    {{photos.message}}
-    <p>
-    {{photos.length}}
-    </p>
-    <p>
-    {{photos.user_stash_count}}
-    </p>
-    <p>
-    {{#each photos}}
-      <span id="user_individual_photo" data-id="{{id}}"><img src={{image_url}}></span>
-    {{/each}}
-    <p>
-    </script>
-  </div>
-
-
-  <div class="my_photos_container">
-    <script id="user-photos-template" type="text/x-handlebars-template">
-      {{#each photos}}
-        <div><span><img src={{image_url}}></span></div>
-      {{/each}}
+<div class="my_info_container">
+  <script id="profile-template" type="text/x-handlebars-template">
+    {{name}}
   </script>
-
 </div>
+
+
+<div class="user_profile_container">
+  <script id="user_photo_show_template" type="text/x-handlebars-template">
+  {{photos.message}}
+  <p>
+  {{photos.length}}
+  </p>
+  <p>
+  {{photos.user_stash_count}}
+  </p>
+  <p>
+  {{#each photos}}
+    <div><span data-id="{{id}}"><img src={{image_url}}></span></div>
+  {{/each}}
+  <p>
+  </script>
+</div>
+
