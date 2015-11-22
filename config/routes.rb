@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :stashes , only: [:show, :index]
   end
 
+  resources :photo_pricetags, only: [:new, :create]
   resources :photos, only: [:new, :create, :show]
   resources :stashes, only: [:new, :create, :show]
 
