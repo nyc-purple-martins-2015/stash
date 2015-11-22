@@ -1,33 +1,25 @@
-<div class="user_profile_container">
-  <% if @error.any? %>
-    <p><%= @error[:message] %></p>
-  <% else %>
-    <p>
-      <%= @photos.length %>
-    </p>
-    <p>
-      <%= user_stash_count %>
-    </p>
+<div class="container">
+  <div class="user_profile_container">
+    <% if @error.any? %>
+      <p><%= @error[:message] %></p>
+    <% else %>
+      <p>
+        <%= @photos.length %>
+      </p>
+      <p>
+        <%= user_stash_count %>
+      </p>
 
-    <div class="user_photos_container">
-      <% @photos.each do |photo|%>
-        <span data-id="<%= photo.id %>">
-          <img src="<%= photo.image_url %>" >
-        </span>
-      <% end %>
-    </div>
+      <div class="user_photos_container">
+        <% @photos.each do |photo|%>
+          <span data-id="<%= photo.id %>">
+            <%= link_to image_tag(photo.image_url), photo_path(photo) %>
+          </span>
+        <% end %>
+      </div>
 
-  <% end %>
+    <% end %>
+  </div>
+
+  <div><%= link_to "Sign out", signout_path, id: "sign_out" %></div>
 </div>
-
-
-<div class="my_photos_container">
-  <script id="user-photos-template" type="text/x-handlebars-template">
-    {{#each photos}}
-      <div><span><img src={{image_url}}></span></div>
-    {{/each}}
-  </script>
-</div>
-
-<div><%= link_to "Sign out", signout_path, id: "sign_out" %></div>
-
