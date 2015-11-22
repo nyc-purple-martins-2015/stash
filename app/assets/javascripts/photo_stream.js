@@ -13,41 +13,22 @@ $(document).ready(function() {
     });
 
   //click home button to show photo stream
-  $(".home").on("click", function(event) {
+  $(".home").on("click", function(event){
     event.preventDefault();
 
-    $.get("/home/show").done(function(data){
+    hideAllContainersExcept(".photo_stream_container")
+
+    $.get("/home/index").done(function(data){
     var locals = { photos: data};
     var templateSource = $("#photostream-template").html();
     var template = Handlebars.compile(templateSource);
     var output = template(locals);
-    // console.log(output);
     // debugger
     $(" .photo_stream_container").html(output);
 
     });
 
   });
-
-  //click mystash button to show my stash
-  $(".my_stash").on("click", function(event){
-    event.preventDefault();
-    var url = $(this).attr("href");
-    var request = $.ajax({
-      method: "get",
-      url: url,
-      data: $(this).serialize()
-    });
-
-    request.done(function(data){
-      var locals = {photos: data};
-      var templateSource = $("#mystash-template").html();
-      var template = Handlebars.compile(templateSource);
-      var output = template(locals);
-
-      $(".my_stash_container").html(output);
-    })
-  })
 
 
   //show one photo from photostream when it is clicked
