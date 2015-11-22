@@ -1,5 +1,10 @@
 class PricetagController < ApplicationController
 
+  def index
+    @pricetags = Pricetag.all
+    byebug
+  end
+
   def new
     @pricetag = Pricetag.new
   end
@@ -16,9 +21,9 @@ class PricetagController < ApplicationController
   end
 
   #to show all price tags on search page
-  def show
-    @pricetags = Pricetag.all
-    render json: @pricetags.to_json
-  end
+  # def show
+  #   @pricetags = Pricetag.all
+  #   render json: @pricetags.to_json
+  # end
 
 end
