@@ -4,6 +4,7 @@
 //   $("#new_photo_form").on("submit", function(event){
 //     // event.preventDefault();
 
+
 //   });
 
   // $.get("/photos/show").done(function(data){

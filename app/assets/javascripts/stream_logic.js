@@ -24,11 +24,10 @@ var View = function(){
 
 }
 
-View.prototype.displayPhoto(photo) {
+View.prototype.displayPhoto = function(photo) {
   $('.photo_container').html(photo);
 
 }
-
 
 var Controller = function(view, photostream){
   this.view = view;
@@ -40,3 +39,12 @@ Controller.prototype.initDisplay = function() {
   var photo = this.phtostream.choosePhoto();
   this.view.displayPhoto(photo);
 }
+
+
+Controller.prototype.addToStash = function() {
+
+
+}
+
+
+
