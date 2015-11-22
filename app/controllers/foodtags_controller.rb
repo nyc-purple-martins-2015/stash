@@ -26,7 +26,7 @@ class FoodtagsController < ApplicationController
 
   #
   def show
-    @foodtag_photos = Foodtag.find(foodtag_params).photos
+    @foodtag_photos = Foodtag.find(foodtag_search_params).photos
     # render json: foodtag_photos.to_json(methods: [:image_url])
   end
 
@@ -44,8 +44,11 @@ class FoodtagsController < ApplicationController
   private
 
   def foodtag_params
-    Foodtag.find(params[:id])
-    # params.require(:foodtag).permit(:description)
+    params.require(:foodtag).permit(:description)
+  end
+
+  def foodtag_search_params
+    params[:id]
   end
 
 end

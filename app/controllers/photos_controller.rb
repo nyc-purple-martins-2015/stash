@@ -13,11 +13,6 @@ class PhotosController < ApplicationController
     end
   end
 
-  def index
-    @photos = current_user.photos
-    render json: @photo.to_json
-  end
-
   def show
     @photo = Photo.find(params[:id])
     render json: @photo.to_json(methods: [:image_url], :include => { :foodtags => {:only => :description}, :pricetag => {:only => :price}})
