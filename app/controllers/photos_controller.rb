@@ -26,8 +26,20 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
+    # maybe find or create by
     restaurant = Restaurant.find_by(name: params[:restaurant])
-    params.require(:photo).permit(:image).merge(restaurant_id: restaurant.id)
+
+    params.require(:photo).permit(:image, :dish_name).merge(restaurant_id: restaurant.id)
+  end
+
+  def pricetag_params
+    params.require(:photo).permit()
+  end
+
+
+  # method to create the associations with the photo
+  def foodtag_params
+    params.require(:photo).permit()
   end
 
   # def photo_foodtag_params
