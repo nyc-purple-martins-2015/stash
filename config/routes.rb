@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resources :pricetags, only: [:index, :new, :create]
+  resources :pricetags, only: [:index, :show]
   resources :photo_stashes, only: [:show, :new, :create]
   resources :foodtags, only: [:new, :create, :show, :index]
   # The priority is based upon order of creation: first created -> highest priority.
