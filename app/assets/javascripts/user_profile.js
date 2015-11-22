@@ -49,7 +49,7 @@ $(document).ready(function() {
       var template = Handlebars.compile(templateSource);
       var output = template(locals);
 
-    debugger
+    // debugger
       $(".photo_stream_container").hide();
       $(".user_profile_container").html(output);
     });
