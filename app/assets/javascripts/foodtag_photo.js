@@ -1,7 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-$(document).ready(function() {
+// $(document).ready(function() {
   // $(".search").on("click", function(event) {
   //   event.preventDefault();
 
@@ -62,5 +62,5 @@ $(document).ready(function() {
   //   });
   // });
 
-});
+// });
 

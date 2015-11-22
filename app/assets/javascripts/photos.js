@@ -1,10 +1,10 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
-$(document).ready(function(){
-  $("#new_photo_form").on("submit", function(event){
-    // event.preventDefault();
+// $(document).ready(function(){
+//   $("#new_photo_form").on("submit", function(event){
+//     // event.preventDefault();
 
-  });
+//   });
 
   // $.get("/photos/show").done(function(data){
   //   var locals = { photo: data };
