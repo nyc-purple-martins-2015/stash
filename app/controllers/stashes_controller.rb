@@ -1,5 +1,4 @@
 class StashesController < ApplicationController
-
   def index
     if current_user.stash != nil
       @stash = current_user.stash.photos

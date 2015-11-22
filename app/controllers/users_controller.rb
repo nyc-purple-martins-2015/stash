@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def show
     @photos = current_user.photos
     if @photos.any?
@@ -9,5 +8,4 @@ class UsersController < ApplicationController
       render :show
     end
   end
-
 end
