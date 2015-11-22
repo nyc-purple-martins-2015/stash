@@ -5,12 +5,9 @@
   {{/each}}
 </script>
 
+
 <!-- Individual photo show script -->
-<script id="photo_show_template" type="text/x-handlebars-template">
-  {{#photo}}
-  <span id="individual_photo" data-id="{{id}}"><img src={{image_url}}></span>
-  {{/photo}}
-</script>
+
 
 <!-- Individual photo info script -->
 <script id="photo_show_info_template" type="text/x-handlebars-template">
@@ -44,11 +41,10 @@
     </script>
   </div>
 
-  <div class="photo_stream_container"></div>
-
-  <div class="photo_container"></div>
-
-  <div class="photo_info_container"></div>
+  <div class="photo_stream_container">
+    <div class="photo_container"></div>
+    <div class="photo_info_container"></div>
+  </div>
 
   <div class="filtered_photos_container"></div>
 

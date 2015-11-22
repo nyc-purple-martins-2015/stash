@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
   def index
+    @photostream = Photo.all.limit(20)
 
   end
 
