@@ -17,58 +17,59 @@
 
 
 $(document).ready(function() {
-
 // autocomplete place details
 
-  (function initialize (){  
+  (function initialize (){
+    var defaultLatLng = new google.maps.LatLng(40.7127, -74.0059)
 
-    var lat = 40.7127,
-        lng = -74.0059,
-        latlng = new google.maps.LatLng(lat, lng),
-        image = 'http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png';
-    
-    var myOptions = {
-      center: new google.maps.LatLng(lat, lng),
-      zoom: 17,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+    //show current location and drop the pin
+    if ( navigator.geolocation ) {
+      function success(pos) {
+        drawMap(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+      }
+      function fail(error) {
+          drawMap(defaultLatLng);
+      }
+        navigator.geolocation.getCurrentPosition(success, fail, {maximumAge: 500000, enableHighAccuracy:true, timeout: 6000});
+      } else {
+        drawMap(defaultLatLng);  // No geolocation support, show default map
+    }
 
-    var map = new google.maps.Map(document.getElementById("map"), myOptions);
-    console.log(map);
+    //function to make a map
+    function drawMap(latlng) {
+      var myOptions = {
+        zoom: 17,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("map"), myOptions);
+      // Add an overlay to the map of current lat/lng
+      var marker = new google.maps.Marker({
+          position: latlng,
+          map: map,
+          title: "Greetings!"
+      });
+    }
 
-    // Get's user's current location
-    var input = document.getElementById('searchTextField');         
-    console.log(input); 
-    
-    var autocomplete = new google.maps.places.Autocomplete(input);          
-    
-    autocomplete.bindTo('bounds', map); 
-    var infowindow = new google.maps.InfoWindow(); 
+// autofill function
+    var input = document.getElementById('searchTextField');
+    console.log(input);
+
+    var autocomplete = new google.maps.places.Autocomplete(input);
+
+    autocomplete.bindTo('bounds', map);
+    var infowindow = new google.maps.InfoWindow();
 
     autocomplete.addListener('place_changed', function() {
         infowindow.close();
         var place = autocomplete.getPlace();
         $('#photo_restaurant').val(place.name);
-        
-        console.log(place);
-    });     
- 
- 
-    //show current location and marker
-    navigator.geolocation.getCurrentPosition(function(position) {
-      initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-  
-      map.setCenter(initialLocation);
 
-      var marker = new google.maps.Marker({
-        position: initialLocation,
-        map: map,
-        title: 'Hello World!'
-      });
+        console.log(place);
     });
 
 }) ();
-  
+
 
 //document ready end
 });
