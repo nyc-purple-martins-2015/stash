@@ -31,6 +31,10 @@ class Photo < ActiveRecord::Base
     image.path(:medium)
   end
 
+  # def card_stats
+  #   self.
+  # end
+
   def associate_to_foodtags(tag_list)
     tag_list.each do |tag_name|
       new_tag = Foodtag.find_or_create_by(description: tag_name.strip)
