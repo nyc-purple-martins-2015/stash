@@ -30,8 +30,20 @@ var StreamView = function(){
 }
 
 StreamView.prototype.displayPhoto = function(photo) {
+  function makeDraggable(){
+    $('.photo_container').draggable({
+          revert: false,
+          start: function(event, ui) {
+            ui.helper.data('dropped', false);
+          },
+          stop: function(event, ui) {
+            cont.displayNext();
+          }
+      });
+  };
 
-  $('.photo_stream_container').html("<div class='photo_container' id='card'><div class='front'><img src="+photo.image_url+"></div><div class='back'>"+photo.pricetag+"</div></div>")
+
+  // $('.photo_stream_container').html("<div class='photo_container ui-draggable ui-draggable-handle' id='card'><div class='front' style='height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 1; transition: all 0.5s ease-out;'><img src="+photo.image_url+"></div><div class='back' style='transform: rotateX(-180deg); height: 100%; width: 100%; backface-visibility: hidden; transform-style: preserve-3d; position: absolute; z-index: 0; transition: all 0.5s ease-out;'>"+photo.pricetag+"</div></div>").flip({axis: "x", trigger: "click"}).draggable({revert: false, start: function(event, ui) {ui.helper.data('dropped', false);},stop: function(event, ui) {cont.displayNext();}})
   // .draggable({
   //     revert : function(event, ui) {
 

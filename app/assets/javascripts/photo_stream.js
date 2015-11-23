@@ -7,34 +7,47 @@ $(document).ready(function() {
     cont.initDisplay();
 
     // $('.photo_stream_container').on("click", ".photo_container", function(){
+    // $('.photo_stream_container').on("hover", ".photo_container", function() {
 
-    $(".photo_container").flip({
-        axis: "x",
-        trigger:'click'
+      $(".photo_container").flip({
+          axis: "x",
+          trigger:'click'
+        });
+      // })
+
+      $('.photo_container').draggable({
+        // revert : function(event, ui) {
+        //     debugger
+
+        //       $(this).data("uiDraggable").originalPosition = {
+        //           top : 0,
+        //           left : 0
+        //       };
+        //       return !event;
+        //       // that evaluate like this:
+        //       // return event !== false ? false : true;
+        //   }
+          revert: false,
+          start: function(event, ui) {
+            ui.helper.data('dropped', false);
+          },
+          stop: function(event, ui) {
+            // alert('stop: dropped=' + ui.helper.data('dropped'))
+            // cont.displayNext();
+          }
       });
-    // })
 
-    $('.photo_container').draggable({
-      revert : function(event, ui) {
+      $('.stream_stash').droppable({
+        accept: '.photo_container',
+        drop: function(event, ui) {
+          debugger
 
-            $(this).data("uiDraggable").originalPosition = {
-                top : 0,
-                left : 0
-            };
-            return !event;
-            // that evaluate like this:
-            // return event !== false ? false : true;
+          // send signal back to server
+          ui.helper.data('dropped', true);
+          cont.displayNext();
         }
 
-
-    });
-
-    $('.stream_stash').droppable({
-      drop: function(event, ui) {
-        cont.displayNext();
-      }
-
-    })
+      })
 
   };
   // $(".home").on("click", function(event){
