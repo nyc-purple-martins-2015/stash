@@ -1,0 +1,34 @@
+<!-- Photostream script -->
+<script id="photostream-template" type="text/x-handlebars-template">
+  {{#each photos}}
+    <div class="photo_view" data-id="{{id}}"><a href={{image_url}}><img src="{{image_url}}"></a></div>
+  {{/each}}
+</script>
+
+
+<!-- Individual photo show script -->
+
+
+<!-- Individual photo info script -->
+<script id="photo_show_info_template" type="text/x-handlebars-template">
+  {{#photo}}
+  <p>
+    {{dish_name}}
+  </p>
+  <p>
+    {{#each foodtags}}
+      <span>{{description}}</span>
+    {{/each}}
+  </p>
+  <p>
+    {{pricetag.price}}
+  </p>
+  {{/photo}}
+</script>
+
+<!-- Filtered photo script -->
+<script id="filter-template" type="text/x-handlebars-template">
+  {{#each photos}}
+    <div class="filtered_photos" data-id="{{id}}"><img src={{image_url}}></div>
+  {{/each}}
+</script>

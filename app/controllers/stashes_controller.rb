@@ -3,6 +3,7 @@ class StashesController < ApplicationController
     if current_user.stash != nil
       @stash = current_user.stash.photos
     else
+      @error ="There's no food in your stash."
       @stash = []
     end
   end
