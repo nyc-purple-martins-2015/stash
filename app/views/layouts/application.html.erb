@@ -2,9 +2,6 @@
 <html>
 <head>
   <title>stash</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,9 +15,14 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
   </script>
 
-  <!-- // <script src="https://maps.googleapis.com/maps/api/js"></script>
- -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPReP1WPR4FrvBjw117_L9d-SVfrxVXsA&libraries=restaurants"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+
+
+  <!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPReP1WPR4FrvBjw117_L9d-SVfrxVXsA&libraries=places"></script>-->
 
 
 </head>
