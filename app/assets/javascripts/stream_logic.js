@@ -41,7 +41,10 @@ StreamView.prototype.displayPhoto = function(photo) {
   //         }
   //     });
   // };
-  $('.photo_stream_container').html("<div class='photo_container id='card'><div class='front'><img src="+photo.image_url+"></div><div class='back' ><img src="+photo.image_url+"></div></div>");
+  var source = $('#flippable-card-template').html();
+  var template = Handlebars.compile(source);
+  var output = templag({photo: photo});
+  $('.photo_stream_container').html(output);
 
   $('.photo_container').flip({trigger: 'click'});
 
