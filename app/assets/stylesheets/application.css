@@ -17,4 +17,11 @@
 .container {
   margin-top: 7em;
   width: 20%;
+  text-align: center;
+}
+
+#map {
+  width: 300px;
+  height: 300px;
+  text-align: center;
 }
