@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
     restaurant = Restaurant.find_or_create_by(name: restaurant_params[:restaurant])
     @photo = current_user.photos.new(image: photo_params[:image], dish_name: photo_params[:dish_name], restaurant_id: restaurant.id)
     if @photo.save
-      @photo.pricetag = Pricetag.find(pricetag_params[:pricetag])
+      @photo.pricetag = Pricetag.find_or_create_by(price: pricetag_params[:pricetag])
       @photo.associate_to_foodtags(foodtag_params[:foodtags].split(","))
       redirect_to user_path(current_user)
     else
