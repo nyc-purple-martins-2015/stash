@@ -25,3 +25,9 @@
   height: 300px;
   text-align: center;
 }
+
+
+.nav > .menu_link > a {
+  display: inline-block;
+  margin-left: 1em;
+}
