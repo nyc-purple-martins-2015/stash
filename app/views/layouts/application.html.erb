@@ -29,23 +29,20 @@
 <body>
 
 
-<nav class="navbar navbar-fixed-top">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand">stash</a>
-    </div>
-    <div>
-      <ul class="nav navbar-nav">
-        <li class="menu_link"><%= link_to image_tag("home.png"), root_path, class: "home" %></li>
+
+      <div class="menu_link_bar">
+        <span class="menu_link"><%= link_to image_tag("home.png"), root_path, class: "home" %></span>
       <% if current_user %>
 
-        <li class="menu_link"><%= link_to image_tag("search.png"), foodtags_path, class: "search" %></li>
-        <li class="menu_link"><%= link_to image_tag("camera.png"), new_photo_path, class: "camera" %></li>
-        <li class="menu_link"><%= link_to image_tag("dining-set.png"), user_stashes_path(current_user), class: "my_stash" %></li>
-        <li class="menu_link"><%= link_to image_tag("user.png"), user_path(current_user), class: "my_profile", id: "current_user.stash.id" %></li>
-      </ul>
+        <span class="menu_link"><%= link_to image_tag("search.png"), foodtags_path, class: "search" %></span>
+        <span class="menu_link"><%= link_to image_tag("camera.png"), new_photo_path, class: "camera" %></span>
+        <span class="menu_link"><%= link_to image_tag("dining-set.png"), user_stashes_path(current_user), class: "my_stash" %></span>
+        <span class="menu_link"><%= link_to image_tag("user.png"), user_path(current_user), class: "my_profile", id: "current_user.stash.id" %></span>
+      </div>
       <% else %>
-      <ul class="nav navbar-nav navbar-right">
+
         <li class="menu_link"><%= link_to 'Sign In with Facebook', "/auth/facebook",  id: "sign_in" %></li>
         <li class="menu_link"><%= link_to 'Sign In with Google', "/auth/google_oauth2",  id: "sign_in" %></li>
       </ul>
