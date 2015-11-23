@@ -4,13 +4,14 @@
 <h3>By Food Type</h3>
 
   <% @foodtags.each do |tag| %>
-    <span class="tag"><%= link_to tag.description, foodtag_path(tag) %></span>
+    <button type="button" class="btn btn-info"><%= link_to tag.description, foodtag_path(tag) %></button>
   <% end %>
 
- 
+
 <h3>By Price</h3>
-  <span><%= link_to '$', pricetag_path(1) %></span>
-  <span><%= link_to '$$', pricetag_path(2) %></span>
-  <span><%= link_to '$$$', pricetag_path(3) %></span>
-  <span><%= link_to '$$$$', pricetag_path(4) %></span>
+
+<% @pricetags.each do |tag| %>
+  <button type="button" class="btn btn-info" id="price"><%= link_to "#{tag.price}", pricetag_path(tag) %></button>
+<% end %>
+
 </div>
