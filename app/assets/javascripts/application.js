@@ -15,18 +15,6 @@
 //= require_tree .
 //= require handlebars-205c61c
 
-// function hideAllContainersExcept(divNotHidden) {
-//   $('div.container > [class*="container"]').hide();
-//   $(divNotHidden).show()
-// };
-
-// initialize();
-
-// function initialize() {
-//   google.maps.event.addDomListener(window, 'load', function() {
-//     codeAddress('New York');
-// });
-// }
 
 $(document).ready(function() {
 
@@ -92,6 +80,7 @@ $(document).ready(function() {
         });
     });
 
+    //show current location and marker
     navigator.geolocation.getCurrentPosition(function(position) {
       initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
   
@@ -103,10 +92,8 @@ $(document).ready(function() {
         title: 'Hello World!'
       });
     });
-     
- 
-//evoke funciton
-  }) ();
+
+}) ();
   
 
 //document ready end
