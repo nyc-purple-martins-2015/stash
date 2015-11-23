@@ -2,7 +2,7 @@
   <div class="user_profile_container">
     <% if @error %>
         <p><%= @error %></p>
-  
+
     <% else %>
       <p>
         Number of uploaded photos: <%= @photos.length %>
@@ -23,3 +23,5 @@
   <div><%= link_to "Sign out", signout_path, id: "sign_out" %></div>
 
 </div>
+
+
