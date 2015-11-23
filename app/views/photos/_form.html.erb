@@ -1,7 +1,17 @@
 <%= form_for @photo, url: photos_path, html: { multipart: true} do |f| %>
 
+<<<<<<< d4f8b2a08c4ed224e9f3dd61c0dc0c871890140e
   <p><%= f.file_field :image, accept: "image/*" %></p>
+=======
+  <p><%= f.file_field :image %></p>
+
+>>>>>>> Start applying google places api.
   <p><%= f.text_field :restaurant, value: nil, :placeholder => "Restaurant" %></p>
+  
+  <input id="searchTextField" type="text" size="50" placeholder="Anything you want!">
+
+  <p><%= f.text_field :restaurant, id: "searchTextField", :placeholder => "Search for your restaurant here!" %>
+  
   <p><%= f.text_field :foodtags, value: nil, :placeholder => "Foodtags" %></p>
   <p>Price Range: <%= f.select :pricetag, [['$0..$10', "$" ], ['$10..$15', "$$" ], ['$15..$20', "$$$" ],['$20+', "$$$$" ]] %></p>
   <p><%= f.text_field :dish_name, value: nil, :placeholder => "Dish Name" %></p>
