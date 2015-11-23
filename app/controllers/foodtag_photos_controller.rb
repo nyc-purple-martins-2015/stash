@@ -1,3 +1,5 @@
+#Delete this file if you're not using it
+
 class FoodtagPhotosController < ApplicationController
 
   # def new

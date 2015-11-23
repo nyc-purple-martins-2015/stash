@@ -1,3 +1,8 @@
+<!-- If @photo is in the right state, you shouldn't need the url etc options - rails should figure it out.
+Also if you render with a local, change the ivar to be a simple variable
+
+ -->
+
 <%= form_for @photo, url: photos_path, html: { multipart: true} do |f| %>
 
   <p><%= f.file_field :image, accept: "image/*" %></p>

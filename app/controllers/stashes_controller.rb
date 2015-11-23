@@ -1,6 +1,7 @@
 class StashesController < ApplicationController
   def index
     if current_user.stash != nil
+      # Can be misleading to name a variable something other than what it is.
       @stash = current_user.stash.photos
     else
       @stash = []

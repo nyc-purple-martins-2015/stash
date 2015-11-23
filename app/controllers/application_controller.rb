@@ -9,10 +9,12 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  # This probably should not be here (should directly use photo?)
   def image_url
     self.image.url
   end
 
+  #This should be a method on user and then use current_user.stash_count in views
   def user_stash_count
     current_user.stash.photos.count
   end

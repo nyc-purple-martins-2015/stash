@@ -30,6 +30,8 @@ class FoodtagsController < ApplicationController
     # render json: foodtag_photos.to_json(methods: [:image_url])
   end
 
+
+  #This feels like a duplication of model logic
   def parse_foodtags(photo, foodtag_params)
     foodtags = foodtag_params[:description].split(/[-,\/]/)
     foodtags = foodtags.map { |tag| Foodtag.find_or_create_by(description: foodtag.strip) }.uniq

@@ -1,4 +1,8 @@
+# Is any of this needed?
+# Check if that route is needed as well
 class PhotoStashesController < ApplicationController
+
+  #This is probably not needed
   def new
     @photostash = Photostash.new
   end

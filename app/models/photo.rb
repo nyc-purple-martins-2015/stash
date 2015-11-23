@@ -2,9 +2,9 @@ class Photo < ActiveRecord::Base
 
   belongs_to        :user
   belongs_to        :restaurant
-  belongs_to        :stash
+  belongs_to        :stash # through ?
   has_one           :photo_pricetag
-  has_one           :pricetag, through: :photo_pricetag
+  has_one           :pricetag, through: :photo_pricetag  # make this a belongs_to ?
   has_many          :foodtags, through: :foodtag_photos
   has_many          :foodtag_photos
 
@@ -22,6 +22,7 @@ class Photo < ActiveRecord::Base
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
+  # delegate :url, to: image, prefix: true would create a image_url method
 
   def image_url
     self.image.url
