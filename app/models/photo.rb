@@ -28,11 +28,11 @@ class Photo < ActiveRecord::Base
 
   def associate_to_foodtags(tag_list)
     tag_list.each do |tag_name|
+      tag_name = tag_name.downcase
       new_tag = Foodtag.find_or_create_by(description: tag_name.strip)
       unless self.foodtags.include?(new_tag)
         self.foodtags << new_tag
       end
     end
   end
-
 end
