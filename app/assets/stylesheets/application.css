@@ -30,7 +30,7 @@
   moz-border-radius: 13px;
   -webkit-border-radius: 13px;
   border-color: transparent;
-  padding: 5px;;
+  padding: 5px;
 }
 
 .search_form_container #search-button {
@@ -309,6 +309,55 @@ figure:before {
   margin-left: 0 auto;
   text-align: center;
   width: 100%;
+}
+
+#searchTextField {
+  background-color: #e6e6e6;
+  color: grey;
+  width: 180px;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
+}
+
+#add_photo_button {
+  color: white;
+  background-color: black;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
+}
+
+#dish_name {
+  background-color: #e6e6e6;
+  color: grey;
+  width: 180px;
+  height: 30px;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
+}
+
+#photo_foodtags {
+  background-color: #e6e6e6;
+  color: grey;
+  width: 180px;
+  height: 30px;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
+}
+
+#upload_text_field {
+  background-color: #e6e6e6;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
 }
 
 /* STYLING FOR LOGIN BUTTONS */
