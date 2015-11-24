@@ -1,5 +1,7 @@
 <div class="container">
-  <% @foodtag_photos.each do |photo| %>
-    <div><img src="<%= photo.image_url %>" /></div>
-  <% end %>
+  <div class="foodtag_photos_container">
+    <% @foodtag_photos.each do |photo| %>
+      <div><img src="<%= photo.image_url %>" /></div>
+    <% end %>
+  </div>
 </div>
