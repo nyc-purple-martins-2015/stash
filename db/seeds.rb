@@ -40,6 +40,9 @@ pricetags = ['$', '$$', '$$$', '$$$$']
 
 pricetags.map! { |tag| Pricetag.create(price: tag) }
 
+users.each do |user|
+  stash = Stash.create(user: user)
+end
 
 
 
