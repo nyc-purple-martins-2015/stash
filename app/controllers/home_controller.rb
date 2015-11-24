@@ -8,6 +8,6 @@ class HomeController < ApplicationController
   def show
     # @photostream = Photos.where(the lng and lat are within a two mile radius of the current_user)
     @photostream = Photo.all
-    render json: @photostream.to_json(methods: [:image_url], :include => { :foodtags => {:only => :description}, :pricetag => {:only => :price}} )
+    # render json: @photostream.to_json(methods: [:image_url], :include => { :foodtags => {:only => :description}, :pricetag => {:only => :price}} )
   end
 end

@@ -1,0 +1,25 @@
+<div class="containers">
+  <div class="wrap">
+    <div id="tinderslide">
+      <ul>
+        <% @photostream.each_with_index do |photo, index| %>
+          <li class="pane<%=index%>">
+            <div class="img" style="background: url(<%=photo.image_url%>) no-repeat scroll center center"></div>
+            <div>Dish Name:<%= photo.dish_name %></div>
+            <div class="like"></div>
+            <div class="dislike"></div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="actions">
+    <a href="#" class="dislike"><i></i></a>
+    <a href="#" class="like"><i></i></a>
+</div>
+
+<div id="status"></div>
+
+
+
