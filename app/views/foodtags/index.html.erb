@@ -1,20 +1,20 @@
 <div class="container">
-<div class="search_form_container">
-  <%= render :partial => 'photos/search' %>
-</div>
+
+  <div class="search_form_container">
+    <%= render :partial => 'photos/search' %>
+  </div>
+
+  <h4>By Price</h4>
 
 
-<h3>By Food Type</h3>
+  <% @pricetags.each do |tag| %>
+    <button type="button" class="btn btn-info" id="price"><%= link_to "#{tag.price}", pricetag_path(tag) %></button>
+  <% end %>
+
+  <h3>or...By Food Type</h3>
 
   <% @foodtags.each do |tag| %>
     <button type="button" class="btn btn-info"><%= link_to tag.description, foodtag_path(tag) %></button>
   <% end %>
-
-
-<h3>By Price</h3>
-
-<% @pricetags.each do |tag| %>
-  <button type="button" class="btn btn-info" id="price"><%= link_to "#{tag.price}", pricetag_path(tag) %></button>
-<% end %>
 
 </div>
