@@ -2,12 +2,12 @@
 
   <div class="top_form">
     <div class="top_form_left">
-      <p><div class="photo_field_label"> Dish Name: </div><div class="photo_field_input"><%= f.text_field :dish_name, value: nil, :placeholder => "Dish Name" %></div></p>
+      <p><div class="photo_field_input"><%= f.text_field :dish_name, value: nil, id: "dish_name", :placeholder => "Dish Name" %></div></p>
 
-      <p><div class="photo_field_label">FoodTags: </div><div class="photo_field_input"><%= f.text_field :foodtags, value: nil, :placeholder => "Foodtags" %></div></p>
+      <p><div class="photo_field_input"><%= f.text_field :foodtags, id: "photo_foodtags", value: nil, :placeholder => "Foodtags" %></div></p>
 
       <p><div class="photo_field_label">Price Range:</div><div class="photo_field_input"><%= f.select :pricetag, [['$0..$10', "$" ], ['$10..$15', "$$" ], ['$15..$20', "$$$" ],['$20+', "$$$$" ]] %></div></p>
-      <p><div class="photo_upload"><%= f.file_field :image, accept: "image/*" %></div></p>
+      <p><div class="photo_upload"><%= f.file_field :image, id: "upload_text_field", accept: "image/*" %></div></p>
     </div>
 
   <div class="top_form_right">
