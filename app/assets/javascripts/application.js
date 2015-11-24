@@ -64,10 +64,14 @@ $(document).ready(function() {
 
           console.log(place);
       });
+      width = screen.width.toString(); + "px"
+      height = (screen.height/4).toString() + "px"
+      document.getElementById("map").style.width = width;
+      document.getElementById("map").style.height = height;
     }
 
-
 }) ();
+
 
 
 //document ready end
