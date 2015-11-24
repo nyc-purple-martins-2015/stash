@@ -11,9 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
 //= require handlebars-205c61c
+
+//= require app
+//= require search
 
 
 $(document).ready(function() {
