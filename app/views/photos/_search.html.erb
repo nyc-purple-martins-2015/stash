@@ -1,5 +1,0 @@
-<h4>Explore Your Options by </h4>
-<%= form_tag(photos_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], id: "search-box", placeholder: "Food Tags" %>
-  <%= submit_tag "Search", id: "search-button" %>
-<% end %>
