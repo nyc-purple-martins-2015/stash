@@ -1,5 +1,19 @@
 class PhotosController < ApplicationController
 
+  def index
+    if params[:search]
+      search_tag = Foodtag.search(params[:search])
+      # byebug
+      if search_tag.count == 0
+        @error = "There is no photo regarding this tag!"
+        render :index
+      else
+        tag_id = search_tag.first.id
+        redirect_to foodtag_path(tag_id)
+      end
+    end
+  end
+
   def new
     @photo = Photo.new
   end
