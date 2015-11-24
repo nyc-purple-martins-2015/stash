@@ -30,7 +30,7 @@
 }
 
 #map {
-  width: 300px;
+  width: 100%;
   height: 300px;
   text-align: center;
 }
@@ -59,4 +59,3 @@ div.container-fluid {
 .btn #price {
   background-color: gray;
 }
-
