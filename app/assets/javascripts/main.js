@@ -7,12 +7,22 @@ $(document).ready(function() {
     // dislike callback
       onDislike: function (item) {
         // set the status text
+
+        console.log("disliked");
           $('#status').html('Passed on ' + (item.index()+1));
       },
     // like callback
       onLike: function (item) {
         // set the status text
-          $('#status').html('Stashed ' + (item.index()+1) + '!');
+
+        $.ajax({
+          method: 'post',
+          url: 'users/stashphoto',
+          data: { photoid: $(item).data('photoid')}
+        }).done(function(data){
+          console.log("liked");
+          $('#status').html(data);
+        });
       },
     animationRevertSpeed: 200,
     animationSpeed: 400,
