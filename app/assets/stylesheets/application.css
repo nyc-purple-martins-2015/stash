@@ -130,6 +130,8 @@ figure, figcaption {
 }
 
 #polaroid .flippable {
+  width: 100%;
+  height: auto;
   -webkit-perspective: 1000;
   -moz-perspective: 1000;
 }
