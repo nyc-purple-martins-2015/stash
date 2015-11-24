@@ -19,6 +19,8 @@
 $(document).ready(function() {
 // autocomplete place details
 
+if (document.getElementById("map")) {
+
   (function initialize (){
     var defaultLatLng = new google.maps.LatLng(40.7127, -74.0059)
 
@@ -72,6 +74,7 @@ $(document).ready(function() {
 
 }) ();
 
+}
 
 
 //document ready end

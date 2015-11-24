@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :sessions, only: [:create, :destroy]
-  resources :home, only: [:index]
+  resources :home, only: [:index, :show]
 
   resources :users, only: [:new, :create, :show] do
     resources :stashes , only: [:index]
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # resources :photo_pricetags, only: [:new, :create]
   resources :photos, only: [:new, :create, :show, :index]
 
-  root to: "home#index"
+  root to: "home#show"
 
   resources :pricetags, only: [:index, :show]
   resources :photo_stashes, only: [:show, :new, :create]
