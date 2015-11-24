@@ -1,4 +1,5 @@
+<h4>Explore Your Option </h4>
 <%= form_tag(photos_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Food Tag" %>
-  <%= submit_tag "Search" %>
+  <%= text_field_tag :search, params[:search], id: "search-box", placeholder: "Search Food Tag" %>
+  <%= submit_tag "Search", id: "search-button" %>
 <% end %>
