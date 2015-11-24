@@ -22,7 +22,7 @@ $(document).ready(function() {
   (function initialize (){
     var defaultLatLng = new google.maps.LatLng(40.7127, -74.0059)
 
-    //show current location and drop the pin
+    //show current location
     if ( navigator.geolocation ) {
       function success(pos) {
         drawMap(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
@@ -35,38 +35,39 @@ $(document).ready(function() {
         drawMap(defaultLatLng);  // No geolocation support, show default map
     }
 
-    //function to make a map
+    //function to make a map and drop a pin
     function drawMap(latlng) {
       var myOptions = {
         zoom: 17,
         center: latlng,
+        scaleControl: true,
+        zoomControl: true,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       var map = new google.maps.Map(document.getElementById("map"), myOptions);
-      // Add an overlay to the map of current lat/lng
+
       var marker = new google.maps.Marker({
           position: latlng,
           map: map,
-          title: "Greetings!"
+      });
+    // autofill function
+      var input = document.getElementById('searchTextField');
+      console.log(input);
+
+      var autocomplete = new google.maps.places.Autocomplete(input);
+
+      autocomplete.bindTo('bounds', map);
+      var infowindow = new google.maps.InfoWindow();
+
+      autocomplete.addListener('place_changed', function() {
+          infowindow.close();
+          var place = autocomplete.getPlace();
+          $('#photo_restaurant').val(place.name);
+
+          console.log(place);
       });
     }
 
-// autofill function
-    var input = document.getElementById('searchTextField');
-    console.log(input);
-
-    var autocomplete = new google.maps.places.Autocomplete(input);
-
-    autocomplete.bindTo('bounds', map);
-    var infowindow = new google.maps.InfoWindow();
-
-    autocomplete.addListener('place_changed', function() {
-        infowindow.close();
-        var place = autocomplete.getPlace();
-        $('#photo_restaurant').val(place.name);
-
-        console.log(place);
-    });
 
 }) ();
 
