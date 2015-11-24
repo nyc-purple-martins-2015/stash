@@ -9,11 +9,4 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  def image_url
-    self.image.url
-  end
-
-  def user_stash_count
-    current_user.stash.photos.count
-  end
 end
