@@ -2,7 +2,7 @@ class FoodtagsController < ApplicationController
 
   def index
     @foodtags = Foodtag.all
-     @pricetags = Pricetag.all
+    @pricetags = Pricetag.all
 
     # render foodtags_path
     # render json: @foodtags.to_json
@@ -40,7 +40,6 @@ class FoodtagsController < ApplicationController
       photo.foodtags << tag
     end
   end
-
 
   private
 
