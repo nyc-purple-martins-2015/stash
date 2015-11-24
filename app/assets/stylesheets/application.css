@@ -25,7 +25,7 @@
 }
 
 .container {
-  margin-top: 7em;
+  margin-top: 2em;
   width: 90%;
   text-align: center;
 }
@@ -66,6 +66,73 @@ div.container-fluid {
 .btn #price {
   background-color: gray;
 }
+
+figure, figcaption {
+display: block;
+}
+
+/* User Profile && Polaroid Effect on Photos */
+
+
+#polaroid{
+  text-align: center;
+  width:100%;
+  overflow:hidden;
+  padding:5px 5px;
+}
+
+#polaroid figure{
+  float:left;
+  position:relative;
+  width:200px;
+  margin:5px 20px;
+  padding: 6px 8px 8px 8px;
+  -webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+  -moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+  box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+  background: #eee6d8;
+  background: -webkit-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+  background: -moz-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+  background: -o-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+  background: -ms-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+  background: linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+  -webkit-transform:rotate(-1deg);
+  -moz-transform: rotate(-1deg);
+  -o-transform: rotate(-1deg);
+  -ms-transform: rotate(-1deg);
+  transform: rotate(-1deg);
+  -webkit-backface-visibility:hidden; /*prevent rotated text being jagged in Chrome and Safari*/
+}
+
+#polaroid img {
+  width: 185px;
+  height: 190px;
+}
+
+#polaroid figcaption{
+  text-align:center;
+  font-family: 'Reenie Beanie', cursive; /*Reenie Beanie is available through Google Webfonts http://code.google.com/webfonts/specimen/Reenie+Beanie*/
+  font-size:1.3em;
+  color:#454f40;
+  letter-spacing:0.09em;
+}
+
+figure:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left:5px; /*postion from the left side of the frame (positive value move the tape right, negative moves it left)*/
+  top: -5px; /*position from the top of the frame (positive move it above the frame, negative below)*/
+  width: 75px; /*width of the tape*/
+  height: 25px; /*height of the tape*/
+  background-color: rgba(222,220,198,0.7); /*colour of the tape, use rgba to make it slightly transparent*/
+  /*rotate the tape 12 degrees anti-clockwise*/
+  -webkit-transform: rotate(-12deg);
+  -moz-transform: rotate(-12deg);
+  -o-transform: rotate(-12deg);
+  -ms-transform: rotate(-12deg);
+  }
+
 
 /* STYLING FOR LOGIN BUTTONS */
 
