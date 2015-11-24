@@ -47,7 +47,8 @@ ActiveRecord::Schema.define(version: 20151120205232) do
   add_index "photo_stashes", ["stash_id"], name: "index_photo_stashes_on_stash_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
-    t.integer  "restaurant_id"
+    t.string   "restaurant"
+    t.string   "restaurant_address"
     t.integer  "user_id",                                     null: false
     t.string   "dish_name"
     t.decimal  "lng",                precision: 10, scale: 6
@@ -60,21 +61,12 @@ ActiveRecord::Schema.define(version: 20151120205232) do
     t.datetime "image_updated_at"
   end
 
-  add_index "photos", ["restaurant_id"], name: "index_photos_on_restaurant_id", using: :btree
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "pricetags", force: :cascade do |t|
     t.string   "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "restaurants", force: :cascade do |t|
-    t.string   "name",                                null: false
-    t.decimal  "lng",        precision: 10, scale: 6
-    t.decimal  "lat",        precision: 10, scale: 6
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
   end
 
   create_table "stashes", force: :cascade do |t|
