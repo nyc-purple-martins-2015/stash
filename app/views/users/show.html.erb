@@ -1,15 +1,14 @@
 <div class="container">
-  
+
   <div class="user_profile_container">
     <% if @error %>
         <p><%= @error %></p>
-
     <% else %>
       <p>
         Number of uploaded photos: <%= @photos.length %>
       </p>
       <p>
-        Number of photos in your stash: <%= user_stash_count %>
+        Number of photos in your stash: <%= @stash_photos.count %>
       </p>
 
       <div class="user_photos_container">

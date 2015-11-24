@@ -1,14 +1,17 @@
 class PhotosController < ApplicationController
 
   def new
-    @photo = current_user.photos.new
+    @photo = Photo.new
   end
 
   def create
-    restaurant = Restaurant.find_or_create_by(name: restaurant_params[:restaurant])
+    restaurant = Restaurant.find_or_create_by(name: params[:photo][:restaurant])
     @photo = current_user.photos.new(image: photo_params[:image], dish_name: photo_params[:dish_name], lat: photo_params[:lat].to_f, lng: photo_params[:lng].to_f, restaurant: restaurant)
+      # byebug
     if @photo.save
-      @photo.pricetag = Pricetag.find_or_create_by(price: pricetag_params[:pricetag])
+
+      # @photo.pricetag.create(pricetag: params[:photo][:pricetag].id)
+      @photo.pricetag = Pricetag.find_by(price: params[:photo][:pricetag])
       @photo.associate_to_foodtags(foodtag_params[:foodtags].split(","))
       redirect_to user_path(current_user)
     else
@@ -27,20 +30,8 @@ class PhotosController < ApplicationController
     params.require(:photo).permit(:image, :dish_name, :lat, :lng)
   end
 
-  def pricetag_params
-    params.require(:photo).permit(:pricetag)
-  end
-
-  def restaurant_params
-    params.require(:photo).permit(:restaurant)
-  end
-
   def foodtag_params
     params.require(:photo).permit(:foodtags)
   end
-
-  # def photo_foodtag_params
-  #   params.require(:photo).permit(:foodtag)
-  # end
 
 end

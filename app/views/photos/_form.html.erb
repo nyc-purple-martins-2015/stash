@@ -1,10 +1,10 @@
-<%= form_for @photo, url: photos_path, html: { multipart: true} do |f| %>
+<%= form_for photo, html: {multipart: true } do |f| %>
 
   <p><%= f.file_field :image, accept: "image/*" %></p>
 
   <%= f.hidden_field :restaurant %>
   <input id="searchTextField" id="pac-input" class="controls" type="text" placeholder="search for restaurant here." >
-  
+
 
   <p><%= f.text_field :foodtags, value: nil, :placeholder => "Foodtags" %></p>
   <p>Price Range: <%= f.select :pricetag, [['$0..$10', "$" ], ['$10..$15', "$$" ], ['$15..$20', "$$$" ],['$20+', "$$$$" ]] %></p>

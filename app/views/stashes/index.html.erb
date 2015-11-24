@@ -1,24 +1,14 @@
-<script id="mystash-template" type="text/x-handlebars-template">
-  {{photos.message}}
-    {{#each photos}}
-      <div class="stash_view" data-id="{{id}}"> <span>{{image_file_name}}</span> </div>
-    {{/each}}
-</script>
-
-<script id="photo_show_template" type="text/x-handlebars-template">
-  {{#photo}}
-  <span id="individual_photo" data-id="{{id}}"><img src={{image_url}}></span>
-  {{/photo}}
-</script>
-
 <div class="container">
-  <div class="my_stash_container">
     <h3> My Stash </h3>
+    <% if @error %>
+        <p><%= @error %></p>
+    <% else %>
 
-    <% @stash.each do |photo| %>
-      <div class="photo_show_template">
-        <span id="individual_photo" data-id="<%= photo.id %>"><img src=<%= photo.image_url %>></span>
-      </div>
+      <% @stash_photos.each do |photo| %>
+        <div class="photo_show_template">
+          <span id="individual_photo" data-id="<%= photo.id %>"><img src=<%= photo.image_url %>></span>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

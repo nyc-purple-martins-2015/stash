@@ -2,11 +2,14 @@ class Photo < ActiveRecord::Base
 
   belongs_to        :user
   belongs_to        :restaurant
-  belongs_to        :stash
-  has_one           :photo_pricetag
+  belongs_to        :stashes
   has_one           :pricetag, through: :photo_pricetag
+
+  has_one           :photo_pricetag
   has_many          :foodtags, through: :foodtag_photos
   has_many          :foodtag_photos
+
+  delegate          :url, to: :image, prefix: true
 
   has_attached_file :image,
                     #url: "/system/:hash.:extension",
@@ -22,14 +25,6 @@ class Photo < ActiveRecord::Base
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-
-  def image_url
-    self.image.url
-  end
-
-  def image_path
-    image.path(:medium)
-  end
 
   def associate_to_foodtags(tag_list)
     tag_list.each do |tag_name|
