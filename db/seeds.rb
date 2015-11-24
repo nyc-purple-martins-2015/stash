@@ -17,17 +17,13 @@ june = User.create(provider: "etsy", uid: "234", name: "june", oauth_token: "why
 users = [matt, nick, rachel, june]
 
 photos = []
-restaurants = []
 
-15.times do
-  restaurants << Restaurant.create(name: Faker::Company.name, lng: rand(-100.00..100.00).round(4), lat: rand(-100.00..100.00).round(4))
-end
 
 photo_collection = ['burger.jpg', 'fish.jpg', 'spaghetti.jpg', 'pretzel.jpg', 'sushi.jpg']
 
 users.each do |user|
   5.times do
-   photos << Photo.create(restaurant: restaurants[rand(0..14)],
+   photos << Photo.create(restaurant: Faker::Company.name,
     user: user, lng: rand(90), lat: rand(90),
     image: File.new(Rails.root.join('seed_photos', photo_collection.sample)))
   end
@@ -44,19 +40,6 @@ pricetags = ['$', '$$', '$$$', '$$$$']
 
 pricetags.map! { |tag| Pricetag.create(price: tag) }
 
-# photos.each do |photo|
-#   photo.pricetag = Pricetag.find(rand(1..4))
-# end
 
-# price_tags = Pricetag.all
-
-# price_tags.each do |tag|
-#   PhotoPricetag.create(pricetag: tag, photo: rand(1..(Photo.all.count)))
-# end
-
-# users.each do |user|
-#   stash = Stash.create(user: user)
-#   5.times { stash.photos << Photo.find(rand(1..20))}
-# end
 
 

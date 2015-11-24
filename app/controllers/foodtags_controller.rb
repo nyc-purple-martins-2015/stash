@@ -4,6 +4,17 @@ class FoodtagsController < ApplicationController
     @foodtags = Foodtag.all.sample(10)
     @pricetags = Pricetag.all
 
+    if params[:search]
+      search_tag = Foodtag.search(params[:search])
+      if search_tag.count == 0
+        @error = "There is no photo regarding this tag!"
+        # redirect_to foodtags_path(@error)
+        render :partial => "error"
+      else
+        tag_id = search_tag.first.id
+        redirect_to foodtag_path(tag_id)
+      end
+    end
     # render foodtags_path
     # render json: @foodtags.to_json
   end

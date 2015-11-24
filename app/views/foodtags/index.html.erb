@@ -1,7 +1,11 @@
 <div class="container">
 
   <div class="search_form_container">
-    <%= render :partial => 'photos/search' %>
+    <%= render :partial => 'search' %>
+  </div>
+
+  <div class="error">
+    <% render :partial => 'error' %>
   </div>
   <% @foodtags.each do |tag| %>
     <button type="button" class="btn btn-info"><%= link_to tag.description, foodtag_path(tag) %></button>
