@@ -1,0 +1,41 @@
+<script id="flippable-card-template" type="text/x-handlebars-template">
+  <div class="photo_container" id="cardd">
+    <div class="frontt">
+      <img src="{{photo.image_url}}">
+    </div>
+    <div class="backk">
+      {{#if photo.dish_name }}
+        <p> Name: {{photo.dish_name}} </p>
+      {{/if}}
+      {{#if photo.restaurant}}
+        <p> Restaurant: {{photo.restaurant}} </p>
+      {{/if}}
+      {{#if photo.pricetag}}
+        <p> Price: {{photo.pricetag }} </p>
+      {{/if}}
+      {{#if photo.foodtags}}
+        <p> Tags: </p>
+        {{#each photo.foodtags}}
+          <span>{{description}}</span>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+</script>
+
+
+<div class="container">
+  <div class="errors_container">
+    <script id="error-template" type="text/x-handlebars-template">
+      <div class="error_message"><span></span></div>
+    </script>
+  </div>
+
+  <%= content_tag "div", class: "photo_stream_container", data: {photostream: @photostream} do %>
+  <% end %>
+
+  <div class="photo_info_container"></div>
+  <div class="stream_stash"></div>
+
+</div>
+
