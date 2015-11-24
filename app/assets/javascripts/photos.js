@@ -38,5 +38,14 @@ $(document).ready(function(){
 
   });
 
+  $("#polaroid > figure").on("click", function(event) {
+    // debugger
+    $(this).toggleClass("#polaroid > figure.back")
+
+
+  })
+
+
+
 });
 
