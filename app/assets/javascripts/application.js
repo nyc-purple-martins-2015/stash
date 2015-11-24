@@ -40,8 +40,6 @@ $(document).ready(function() {
       var myOptions = {
         zoom: 17,
         center: latlng,
-        scaleControl: true,
-        zoomControl: true,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       var map = new google.maps.Map(document.getElementById("map"), myOptions);
