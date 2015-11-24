@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @photostream = Photo.all.limit(20)
-
+    @photostream = @photostream.to_json(methods: [:image_url], :include => { :foodtags => {:only => :description}, :pricetag => {:only => :price}} )
   end
 
   def show
