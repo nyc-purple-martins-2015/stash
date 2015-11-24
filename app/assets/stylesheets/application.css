@@ -30,7 +30,6 @@
   text-align: center;
 }
 
-
 .menu_link {
   margin-top: 1em;
   margin: 1em;
@@ -62,20 +61,6 @@ div.container-fluid {
 .btn #price {
   background-color: gray;
 }
-
-#map {
-  width: 300px;
-  height: 300px;
-  text-align: center;
-}
-
-
-.btn {
-  margin: 5px;
-  border-radius: 24px;
-}
-
-
 
 /* STYLING FOR LOGIN BUTTONS */
 
@@ -111,5 +96,3 @@ div.container-fluid {
 .btn-google:active,.btn-google.active,.open>.dropdown-toggle.btn-google{background-image:none}
 .btn-google.disabled,.btn-google[disabled],fieldset[disabled] .btn-google,.btn-google.disabled:hover,.btn-google[disabled]:hover,fieldset[disabled] .btn-google:hover,.btn-google.disabled:focus,.btn-google[disabled]:focus,fieldset[disabled] .btn-google:focus,.btn-google.disabled.focus,.btn-google[disabled].focus,fieldset[disabled] .btn-google.focus,.btn-google.disabled:active,.btn-google[disabled]:active,fieldset[disabled] .btn-google:active,.btn-google.disabled.active,.btn-google[disabled].active,fieldset[disabled] .btn-google.active{background-color:#dd4b39;border-color:rgba(0,0,0,0.2)}
 .btn-google .badge{color:#dd4b39;background-color:#fff}
-
-
