@@ -5,8 +5,10 @@
     <% else %>
 
       <% @stash_photos.each do |photo| %>
-        <div class="photo_show_template">
-          <span id="individual_photo" data-id="<%= photo.id %>"><img src=<%= photo.image_url %>></span>
+        <div id="polaroid">
+          <figure>
+            <img src="<%= photo.image_url %>" width="200" height="200" alt="user_photo" />
+          </figure>
         </div>
       <% end %>
     <% end %>
