@@ -1,7 +1,6 @@
 class Photo < ActiveRecord::Base
 
   belongs_to        :user
-  belongs_to        :restaurant
   belongs_to        :stashes
   has_one           :pricetag, through: :photo_pricetag
   has_one           :photo_pricetag
