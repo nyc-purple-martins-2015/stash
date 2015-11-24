@@ -1,7 +1,7 @@
 class FoodtagsController < ApplicationController
 
   def index
-    @foodtags = Foodtag.all
+    @foodtags = Foodtag.all.sample(10)
     @pricetags = Pricetag.all
 
     # render foodtags_path
