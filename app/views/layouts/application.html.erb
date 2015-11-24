@@ -7,6 +7,7 @@
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -27,28 +28,30 @@
 
 </head>
 <body>
-
-
+<% if current_user %>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-
       <div class="menu_link_bar">
         <span class="menu_link"><%= link_to image_tag("home.png"), root_path, class: "home" %></span>
-      <% if current_user %>
-
         <span class="menu_link"><%= link_to image_tag("search.png"), foodtags_path, class: "search" %></span>
         <span class="menu_link"><%= link_to image_tag("camera.png"), new_photo_path, class: "camera" %></span>
         <span class="menu_link"><%= link_to image_tag("dining-set.png"), user_stashes_path(current_user), class: "my_stash" %></span>
         <span class="menu_link"><%= link_to image_tag("user.png"), user_path(current_user), class: "my_profile", id: "current_user.stash.id" %></span>
       </div>
-      <% else %>
-
-        <li class="menu_link"><%= link_to 'Sign In with Facebook', "/auth/facebook",  id: "sign_in" %></li>
-        <li class="menu_link"><%= link_to 'Sign In with Google', "/auth/google_oauth2",  id: "sign_in" %></li>
-      </ul>
-      <% end %>
-
+    </div>
 </nav>
+<% else %>
+<div class="welcome-container">
+  <div class="welcome">
+    <h1> Welcome to stash </h1>
+  </div>
+  <div class="login">
+    <a href="/auth/facebook" class="btn btn-block btn-social btn-facebook"> Login with Facebook <span class="fa fa-facebook"></span> </a>
+    <a href="/auth/google_oauth2" class="btn btn-block btn-social btn-google"> Login with Google <span class="fa fa-google"></span> </a>
+  </div>
+</div>
+<% end %>
+
 
 <%= yield %>
 
