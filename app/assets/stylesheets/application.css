@@ -19,6 +19,30 @@
   text-decoration: none;
  }
 
+.search_form_container {
+  text-align: center;
+
+}
+
+.search_form_container #search-box {
+  background-color: #e6e6e6;
+  color: grey;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;;
+}
+
+.search_form_container #search-button {
+  /*height: 60px%;*/
+  color: white;
+  background-color: black;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;;
+}
+
 .nav > .menu_link > a {
   display: inline-block;
   margin-left: 1em;
