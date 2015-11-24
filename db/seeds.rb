@@ -23,12 +23,13 @@ restaurants = []
   restaurants << Restaurant.create(name: Faker::Company.name, lng: rand(-100.00..100.00).round(4), lat: rand(-100.00..100.00).round(4))
 end
 
+photo_collection = ['burger.jpg', 'fish.jpg', 'spaghetti.jpg', 'pretzel.jpg', 'sushi.jpg']
 
 users.each do |user|
   5.times do
    photos << Photo.create(restaurant: restaurants[rand(0..14)],
     user: user, lng: rand(90), lat: rand(90),
-    image: File.new(Rails.root.join('seed_photos','kitten.jpg')))
+    image: File.new(Rails.root.join('seed_photos', photo_collection.sample)))
   end
 end
 
@@ -53,9 +54,9 @@ pricetags.map! { |tag| Pricetag.create(price: tag) }
 #   PhotoPricetag.create(pricetag: tag, photo: rand(1..(Photo.all.count)))
 # end
 
-users.each do |user|
-  stash = Stash.create(user: user)
-  5.times { stash.photos << Photo.find(rand(1..20))}
-end
+# users.each do |user|
+#   stash = Stash.create(user: user)
+#   5.times { stash.photos << Photo.find(rand(1..20))}
+# end
 
 

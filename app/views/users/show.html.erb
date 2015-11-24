@@ -1,27 +1,21 @@
 <div class="container">
+  <% if @error %>
+      <p><%= @error %></p>
+  <% else %>
+    <span class="user_info">
+      <%= @user_photos.length %> posts
+    </span>
 
-  <div class="user_profile_container">
-    <% if @error %>
-        <p><%= @error %></p>
-    <% else %>
-      <p>
-        Number of uploaded photos: <%= @photos.length %>
-      </p>
-      <p>
-        Number of photos in your stash: <%= @stash_photos.count %>
-      </p>
-
-      <div class="user_photos_container">
-        <% @photos.each do |photo|%>
-          <span><%= link_to image_tag(photo.image_url), photo_path(photo) %></span>
-        <% end %>
+    <% @user_photos.each do |photo|%>
+      <div id="polaroid">
+        <figure>
+          <img src="<%= photo.image_url %>" width="200" height="200" alt="user_photo" />
+          <figcaption><%= photo.dish_name %></figcaption>
+        </figure>
       </div>
     <% end %>
+  <% end %>
 
-  </div>
-
-  <div><%= link_to "Sign out", signout_path, id: "sign_out" %></div>
+<div><%= link_to "Sign out", signout_path, id: "sign_out" %></div>
 
 </div>
-
-
