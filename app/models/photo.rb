@@ -4,8 +4,8 @@ class Photo < ActiveRecord::Base
   belongs_to        :restaurant
   belongs_to        :stashes
   has_one           :pricetag, through: :photo_pricetag
-
   has_one           :photo_pricetag
+
   has_many          :foodtags, through: :foodtag_photos
   has_many          :foodtag_photos
 
