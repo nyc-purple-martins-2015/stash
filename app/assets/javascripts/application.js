@@ -38,7 +38,7 @@ $(document).ready(function() {
     //function to make a map and drop a pin
     function drawMap(latlng) {
       var myOptions = {
-        zoom: 17,
+        zoom: 18,
         center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
