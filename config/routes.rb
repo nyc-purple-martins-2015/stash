@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   # resources :photo_pricetags, only: [:new, :create]
-  resources :photos, only: [:new, :create, :show]
+  resources :photos, only: [:new, :create, :show, :index]
 
   root to: "home#index"
 
