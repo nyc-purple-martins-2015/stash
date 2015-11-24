@@ -1,16 +1,10 @@
 class StashesController < ApplicationController
   def index
-    if current_user.stash != nil
-      @stash = current_user.stash.photos
+    if current_user.stash.photos.count > 0
+      @stash_photos = current_user.stash.photos
     else
-      @stash = []
+      @error = "You don't have any food in your stash!"
     end
-  end
-
-  private
-
-  def stash_params
-    params.require(:stash).merge(user_id: current_user.id)
   end
 
 end

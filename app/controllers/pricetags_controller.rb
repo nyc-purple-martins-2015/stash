@@ -8,9 +8,4 @@ class PricetagsController < ApplicationController
     @photo_pricetags = Pricetag.find(params[:id]).photos
   end
 
-  private
-
-  def pricetag_search_params
-    params[:id]
-  end
 end

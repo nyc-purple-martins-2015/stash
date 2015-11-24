@@ -1,3 +1,0 @@
-class PhotoPricetagsController < ApplicationController
-
-end
