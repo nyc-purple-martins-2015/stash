@@ -120,6 +120,7 @@ display: block;
   background: -o-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
   background: -ms-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
   background: linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
+  backface-visibility: hidden;
   -webkit-transform:rotate(-1deg);
   -moz-transform: rotate(-1deg);
   -o-transform: rotate(-1deg);
@@ -127,6 +128,15 @@ display: block;
   transform: rotate(-1deg);
   -webkit-backface-visibility:hidden; /*prevent rotated text being jagged in Chrome and Safari*/
 }
+
+#polaroid .front {
+  background: #eee6d8;
+}
+
+#polaroid .back {
+  transform: rotateY( 180deg );
+}
+
 
 #polaroid img {
   width: 185px;
@@ -156,6 +166,12 @@ figure:before {
   -o-transform: rotate(-12deg);
   -ms-transform: rotate(-12deg);
   }
+
+
+
+
+
+/* New Photo Page */
 
 .photo_field_label {
   display: inline-block;
