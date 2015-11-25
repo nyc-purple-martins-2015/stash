@@ -16,7 +16,6 @@
 //= require_tree .
 //= require handlebars-205c61c
 
-//= require app
 //= require search
 
 
