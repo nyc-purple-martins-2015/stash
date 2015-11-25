@@ -1,11 +1,10 @@
-<div class="containers">
+<div class="container">
   <div class="wrap">
     <div id="tinderslide">
       <ul>
         <% @photostream.each_with_index do |photo, index| %>
           <li class="pane<%=index%>" data-photoid="<%= photo.id %>">
-            <div class="img" style="background: url(<%=photo.image_url%>) no-repeat scroll center center"></div>
-            <div>Dish Name:<%= photo.dish_name %></div>
+            <img class="photo" src="<%=photo.image_url%>" />
             <div class="like"></div>
             <div class="dislike"></div>
           </li>

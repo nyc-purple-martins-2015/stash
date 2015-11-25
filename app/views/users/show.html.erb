@@ -9,9 +9,11 @@
     <% @user_photos.each do |photo|%>
       <div id="polaroid">
         <div class="flippable">
+
           <figure class="front">
-            <img src="<%= photo.image_url %>" width="200" height="200" alt="user_photo" />
+            <img class="photo" src="<%= photo.image_url %>" alt="user_photo" />
           </figure>
+
           <figure class="back">
             <figcaption><%= photo.dish_name %> from</figcaption>
             <figcaption><%= photo.restaurant %></figcaption>
@@ -20,13 +22,12 @@
             <br />
             <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_photo_path(photo) %></button>
             <button type="button" class="btn btn-danger"><%= link_to 'Delete', photo_path(photo), method: :delete %></button>
-
           </figure>
         </div>
       </div>
     <% end %>
   <% end %>
 
-<div><%= link_to "Sign out", signout_path, id: "sign_out" %></div>
+  <div><%= link_to "Sign out", signout_path, id: "sign_out" %></div>
 
 </div>
