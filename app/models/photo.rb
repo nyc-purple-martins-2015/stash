@@ -12,8 +12,8 @@ class Photo < ActiveRecord::Base
 
   acts_as_mappable
 
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "200x200#" },
-                    :default_style => :thumb
+  has_attached_file :image, styles: { medium: "300x300#", thumb: "200x200>" },
+                    :default_style => :medium
                     # processors: [:thumbnail, :compression],
                     # :convert_options => { :thumb => '-quality 80'}
   validates_attachment :image, presence: true,
