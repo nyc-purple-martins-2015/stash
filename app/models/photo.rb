@@ -10,9 +10,10 @@ class Photo < ActiveRecord::Base
 
   delegate          :url, to: :image, prefix: true
 
-  has_attached_file :image,
-                    :styles => { :original => "1024x1024#",
-                                 :thumb => "150x150>" }
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "200x200#" },
+                    :default_style => :thumb
+                    # processors: [:thumbnail, :compression],
+                    # :convert_options => { :thumb => '-quality 80'}
   validates_attachment :image, presence: true,
                        content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
                        # size: { in: 0..500.kilobytes }
