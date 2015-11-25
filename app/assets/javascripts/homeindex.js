@@ -11,7 +11,7 @@ $(document).ready(function(){
 
     function success(pos) {
       var latitude = pos.coords.latitude
-      var longitude = pos.coords.latitude
+      var longitude = pos.coords.longitude
 
       window.location = '/home/show?lat='+latitude+'&long='+longitude;
     }
