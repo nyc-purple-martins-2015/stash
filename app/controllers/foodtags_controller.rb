@@ -8,7 +8,6 @@ class FoodtagsController < ApplicationController
       search_tag = Foodtag.search(params[:search])
       if search_tag.count == 0
         @error = "There are no photos for this tag!"
-        render :partial => "error"
       else
         tag_id = search_tag.first.id
         redirect_to foodtag_path(tag_id)
