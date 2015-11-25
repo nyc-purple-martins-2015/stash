@@ -1,32 +1,40 @@
-var app = window.app = {};
+$(document).ready(function(){
+    // var availableTags = [
+    //       "ActionScript",
+    //   "AppleScript",
+    //   "Asp",
+    //   "BASIC",
+    //   "C",
+    //   "C++",
+    //   "Clojure",
+    //   "COBOL",
+    //   "ColdFusion",
+    //   "Erlang",
+    //   "Fortran",
+    //   "Groovy",
+    //   "Haskell",
+    //   "Java",
+    //   "JavaScript",
+    //   "Lisp",
+    //   "Perl",
+    //   "PHP",
+    //   "Python",
+    //   "Ruby",
+    //   "Scala",
+    //   "Scheme"
+    // ]
 
-app.FoodTags = function() {
-  this._input = $('#search-form');
-  this._initAutocomplete();
-};
+    // $( "#search-box" ).autocomplete({
+    //   source: availableTags
+    // });
 
-app.FoodTags.prototype = {
-  _initAutocomplete: function() {
-    this._input
-      .autocomplete({
-        source: '/foodtags',
-        appendTo: '.foodtag_photos_container',
-        select: $.proxy(this._select, this)
-      })
-      .autocomplete('instance')._renderItem = $.proxy(this._render, this);
-  },
+  $('#search-box').autocomplete({
+    var tags = $.ajax({
+      method: "get",
+      url: '/foodtags/autocomplete_tag_name',
+      data: $(this).serialize(),
+    });
+    source: tags
+  });
 
-  _render: function(ul, tag) {
-    var markup = [
-      '<span class="description">' + tag.description + '</span>',
-    ];
-    return $('<li>')
-      .append(markup.join(''))
-      .appendTo(ul);
-  },
-
-  _select: function(e, ui) {
-    this._input.val(ui.tag.description);
-    return false;
-  }
-};
+});
