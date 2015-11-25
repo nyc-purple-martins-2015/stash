@@ -8,8 +8,8 @@ $(document).ready(function() {
       onDislike: function (item) {
         // set the status text
 
-        console.log("disliked");
-          $('#status').html('Passed on ' + (item.index()+1));
+        // console.log("disliked");
+          // $('#status').html('Passed on ' + (item.index()+1));
       },
     // like callback
       onLike: function (item) {
@@ -20,7 +20,7 @@ $(document).ready(function() {
           url: '/users/stashphoto',
           data: { photoid: $(item).data('photoid')}
         }).done(function(data){
-          console.log("liked");
+          // console.log("liked");
           $('#status').html(data);
         });
       },
