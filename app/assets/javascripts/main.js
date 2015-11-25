@@ -9,7 +9,7 @@ $(document).ready(function() {
         // set the status text
 
         // console.log("disliked");
-          // $('#status').html('Passed on ' + (item.index()+1));
+          $('#status').html('Passed');
       },
     // like callback
       onLike: function (item) {
