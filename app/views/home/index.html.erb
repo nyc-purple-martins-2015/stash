@@ -1,7 +1,7 @@
 <% if current_user %>
 <div class="start_stash">
   <%= form_tag('/home/show', :method => 'get') do %>
-    <%= submit_tag 'Start Stashing!', id: "start_stash" %>
+    <%= submit_tag 'Start Stashing!', id: "start_stash", class: "app-button" %>
   <% end %>
 </div>
 <% end %>
