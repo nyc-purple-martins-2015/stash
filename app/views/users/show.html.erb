@@ -1,11 +1,8 @@
 <div class="container">
+    <h3> My Photos </h3>
   <% if @error %>
       <p><%= @error %></p>
   <% else %>
-    <span class="user_info">
-      <%= current_user.name.capitalize %>'s <%= @user_photos.length %> posts.
-    </span>
-
     <% @user_photos.each do |photo|%>
       <div id="polaroid">
         <div class="flippable">
