@@ -8,25 +8,24 @@ $(document).ready(function() {
       onDislike: function (item) {
         // set the status text
 
-        console.log("disliked");
-          $('#status').html('Passed on ' + (item.index()+1));
+        // console.log("disliked");
+          // $('#status').html('Passed on ' + (item.index()+1));
       },
     // like callback
       onLike: function (item) {
         // set the status text
-
         $.ajax({
           method: 'post',
           url: '/users/stashphoto',
           data: { photoid: $(item).data('photoid')}
         }).done(function(data){
-          console.log("liked");
+          // console.log("liked");
           $('#status').html(data);
         });
       },
       onFinish: function (item) {
         console.log("FINISHED");
-        $('#status').html("You finished the stack! Click on tags to browse other photos!");
+        $('#status').html("You finished browsing food near you!");
         $('#tinderslide').hide();
       },
     animationRevertSpeed: 200,
