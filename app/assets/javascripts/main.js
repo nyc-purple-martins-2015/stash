@@ -24,6 +24,11 @@ $(document).ready(function() {
           $('#status').html(data);
         });
       },
+      onFinish: function (item) {
+        console.log("FINISHED");
+        $('#status').html("You finished the stack! Click on tags to browse other photos!");
+        $('#tinderslide').hide();
+      },
     animationRevertSpeed: 200,
     animationSpeed: 400,
     threshold: 1,
