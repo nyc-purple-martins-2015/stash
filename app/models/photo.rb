@@ -10,6 +10,8 @@ class Photo < ActiveRecord::Base
 
   delegate          :url, to: :image, prefix: true
 
+  acts_as_mappable
+
   has_attached_file :image, styles: { medium: "300x300>", thumb: "200x200#" },
                     :default_style => :thumb
                     # processors: [:thumbnail, :compression],
