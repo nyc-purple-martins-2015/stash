@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe PhotosController do
   let(:user)  { FactoryGirl.create(:user) }
-  let(:photo) { Photo.create(restaurant: "New Restaurant",
+  let(:photo) { Photo.create(restaurant_name: "New Restaurant",
                             restaurant_address: "123 New Street",
                             user: user,
                             image: Rack::Test::UploadedFile.new(Rails.root.join('seed_photos', 'fish.jpg'), 'image/jpeg'),
