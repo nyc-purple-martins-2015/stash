@@ -53,11 +53,17 @@
 }
 
 
-.btn {
+
+.btn-info{
   margin: 5px;
-  border-radius: 24px;
+  border-radius: 60px;
 }
 
+
+#tags_bs_override button {
+  border-radius: 50px;
+
+}
 .menu_link {
   margin-top: 1em;
   margin: 1em;
@@ -135,7 +141,7 @@ figure, figcaption {
   margin-right: 15px;
   padding: 6px 8px 8px 8px;
   background: #eee6d8;
-  
+
   -webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
   -moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
   box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
