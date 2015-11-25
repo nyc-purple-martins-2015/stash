@@ -52,6 +52,10 @@ class FoodtagsController < ApplicationController
     end
   end
 
+  def autocomplete_tag_name
+    foodtags = Foodtag.autocomplete_tag_name
+  end
+
   private
 
   def foodtag_params

@@ -28,13 +28,17 @@ $(document).ready(function(){
     //   source: availableTags
     // });
 
-  $('#search-box').autocomplete({
-    var tags = $.ajax({
-      method: "get",
-      url: '/foodtags/autocomplete_tag_name',
-      data: $(this).serialize(),
-    });
-    source: tags
-  });
+  // $('#search-box').autocomplete({
+  //   $.ajax({
+  //     method: "get",
+  //     url: '/foodtags/autocomplete_tag_name',
+  //     data: $(this).serialize(),
+  //   })
+
+  //   .done(response){
+  //       source: response;
+
+  //   }
+  // });
 
 });
