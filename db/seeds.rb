@@ -23,7 +23,7 @@ photo_collection = ['burger.jpg', 'fish.jpg', 'spaghetti.jpg', 'pretzel.jpg', 's
 
 users.each do |user|
   5.times do
-   photos << Photo.create(restaurant: Faker::Company.name,
+   photos << Photo.create(restaurant_name: Faker::Company.name,
     user: user, lng: rand(90), lat: rand(90),
     image: File.new(Rails.root.join('seed_photos', photo_collection.sample)))
   end
