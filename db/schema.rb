@@ -47,8 +47,11 @@ ActiveRecord::Schema.define(version: 20151120205232) do
   add_index "photo_stashes", ["stash_id"], name: "index_photo_stashes_on_stash_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
-    t.string   "restaurant"
+    t.string   "restaurant_name"
     t.string   "restaurant_address"
+    t.string   "restaurant_rating"
+    t.string   "restaurant_website"
+    t.string   "restaurant_phone"
     t.integer  "user_id",                                     null: false
     t.string   "dish_name"
     t.decimal  "lng",                precision: 10, scale: 6
