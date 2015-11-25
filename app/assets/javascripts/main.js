@@ -17,7 +17,7 @@ $(document).ready(function() {
 
         $.ajax({
           method: 'post',
-          url: 'users/stashphoto',
+          url: '/users/stashphoto',
           data: { photoid: $(item).data('photoid')}
         }).done(function(data){
           console.log("liked");
