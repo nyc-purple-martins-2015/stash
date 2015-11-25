@@ -7,7 +7,7 @@ $(document).ready(function(){
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-      alert('Geolocation is not supported on your broswer')
+      alert('Geolocation is not supported on your browser')
     }
 
   })
