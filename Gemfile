@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
+gem 'paperclip-compression'
 
 gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-facebook'

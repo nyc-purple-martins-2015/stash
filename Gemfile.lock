@@ -124,12 +124,16 @@ GEM
     omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    os (0.9.6)
     paperclip (4.3.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    paperclip-compression (0.3.13)
+      os (~> 0.9.6)
+      paperclip (>= 4.3.0)
     pg (0.18.4)
     poltergeist (1.8.0)
       capybara (~> 2.1)
@@ -255,6 +259,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-oauth2 (~> 1.3.1)
   paperclip
+  paperclip-compression
   pg (~> 0.15)
   poltergeist
   pry-rails
