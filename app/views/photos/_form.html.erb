@@ -1,40 +1,46 @@
 <%= form_for photo, html: {multipart: true } do |f| %>
 
   <div class="top_form">
-    <div class="top_form_left">
-      <p><div class="photo_field_label"> Dish Name: </div><div class="photo_field_input"><%= f.text_field :dish_name, value: nil, :placeholder => "Dish Name" %></div></p>
+    <p><%= f.text_field :dish_name, value: nil, :placeholder => "Dish Name" %></p>
 
-      <p><div class="photo_field_label">FoodTags: </div><div class="photo_field_input"><%= f.text_field :foodtags, value: nil, :placeholder => "Foodtags" %></div></p>
+    <p><%= f.text_field :foodtags, value: nil, :placeholder => "Foodtags" %></p>
 
-      <p><div class="photo_field_label">Price Range:</div><div class="photo_field_input"><%= f.select :pricetag, [['$0..$10', "$" ], ['$10..$15', "$$" ], ['$15..$20', "$$$" ],['$20+', "$$$$" ]] %></div></p>
-      <p><div class="photo_upload"><%= f.file_field :image, accept: "image/*" %></div></p>
+    <p><%= f.select :pricetag, [['$0..$10', "$" ], ['$10..$15', "$$" ], ['$15..$20', "$$$" ],['$20+', "$$$$" ]] %></p>
+  </div>
+
+
+    <div class="bottom_form">
+      <%= f.hidden_field :restaurant_name, id: "restaurant_name" %>
+      <p><input id="searchTextField" id="pac-input" class="controls" type="text" placeholder="search for restaurant here."></p>
+
+       <div id="restaurant_test"></div>
+
+       <%= f.hidden_field :restaurant_rating, id: "restaurant_rating" %>
+       <%= f.hidden_field :restaurant_address, id: "restaurant_address" %>
+       <%= f.hidden_field :restaurant_phone, id: "restaurant_phone" %>
+       <%= f.hidden_field :restaurant_website, id: "restaurant_website" %>
+
+      <%= f.hidden_field :lat, id:"lat_field" %>
+      <%= f.hidden_field :lng, id:"lng_field" %>
+
+    <div class="photo_upload">
+      <span class="btn btn-success fileinput-button" class: "app-button">
+      <span>Upload a Photo</span>
+      <%= f.file_field :image, accept: "image/*" %>
     </div>
 
-  <div class="top_form_right">
     <div id="photo_preview" /> </div>
-  </div>
-  <div class="clear_fix">
-  </div>
-  </div>
+    <div class="clear_fix">
+    </div>
+    <!-- </div> -->
 
   <div class="map_container">
       <div id="map"></div>
-  </div><br>
+  </div>
 
-  <div class="bottom_form">
-    <%= f.hidden_field :restaurant_name, id: "restaurant_name" %>
-    <p><input id="searchTextField" id="pac-input" class="controls" type="text" placeholder="search for restaurant here."></p>
+  <br>
 
-     <div id="restaurant_test"></div>
 
-     <%= f.hidden_field :restaurant_rating, id: "restaurant_rating" %>
-     <%= f.hidden_field :restaurant_address, id: "restaurant_address" %>
-     <%= f.hidden_field :restaurant_phone, id: "restaurant_phone" %>
-     <%= f.hidden_field :restaurant_website, id: "restaurant_website" %>
-
-    <%= f.hidden_field :lat, id:"lat_field" %>
-    <%= f.hidden_field :lng, id:"lng_field" %>
-
-    <p><%= submit_tag 'Add Photo', id:"add_photo_button", class: "app-button" %></br>
+    <p><%= submit_tag 'Share your Dish', id:"add_photo_button", class: "app-button" %></br>
   </div>
 <% end %>

@@ -39,7 +39,7 @@
   moz-border-radius: 13px;
   -webkit-border-radius: 13px;
   border-color: transparent;
-  padding: 5px;;
+  padding: 5px;
 }
 
 .search_form_container #search-box {
@@ -87,17 +87,6 @@
 
 }
 
-/**/
-/*.navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
-}
-
-.navbar .navbar-collapse {
-  text-align: center;
-}*/
-/**/
 
 span img.icon {
   margin-top: 1em;
@@ -316,11 +305,13 @@ img.photo {
   display: inline-block;
   width: 75px;
   margin-left: -100px;
+  text-align: center;
 }
 
 .photo_field_input {
-  display: inline-block;
+/*  display: inline-block;*/
   width: 40px;
+  text-align: center;
 }
 
 
@@ -337,19 +328,20 @@ img.photo {
 #photo_preview {
   width: 75px;
   height: 75px;
-  display: inline-block;
+/*  display: inline-block;*/
   margin-top: -40px;
   margin-left: -35px;
+  text-align: center;
 }
 
-.top_form_left {
+/*.top_form_left {
   display: inline-block;
 }
 
 .top_form_right {
   display: inline-block;
   padding-left: 20px;
-}
+}*/
 
 .clear_fix {
   clear: both;
@@ -405,3 +397,55 @@ img.photo {
 .btn-google:active,.btn-google.active,.open>.dropdown-toggle.btn-google{background-image:none}
 .btn-google.disabled,.btn-google[disabled],fieldset[disabled] .btn-google,.btn-google.disabled:hover,.btn-google[disabled]:hover,fieldset[disabled] .btn-google:hover,.btn-google.disabled:focus,.btn-google[disabled]:focus,fieldset[disabled] .btn-google:focus,.btn-google.disabled.focus,.btn-google[disabled].focus,fieldset[disabled] .btn-google.focus,.btn-google.disabled:active,.btn-google[disabled]:active,fieldset[disabled] .btn-google:active,.btn-google.disabled.active,.btn-google[disabled].active,fieldset[disabled] .btn-google.active{background-color:#dd4b39;border-color:rgba(0,0,0,0.2)}
 .btn-google .badge{color:#dd4b39;background-color:#fff}
+
+/*Styling Choose File Button*/
+
+ .app-button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn-success {
+  color: white;
+  background-color: black;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
+}
+
+ .fileinput-button {
+    position: relative;
+    overflow: hidden;
+}
+
+ .fileinput-button input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter:'alpha(opacity=0)';
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+}
+
+.map_container {
+  display: none;
+}
