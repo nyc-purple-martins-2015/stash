@@ -22,8 +22,15 @@
   </div><br>
 
   <div class="bottom_form">
-    <%= f.hidden_field :restaurant %>
+    <%= f.hidden_field :restaurant_name, id: "restaurant_name" %>
     <p><input id="searchTextField" id="pac-input" class="controls" type="text" placeholder="search for restaurant here."></p>
+
+     <%= f.hidden_field :restaurant_rating, id: "restaurant_rating" %>
+     <%= f.hidden_field :restaurant_address, id: "restaurant_address" %>
+     <%= f.hidden_field :restaurant_phone, id: "restaurant_phone" %>
+     <%= f.hidden_field :restaurant_website, id: "restaurant_website" %>
+
+
 
     <%= f.hidden_field :lat, value: "", id:"lat_field"  %>
     <%= f.hidden_field :lng, value: "", id:"lng_field"  %>
