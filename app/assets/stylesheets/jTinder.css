@@ -222,7 +222,7 @@ body {
 
 .ps_logo_stash {
     float: right;
-    background-image: url('fridge_icon');
+    background-image: url('fridge_icon.png');
     background-repeat: no-repeat;
     background-size: 100%;
     height: 100px;
