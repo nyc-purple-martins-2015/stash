@@ -28,6 +28,20 @@
   text-align: center;
 }
 
+.start_stash {
+  text-align: center;
+
+}
+
+.app-button {
+  color: white;
+  background-color: black;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;;
+}
+
 .search_form_container #search-box {
   background-color: #e6e6e6;
   color: grey;
