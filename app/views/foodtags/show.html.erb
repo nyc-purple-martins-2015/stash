@@ -1,5 +1,15 @@
 <div class="container">
-  <% @foodtag_photos.each do |photo| %>
-    <div><img src="<%= photo.image_url %>" /></div>
-  <% end %>
+  <div class="wrap">
+    <div id="tinderslide">
+      <ul>
+        <% @foodtag_photos.each_with_index do |photo, index| %>
+          <li class="pane<%=index%>" data-photoid="<%= photo.id %>">
+            <img class="photo" src="<%=photo.image_url%>" />
+            <div class="like"></div>
+            <div class="dislike"></div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
