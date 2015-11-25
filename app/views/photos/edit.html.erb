@@ -1,0 +1,29 @@
+<div class="container">
+  <% @error %>
+
+  <div id="polaroid"
+    <figure class="front">
+        <img src="<%= @photo.image_url %>" width="200" height="200" alt="user_photo" />
+    </figure>
+  </div>
+
+
+  <div class="form">
+    <%= form_for @photo, html: {multipart: true } do |f| %>
+
+        <p><%= f.text_field :dish_name, :value => "#{@photo.dish_name}" %></p>
+
+        <p><%= f.text_field :foodtags, :value => "#{@photo_foodtags}" %></p>
+
+        <p><%= f.select :pricetag, [['$0..$10', "$" ], ['$10..$15', "$$" ], ['$15..$20', "$$$" ],['$20+', "$$$$" ]] %></p>
+
+
+
+        <p><%= f.hidden_field :restaurant %></p>
+        <p><input id="searchTextField" id="pac-input" class="controls" type="text" value= "#{@photo.restaurant_name}" ></p>
+
+      <p><%= submit_tag 'Edit Photo' %></br>
+    <% end %>
+  </div>
+
+</div>
