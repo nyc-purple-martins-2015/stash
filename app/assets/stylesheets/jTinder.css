@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* Wrapper with padding */
