@@ -14,7 +14,6 @@ $(document).ready(function() {
     // like callback
       onLike: function (item) {
         // set the status text
-
         $.ajax({
           method: 'post',
           url: '/users/stashphoto',
@@ -26,7 +25,7 @@ $(document).ready(function() {
       },
       onFinish: function (item) {
         console.log("FINISHED");
-        $('#status').html("You finished the stack! Click on tags to browse other photos!");
+        $('#status').html("You finished browsing food near you!");
         $('#tinderslide').hide();
       },
     animationRevertSpeed: 200,
