@@ -6,4 +6,12 @@ class Foodtag < ActiveRecord::Base
     description = description.downcase
     where("description LIKE ?", "%#{description}%")
   end
+
+  def autocomplete_tag_name
+    tags = Foodtag.select([:description]).where("description LIKE ?", "%#{params[:search]}%")
+    result = tags.collect do |t|
+      { value: t.description }
+    end
+    render json: result
+  end
 end
