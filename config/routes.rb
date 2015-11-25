@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   resources :pricetags, only: [:index, :show]
   resources :photo_stashes, only: [:show, :new, :create]
-  resources :foodtags, only: [:new, :create, :show, :index]
+  resources :foodtags, only: [:new, :create, :show, :index] do
+    get :autocomplete_tag_name, :on => :collection
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
