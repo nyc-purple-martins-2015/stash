@@ -28,6 +28,11 @@ class PhotosController < ApplicationController
       @photo.dish_name = "You didn't provide a dish name."
     end
 
+    if @photo.restaurant == nil
+      @photo.restaurant = "You did not provide the restaurant name for this dish."
+    end
+    # byebug
+
     if @photo.foodtags
       for tag in @photo.foodtags
         foodtags << tag.description
