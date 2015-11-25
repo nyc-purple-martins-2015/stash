@@ -197,9 +197,9 @@ figure, figcaption {
 }
 .flip.in {
   -webkit-animation-name: flipintoright;
-  -webkit-animation-duration: 225ms;
+  -webkit-animation-duration: 1000ms;
   -moz-animation-name: flipintoright;
-  -moz-animation-duration: 225ms;
+  -moz-animation-duration: 1000ms;
 }
 .flip.out.reverse {
   -webkit-transform: rotateY(90deg) scale(.9);
