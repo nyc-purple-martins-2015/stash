@@ -20,6 +20,41 @@ class PhotosController < ApplicationController
     render json: @photo.to_json(methods: [:image_url], :include => { :foodtags => {:only => :description}, :pricetag => {:only => :price}})
   end
 
+  def edit
+    @photo = Photo.find(params[:id])
+    foodtags = []
+
+    if @photo.dish_name == nil
+      @photo.dish_name = "You didn't provide a dish name."
+    end
+
+    if @photo.foodtags
+      for tag in @photo.foodtags
+        foodtags << tag.description
+      end
+    end
+
+    @photo_foodtags = foodtags.join(", ")
+  end
+
+  def update
+    @photo = Photo.find(params[:id])
+    @photo.assign_attributes(params)
+    if @photo.save
+      redirect_to user_path(current_user)
+    else
+      @error = "Your was unable to be saved."
+      render :edit
+    end
+  end
+
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    redirect_to user_path(current_user)
+  end
+
+
   private
 
   def photo_params

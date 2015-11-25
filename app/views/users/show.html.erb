@@ -3,7 +3,7 @@
       <p><%= @error %></p>
   <% else %>
     <span class="user_info">
-      <%= @user_photos.length %> posts
+      <%= current_user.name.capitalize %>'s <%= @user_photos.length %> posts.
     </span>
 
     <% @user_photos.each do |photo|%>
@@ -16,6 +16,11 @@
             <figcaption><%= photo.dish_name %> from</figcaption>
             <figcaption><%= photo.restaurant.name %></figcaption>
             <figcaption>on <%= photo.created_at.month %> / <%= photo.created_at.day %>, <%= photo.created_at.year %></figcaption>
+            <br />
+            <br />
+            <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_photo_path(photo) %></button>
+            <button type="button" class="btn btn-danger"><%= link_to 'Delete', photo_path(photo), method: :delete %></button>
+
           </figure>
         </div>
       </div>
