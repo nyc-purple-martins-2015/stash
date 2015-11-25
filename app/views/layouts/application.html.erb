@@ -43,8 +43,9 @@
     <% else %>
     <div class="welcome-container">
       <div class="welcome">
-        <h1> Welcome to stash </h1>
+        <h1 id="footer-logo"></h1>
       </div>
+      <h3>Sign in to start Stashing! </h3>
       <div class="login">
         <a href="/auth/facebook" class="btn btn-block btn-social btn-facebook"> Login with Facebook <span class="fa fa-facebook"></span> </a>
         <a href="/auth/google_oauth2" class="btn btn-block btn-social btn-google"> Login with Google <span class="fa fa-google"></span> </a>
@@ -55,8 +56,6 @@
 
     <%= yield %>
 
-
-  <div id="footer"></div>
 
 </body>
 </html>
