@@ -28,6 +28,11 @@
   text-align: center;
 }
 
+.start_stash {
+  text-align: center;
+
+}
+
 .search_form_container #search-box {
   background-color: #e6e6e6;
   color: grey;
