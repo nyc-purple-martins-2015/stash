@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'photo_stashes/destroy'
+
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :pricetags, only: [:index, :show]
-  resources :photo_stashes, only: [:show, :new, :create]
+  resources :photo_stashes, only: [:show, :new, :create, :destroy]
   resources :foodtags, only: [:new, :create, :show, :index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
