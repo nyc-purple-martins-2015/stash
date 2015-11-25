@@ -1,4 +1,4 @@
-<div class="containers">
+<div class="container">
   <h3> My Stash </h3>
   <% if @error %>
       <p><%= @error %></p>
@@ -14,10 +14,9 @@
 
           <figure class="back">
             <figcaption><%= photo.dish_name %> from</figcaption>
-            <figcaption><%= photo.created_at.month %> / <%= photo.created_at.day %>, <%= photo.created_at.year %></figcaption>
+
             <figcaption>Restaurant Info: </figcaption>
             <figcaption><%= photo.restaurant_name %></figcaption>
-            <figcaption><%= photo.restaurant_rating %> stars</figcaption>
             <figcaption><%= photo.restaurant_address %></figcaption>
             <figcaption><%= photo.restaurant_phone %></figcaption>
             <figcaption><%= photo.restaurant_website %></figcaption>

@@ -7,16 +7,13 @@ class FoodtagsController < ApplicationController
     if params[:search]
       search_tag = Foodtag.search(params[:search])
       if search_tag.count == 0
-        @error = "There is no photo regarding this tag!"
-        # redirect_to foodtags_path(@error)
+        @error = "There are no photos for this tag!"
         render :partial => "error"
       else
         tag_id = search_tag.first.id
         redirect_to foodtag_path(tag_id)
       end
     end
-    # render foodtags_path
-    # render json: @foodtags.to_json
   end
 
 
@@ -27,19 +24,14 @@ class FoodtagsController < ApplicationController
   def create
     @foodtag = Foodtag.new(foodtag_params)
     if @foodtag.save
-      # Foodtag is saved after the photo is saved. This should
-      # render the user profile
-
       render json: @foodtag.to_json
     else
       render :new
     end
   end
 
-  #
   def show
     @foodtag_photos = Foodtag.find(foodtag_search_params).photos
-    # render json: foodtag_photos.to_json(methods: [:image_url])
   end
 
   def parse_foodtags(photo, foodtag_params)

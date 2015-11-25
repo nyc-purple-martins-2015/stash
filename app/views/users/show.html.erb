@@ -1,11 +1,8 @@
 <div class="container">
+    <h3> My Photos </h3>
   <% if @error %>
       <p><%= @error %></p>
   <% else %>
-    <span class="user_info">
-      <%= current_user.name.capitalize %>'s <%= @user_photos.length %> posts.
-    </span>
-
     <% @user_photos.each do |photo|%>
       <div id="polaroid">
         <div class="flippable">
@@ -17,9 +14,9 @@
           <figure class="back">
             <figcaption><%= photo.dish_name %> from</figcaption>
             <figcaption><%= photo.created_at.month %> / <%= photo.created_at.day %>, <%= photo.created_at.year %></figcaption>
+
             <figcaption>Restaurant Info: </figcaption>
             <figcaption><%= photo.restaurant_name %></figcaption>
-            <figcaption><%= photo.restaurant_rating %> stars</figcaption>
             <figcaption><%= photo.restaurant_address %></figcaption>
             <figcaption><%= photo.restaurant_phone %></figcaption>
             <figcaption><%= photo.restaurant_website %></figcaption>

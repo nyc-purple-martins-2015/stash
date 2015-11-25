@@ -29,7 +29,7 @@ class PhotosController < ApplicationController
       @photo.dish_name = "You didn't provide a dish name."
     end
 
-    if @photo.restaurant == nil
+    if @photo.restaurant_name == nil
       @photo.restaurant = "You did not provide the restaurant name for this dish."
     end
     # byebug
