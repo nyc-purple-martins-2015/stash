@@ -47,6 +47,14 @@
   /*margin: 0 auto;*/
 }
 
+#start_sign_out {
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  background-color: black;
+  padding: 5px;
+}
+
 h3 {
   margin-top: 0px;
   margin-bottom: 10px;
@@ -65,7 +73,7 @@ h5 {
   text-align: center;
 }
 
-.app-button {
+a.app-button {
   color: white;
   background-color: black;
   moz-border-radius: 13px;
@@ -129,6 +137,46 @@ h5 {
 
 }
 
+#photo_dish_name{
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  background-color: #e6e6e6;
+  border: 0px;
+  padding: 5px;
+  width: 80%;
+}
+
+#searchTextField{
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  background-color: #e6e6e6;
+  padding: 5px;
+  width: 80%;
+}
+
+#photo_foodtags{
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  background-color: #e6e6e6;
+  padding: 5px;
+  width: 80%;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+#edit_button {
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  width: 75px;
+}
 
 span img.icon {
   margin-top: 1em;
