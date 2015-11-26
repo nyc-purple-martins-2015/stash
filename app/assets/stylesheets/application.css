@@ -17,7 +17,13 @@
 
  * {
   text-decoration: none;
+  margin:; 0;
  }
+
+ html, body {
+  height: 100%;
+ }
+
 
 .container {
   width: 100%;
@@ -30,7 +36,11 @@
 
 .start_stash {
   text-align: center;
+}
 
+h3 {
+  padding-top: 3em;
+  text-align: center;
 }
 
 .app-button {
@@ -44,7 +54,7 @@
 
 .search_form_container #search-box {
   background-color: #e6e6e6;
-  color: grey;
+  color: gray;
   moz-border-radius: 13px;
   -webkit-border-radius: 13px;
   border-color: transparent;
@@ -101,7 +111,8 @@ div.container-fluid {
 
 .welcome {
   text-align: center;
-  padding-bottom: 2em
+  padding-bottom: 2em;
+  padding-top: 7em;
 }
 
 .login {

@@ -22,3 +22,14 @@
     height: 100px;
     width: 50px;
 }
+
+#footer-logo {
+    background-image: image-url('stash-strip-big.png');
+    background-repeat: no-repeat;
+    background-size: 90%;
+    height: 100px;
+    width: 85%;
+    margin-left: 12%;
+    text-align: center;
+    position: fixed;
+}
