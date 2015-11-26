@@ -23,7 +23,7 @@
         <p><%= f.hidden_field :restaurant_name %></p>
         <p><input id="searchTextField" id="pac-input" class="controls" type="text" value="<%= @photo.restaurant_name %>" ></p>
 
-      <p><%= submit_tag 'Edit Photo' %></br>
+      <p><%= submit_tag 'Edit Photo', id: "edit_button" %></br>
     <% end %>
   </div>
 

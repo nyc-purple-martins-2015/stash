@@ -1,8 +1,14 @@
 <div class="container">
+  <br/>
+  <div class="upload-error">
+    <% if @error %>
+    <p><h5><%= @error %></h5></p>
+    <% end %>
+  </div>
 
   <%= render :partial => 'form', :locals => {photo: @photo} %>
 
 
-<div class="current_position">
-</div>
+  <div class="current_position">
+  </div>
 </div>

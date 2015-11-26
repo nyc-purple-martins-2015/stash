@@ -47,11 +47,155 @@
   /*margin: 0 auto;*/
 }
 
+#start_stash {
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  background-color: black;
+  padding: 5px;
+}
+
 h3 {
   margin-top: 0px;
   margin-bottom: 10px;
-  /*margin-top: -5px;*/
-  /*padding-top: 3em;*/
+  text-align: center;
+}
+
+h5 {
+  text-align: center;
+}
+
+.finish_stash {
+  display: none;
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+a.app-button {
+  color: white;
+  background-color: black;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
+}
+
+.search_form_container #search-box {
+  background-color: #e6e6e6;
+  color: gray;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;;
+}
+
+.search_form_container #search-button {
+  /*height: 60px%;*/
+  color: white;
+  background-color: black;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;;
+}
+
+.nav > .menu_link > a {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.menu_link_bar {
+  margin-top: 10px;
+}
+
+
+.btn-info{
+  margin: 5px;
+  border-radius: 60px;
+}
+
+#tags_bs_override .btn-info {
+  background-color: #337ab7;
+  border-color: #337ab7;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+}
+
+.btn-info a {
+  color: white;
+}
+
+#tags_bs_override button {
+  border-radius: 50px;
+
+}
+.menu_link {
+  margin-top: 1em;
+  margin: 1em;
+
+}
+
+#photo_dish_name{
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  background-color: #e6e6e6;
+  border: 0px;
+  padding: 5px;
+  width: 80%;
+}
+
+#searchTextField{
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  background-color: #e6e6e6;
+  padding: 5px;
+  width: 80%;
+}
+
+#photo_foodtags{
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  background-color: #e6e6e6;
+  padding: 5px;
+  width: 80%;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+#edit_button {
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border: 0px;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  width: 75px;
+}
+
+span img.icon {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  /*padding-top: 1em;*/
+  position: inherit;
+}
+
+div.container-fluid {
+  text-align: center;
+}
+
+.welcome {
+  text-align: center;
+  padding-bottom: 2em;
+  padding-top: 7em;
+}
+
+.login {
+>>>>>>> Add button styles
   text-align: center;
 }
 
@@ -60,6 +204,226 @@ h3 {
 .welcome-container {
   margin-top: 15em;
 }
+
+@-webkit-keyframes flipintoleft {
+  from { -webkit-transform: rotateY(-90deg) scale(.9); }
+  to { -webkit-transform: rotateY(0); }
+}
+@-moz-keyframes flipintoleft {
+  from { -moz-transform: rotateY(-90deg) scale(.9); }
+  to { -moz-transform: rotateY(0); }
+}
+@-webkit-keyframes flipintoright {
+  from { -webkit-transform: rotateY(90deg) scale(.9); }
+  to { -webkit-transform: rotateY(0); }
+}
+@-moz-keyframes flipintoright {
+  from { -moz-transform: rotateY(90deg) scale(.9); }
+  to { -moz-transform: rotateY(0); }
+}
+
+#polaroid img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  border: 1px solid #dfdfdf;
+  border: 1px solid rgba(96, 96, 96, 0.2);
+}
+
+#polaroid figcaption{
+  text-align: center;
+  font-family: "Lucida Console", Monaco, monospace; /*Reenie Beanie is available through Google Webfonts http://code.google.com/webfonts/specimen/Reenie+Beanie*/
+  font-size:1.3em;
+  color:#454f40;
+  letter-spacing:0.09em;
+}
+
+figure:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left:5px; /*postion from the left side of the frame (positive value move the tape right, negative moves it left)*/
+  top: -5px; /*position from the top of the frame (positive move it above the frame, negative below)*/
+  width: 75px; /*width of the tape*/
+  height: 25px; /*height of the tape*/
+  background-color: rgba(222,220,198,0.7); /*colour of the tape, use rgba to make it slightly transparent*/
+  /*rotate the tape 12 degrees anti-clockwise*/
+  -webkit-transform: rotate(-12deg);
+  -moz-transform: rotate(-12deg);
+  -o-transform: rotate(-12deg);
+  -ms-transform: rotate(-12deg);
+  }
+
+img.photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  z-index: 2;
+  left: 0;
+  overflow: hidden;
+  text-align: center;
+  margin: auto;
+}
+
+
+/* New Photo Page */
+
+.photo_field_label {
+  display: inline-block;
+  width: 75px;
+  margin-left: -100px;
+  text-align: center;
+}
+
+.photo_field_input {
+/*  display: inline-block;*/
+  width: 40px;
+  text-align: center;
+}
+
+
+.photo_upload {
+  display: inline-block;
+  width: 200px;
+}
+
+#photo_image {
+  display: inline-block;
+  width: 200px;
+}
+
+#photo_preview {
+  margin-top: 1em;
+  width: 75px;
+  height: 75px;
+
+  text-align: center;
+  display: inline;
+
+}
+
+.photo_preview_container {
+  text-align: center;
+
+}
+
+
+.clear_fix {
+  clear: both;
+}
+
+.new_photo {
+  position: relative;
+}
+
+.top_form {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.bottom_form {
+  margin-left: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.icon  img {
+  width: 9%;
+  height: auto;
+}
+
+/* STYLING FOR LOGIN BUTTONS */
+
+.btn-social{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.btn-social>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+.btn-social.btn-lg{padding-left:61px}.btn-social.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
+.btn-social.btn-sm{padding-left:38px}.btn-social.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social.btn-xs{padding-left:30px}.btn-social.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}
+.btn-social-icon{position:relative;padding-left:44px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;height:34px;width:34px;padding:0}.btn-social-icon>:first-child{position:absolute;left:0;top:0;bottom:0;width:32px;line-height:34px;font-size:1.6em;text-align:center;border-right:1px solid rgba(0,0,0,0.2)}
+.btn-social-icon.btn-lg{padding-left:61px}.btn-social-icon.btn-lg>:first-child{line-height:45px;width:45px;font-size:1.8em}
+.btn-social-icon.btn-sm{padding-left:38px}.btn-social-icon.btn-sm>:first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social-icon.btn-xs{padding-left:30px}.btn-social-icon.btn-xs>:first-child{line-height:20px;width:20px;font-size:1.2em}
+.btn-social-icon>:first-child{border:none;text-align:center;width:100% !important}
+.btn-social-icon.btn-lg{height:45px;width:45px;padding-left:0;padding-right:0}
+.btn-social-icon.btn-sm{height:30px;width:30px;padding-left:0;padding-right:0}
+.btn-social-icon.btn-xs{height:22px;width:22px;padding-left:0;padding-right:0}
+.btn-adn{color:#fff;background-color:#d87a68;border-color:rgba(0,0,0,0.2)}.btn-adn:focus,.btn-adn.focus{color:#fff;background-color:#ce563f;border-color:rgba(0,0,0,0.2)}
+.btn-adn:hover{color:#fff;background-color:#ce563f;border-color:rgba(0,0,0,0.2)}
+.btn-adn:active,.btn-adn.active,.open>.dropdown-toggle.btn-adn{color:#fff;background-color:#ce563f;border-color:rgba(0,0,0,0.2)}.btn-adn:active:hover,.btn-adn.active:hover,.open>.dropdown-toggle.btn-adn:hover,.btn-adn:active:focus,.btn-adn.active:focus,.open>.dropdown-toggle.btn-adn:focus,.btn-adn:active.focus,.btn-adn.active.focus,.open>.dropdown-toggle.btn-adn.focus{color:#fff;background-color:#b94630;border-color:rgba(0,0,0,0.2)}
+.btn-adn:active,.btn-adn.active,.open>.dropdown-toggle.btn-adn{background-image:none}
+.btn-adn.disabled,.btn-adn[disabled],fieldset[disabled] .btn-adn,.btn-adn.disabled:hover,.btn-adn[disabled]:hover,fieldset[disabled] .btn-adn:hover,.btn-adn.disabled:focus,.btn-adn[disabled]:focus,fieldset[disabled] .btn-adn:focus,.btn-adn.disabled.focus,.btn-adn[disabled].focus,fieldset[disabled] .btn-adn.focus,.btn-adn.disabled:active,.btn-adn[disabled]:active,fieldset[disabled] .btn-adn:active,.btn-adn.disabled.active,.btn-adn[disabled].active,fieldset[disabled] .btn-adn.active{background-color:#d87a68;border-color:rgba(0,0,0,0.2)}
+.btn-adn .badge{color:#d87a68;background-color:#fff}
+
+.btn-facebook{color:#fff;background-color:#3b5998;border-color:rgba(0,0,0,0.2)}.btn-facebook:focus,.btn-facebook.focus{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:hover{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}.btn-facebook:active:hover,.btn-facebook.active:hover,.open>.dropdown-toggle.btn-facebook:hover,.btn-facebook:active:focus,.btn-facebook.active:focus,.open>.dropdown-toggle.btn-facebook:focus,.btn-facebook:active.focus,.btn-facebook.active.focus,.open>.dropdown-toggle.btn-facebook.focus{color:#fff;background-color:#23345a;border-color:rgba(0,0,0,0.2)}
+.btn-facebook:active,.btn-facebook.active,.open>.dropdown-toggle.btn-facebook{background-image:none}
+.btn-facebook.disabled,.btn-facebook[disabled],fieldset[disabled] .btn-facebook,.btn-facebook.disabled:hover,.btn-facebook[disabled]:hover,fieldset[disabled] .btn-facebook:hover,.btn-facebook.disabled:focus,.btn-facebook[disabled]:focus,fieldset[disabled] .btn-facebook:focus,.btn-facebook.disabled.focus,.btn-facebook[disabled].focus,fieldset[disabled] .btn-facebook.focus,.btn-facebook.disabled:active,.btn-facebook[disabled]:active,fieldset[disabled] .btn-facebook:active,.btn-facebook.disabled.active,.btn-facebook[disabled].active,fieldset[disabled] .btn-facebook.active{background-color:#3b5998;border-color:rgba(0,0,0,0.2)}
+.btn-facebook .badge{color:#3b5998;background-color:#fff}
+
+.btn-google{color:#fff;background-color:#dd4b39;border-color:rgba(0,0,0,0.2)}.btn-google:focus,.btn-google.focus{color:#fff;background-color:#c23321;border-color:rgba(0,0,0,0.2)}
+.btn-google:hover{color:#fff;background-color:#c23321;border-color:rgba(0,0,0,0.2)}
+.btn-google:active,.btn-google.active,.open>.dropdown-toggle.btn-google{color:#fff;background-color:#c23321;border-color:rgba(0,0,0,0.2)}.btn-google:active:hover,.btn-google.active:hover,.open>.dropdown-toggle.btn-google:hover,.btn-google:active:focus,.btn-google.active:focus,.open>.dropdown-toggle.btn-google:focus,.btn-google:active.focus,.btn-google.active.focus,.open>.dropdown-toggle.btn-google.focus{color:#fff;background-color:#a32b1c;border-color:rgba(0,0,0,0.2)}
+.btn-google:active,.btn-google.active,.open>.dropdown-toggle.btn-google{background-image:none}
+.btn-google.disabled,.btn-google[disabled],fieldset[disabled] .btn-google,.btn-google.disabled:hover,.btn-google[disabled]:hover,fieldset[disabled] .btn-google:hover,.btn-google.disabled:focus,.btn-google[disabled]:focus,fieldset[disabled] .btn-google:focus,.btn-google.disabled.focus,.btn-google[disabled].focus,fieldset[disabled] .btn-google.focus,.btn-google.disabled:active,.btn-google[disabled]:active,fieldset[disabled] .btn-google:active,.btn-google.disabled.active,.btn-google[disabled].active,fieldset[disabled] .btn-google.active{background-color:#dd4b39;border-color:rgba(0,0,0,0.2)}
+.btn-google .badge{color:#dd4b39;background-color:#fff}
+
+/*Styling Choose File Button*/
+
+ .app-button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.photo_upload .btn-success {
+  color: white;
+  background-color: #337ab7;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
+}
+
+#add_photo_button {
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+}
+
+ .fileinput-button {
+    position: relative;
+    overflow: hidden;
+}
+
+ .fileinput-button input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter:'alpha(opacity=0)';
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+}
+
 .map_container {
   display: none;
 }
