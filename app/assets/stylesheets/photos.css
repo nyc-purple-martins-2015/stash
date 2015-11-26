@@ -20,15 +20,20 @@ figure, figcaption {
 }
 
 #polaroid figure{
-  display: block;
-  position: inherit;
-  width: 100%;
-  height: 100%;
+  height: 300px;
+  width: 300px;
+  padding: 1% 0;
+  margin: 0 auto;
+ /* display: block;
+  position: absolute;
+  width: 290px;
+  height: 290px;
   overflow: hidden;
-  text-align: center;
-  margin-right: 15px;
-  padding: 6px 8px 8px 8px;
+  text-align: center;*/
+  /*margin-right: 15px;*/
+  /*padding: 6px 8px 8px 8px;
   background: #eee6d8;
+  margin: 0 auto;*/
 
   -webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
   -moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
@@ -135,8 +140,15 @@ figure, figcaption {
 /*---------------------------*/
 
 #polaroid img {
-  width: 100%;
-  height: 100%;
+  background-size: cover;
+  height: 285px;
+  width: 285px;
+  margin: 2px auto;
+/*  margin-bottom: 5px;*/
+  position: relative;
+  background-size: cover;
+ /* width: 100%;
+  height: 100%;*/
   border: 1px solid #fff;
   border: 1px solid #dfdfdf;
   border: 1px solid rgba(96, 96, 96, 0.2);
