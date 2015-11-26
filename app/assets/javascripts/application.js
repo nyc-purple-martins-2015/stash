@@ -62,15 +62,17 @@ $(document).ready(function() {
             infowindow.close();
             var place = autocomplete.getPlace();
 
+
             $('#restaurant_name').val(place.name);
             $('#restaurant_rating').val(place.rating);
             $('#restaurant_address').val(place.vicinity);
             $('#restaurant_phone').val(place.formatted_phone_number);
             $('#restaurant_website').val(place.website);
 
-            $('#lat_field').val(place.geometry.location.lat)
+            $('#lat_field').val(place.geometry.location.lat);
             $('#lng_field').val(place.geometry.location.lng);
 
+            // debugger
         });
         width = screen.width.toString(); + "px"
         height = (screen.height/4).toString() + "px"
