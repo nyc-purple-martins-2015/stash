@@ -14,6 +14,12 @@ class HomeController < ApplicationController
     # render json: @photostream.to_json(methods: [:image_url], :include => { :foodtags => {:only => :description}, :pricetag => {:only => :price}} )
   end
 
+  def showall
+
+    @photostream = Photo.all
+    @photostream = @photostream.to_a.shuffle!.shuffle!.shuffle![0..30]
+    render :show
+  end
 
 end
 
