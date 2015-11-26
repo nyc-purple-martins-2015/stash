@@ -21,7 +21,7 @@
             <figcaption><%= photo.restaurant_phone %></figcaption>
             <figcaption><%= photo.restaurant_website %></figcaption>
             <br />
-            <br />
+
             <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_photo_path(photo) %></button>
             <button type="button" class="btn btn-danger"><%= link_to 'Delete', photo_path(photo), method: :delete %></button>
           </figure>
@@ -30,6 +30,6 @@
     <% end %>
   <% end %>
 
-  <div><%= link_to "Sign out", signout_path, id: "sign_out", class: "app-button" %></div>
+  <div class="footer"><%= link_to "Sign out", signout_path, id: "sign_out", class: "app-button" %></div>
 
 </div>

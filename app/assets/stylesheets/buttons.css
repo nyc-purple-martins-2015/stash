@@ -1,0 +1,76 @@
+.app-button {
+  color: white;
+  background-color: black;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
+}
+
+.search_form_container #search-box {
+  background-color: #e6e6e6;
+  color: gray;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;;
+}
+
+.search_form_container #search-button {
+  /*height: 60px%;*/
+  color: white;
+  background-color: black;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;;
+}
+
+
+/*Styling Choose File Button*/
+
+ .app-button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn-success {
+  color: white;
+  background-color: black;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
+}
+
+ .fileinput-button {
+    position: relative;
+    overflow: hidden;
+}
+
+ .fileinput-button input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter:'alpha(opacity=0)';
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+}
