@@ -1,9 +1,11 @@
 <div class="container">
     <h3> my photos </h3>
-  <% if @error %>
+   <% if @error %>
       <p><%= @error %></p>
+
   <% else %>
     <% @user_photos.each do |photo|%>
+
       <div id="polaroid">
         <div class="flippable">
 
@@ -21,15 +23,16 @@
             <figcaption><%= photo.restaurant_phone %></figcaption>
             <figcaption><%= photo.restaurant_website %></figcaption>
             <br />
-            <br />
+
             <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_photo_path(photo) %></button>
             <button type="button" class="btn btn-danger"><%= link_to 'Delete', photo_path(photo), method: :delete %></button>
           </figure>
         </div>
       </div>
+
     <% end %>
   <% end %>
 
-  <div><%= link_to "Sign out", signout_path, id: "sign_out", class: "app-button" %></div>
+
 
 </div>
