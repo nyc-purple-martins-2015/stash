@@ -195,14 +195,13 @@ div.container-fluid {
 }
 
 .login {
->>>>>>> Add button styles
   text-align: center;
 }
 
 
 
 .welcome-container {
-  margin-top: 15em;
+  margin-top: 10em;
 }
 
 @-webkit-keyframes flipintoleft {
