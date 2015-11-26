@@ -13,7 +13,13 @@
     </div>
   </div>
 </div>
-<div class="actions">
+<div class="actionz">
+  <div class="finish_stash">
+    <p> You finished browsing all the photo's near you! </p>
+    <%= link_to "see your stash", user_stashes_path(current_user), class:
+  "app-button" %>
+    <%= link_to "search by tags", foodtags_path, class: "app-button" %>
+  </div>
 
 </div>
 

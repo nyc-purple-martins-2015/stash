@@ -25,8 +25,10 @@ $(document).ready(function() {
       },
       onFinish: function (item) {
         console.log("FINISHED");
-        $('#status').html("You finished browsing food near you!");
+        $('#status').hide();
         $('#tinderslide').hide();
+        $('.wrap').hide();
+        $('.finish_stash').toggle();
       },
     animationRevertSpeed: 200,
     animationSpeed: 400,
