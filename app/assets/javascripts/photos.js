@@ -56,7 +56,10 @@ $(document).ready(function(){
 
   // })
 
+  $('.photo_upload').on('click', function(){
 
+    $('.photo_upload').hide();
+  });
 
 });
 
