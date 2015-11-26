@@ -30,15 +30,15 @@
 
     <% if current_user %>
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
-          <div class="menu_link_bar">
-            <span class="menu_link"><%= link_to image_tag("home.png"), root_path, class: "icon" %></span>
-            <span class="menu_link"><%= link_to image_tag("search.png"), foodtags_path, class: "icon" %></span>
-            <span class="menu_link"><%= link_to image_tag("camera.png"), new_photo_path, class: "icon" %></span>
-            <span class="menu_link"><%= link_to image_tag("dining-set.png"), user_stashes_path(current_user), class: "icon" %></span>
-            <span class="menu_link"><%= link_to image_tag("user.png"), user_path(current_user), class: "icon", id: "current_user.stash.id" %></span>
-          </div>
-        </div>
+    <div class="container-fluid">
+      <div class="menu_link_bar">
+        <span class="menu_link"><%= link_to image_tag("dish.png"), root_path, class: "icon" %></span>
+        <span class="menu_link"><%= link_to image_tag("search-glass.png"), foodtags_path, class: "icon" %></span>
+        <span class="menu_link"><%= link_to image_tag("cam.png"), new_photo_path, class: "icon" %></span>
+        <span class="menu_link"><%= link_to image_tag("head.png"), user_path(current_user), class: "icon", id: "current_user.stash.id" %></span>
+        <span class="menu_link"><%= link_to image_tag("fridge.png"), user_stashes_path(current_user), class: "icon" %></span>
+      </div>
+    </div>
     </nav>
     <% else %>
     <div class="welcome-container">
@@ -52,6 +52,8 @@
       </div>
     </div>
     <% end %>
+
+
 
 
     <%= yield %>
