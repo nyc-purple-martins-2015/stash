@@ -1,6 +1,16 @@
 <%= form_for photo, html: {multipart: true } do |f| %>
 
   <div class="top_form">
+    <div class="photo_upload">
+      <span class="btn btn-success fileinput-button" class: "app-button">
+      <span>Upload a Photo</span>
+      <%= f.file_field :image, accept: "image/*" %>
+    </div>
+
+    <div class="photo_preview_container">
+    <div id="photo_preview" /> </div>
+    </div> <br>
+
     <p><%= f.text_field :dish_name, value: nil, :placeholder => "Dish Name" %></p>
 
     <p><%= f.text_field :foodtags, value: nil, :placeholder => "Foodtags" %></p>
@@ -23,15 +33,6 @@
       <%= f.hidden_field :lat, id:"lat_field" %>
       <%= f.hidden_field :lng, id:"lng_field" %>
 
-    <div class="photo_upload">
-      <span class="btn btn-success fileinput-button" class: "app-button">
-      <span>Upload a Photo</span>
-      <%= f.file_field :image, accept: "image/*" %>
-    </div>
-
-    <div class="photo_preview_container">
-    <div id="photo_preview" /> </div>
-    </div>
 
     <div class="clear_fix">
     </div>
