@@ -47,7 +47,7 @@
   /*margin: 0 auto;*/
 }
 
-#start_sign_out {
+#start_stash {
   moz-border-radius: 13px;
   -webkit-border-radius: 13px;
   border: 0px;
@@ -58,7 +58,6 @@
 h3 {
   margin-top: 0px;
   margin-bottom: 10px;
-  padding-top: 3em;
   text-align: center;
 }
 
