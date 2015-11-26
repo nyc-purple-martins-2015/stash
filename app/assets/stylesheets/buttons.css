@@ -76,13 +76,17 @@
 }
 
 #footer {
-  position:fixed;
+  /*margin-bottom: 3px;*/
+  position: fixed;
   bottom:0;
   left:0;
   width: 100%;
-  margin-bottom: 5px;
+  background-color: rgba(0,0,0,0.5);
+  border-top: 1px solid grey;
+/*  margin-bottom: 5px;*/
 }
 
 #sign_out {
+  display: inline-block;
   text-align: center;
 }

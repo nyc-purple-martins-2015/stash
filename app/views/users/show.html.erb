@@ -1,9 +1,11 @@
 <div class="container">
-    <h3> my photos </h3>
-  <% if @error %>
+    <span><h3> my photos </h3></span>
+   <% if @error %>
       <p><%= @error %></p>
+
   <% else %>
     <% @user_photos.each do |photo|%>
+
       <div id="polaroid">
         <div class="flippable">
 
@@ -27,9 +29,10 @@
           </figure>
         </div>
       </div>
+
     <% end %>
   <% end %>
 
-  <div id="footer"><%= link_to "Sign out", signout_path, id: "sign_out", class: "app-button" %></div>
+
 
 </div>

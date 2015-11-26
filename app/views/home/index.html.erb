@@ -3,7 +3,11 @@
       <br />
   <div class="start_stash">
       <div><%= form_tag('/home/show', :method => 'get') do %>
-        <%= submit_tag 'Happy Stashing!', id: "start_sign_out", class: "app-button" %>
+        <%= submit_tag 'Start Stashing!', id: "start_sign_out", class: "app-button" %>
+        <h4> or </h4>
+
+           <span id="sign_out"><%= link_to "Sign out", signout_path, class: "app-button" %></span>
+
       <% end %></div>
   </div>
 <!-- </div> -->
