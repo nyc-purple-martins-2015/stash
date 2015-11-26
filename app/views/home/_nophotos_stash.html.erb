@@ -1,0 +1,13 @@
+<div class="nophotos_stash">
+    <h3> There aren't any photos near you for this category! </h3>
+  <div class="finish_buttons">
+    <%= link_to "see your stash", user_stashes_path(current_user), class:
+"app-button" %>
+  </div>
+  <div class="finish_buttons">
+    <%= link_to "stash photos from around the world", show_all_path, class: "app-button" %>
+  </div>
+  <div class="finish_buttons">
+    <%= link_to "search by tags", foodtags_path, class: "app-button" %>
+  </div>
+</div>

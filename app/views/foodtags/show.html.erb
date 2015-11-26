@@ -1,26 +1,28 @@
-<div class="container">
-  <div class="wrap">
-    <div id="tinderslide">
-      <ul>
-        <% @foodtag_photos.each_with_index do |photo, index| %>
-          <li class="pane<%=index%>" data-photoid="<%= photo.id %>">
-            <img class="photo" src="<%=photo.image_url%>" />
-            <div class="like"></div>
-            <div class="dislike"></div>
-          </li>
-        <% end %>
-      </ul>
+<% if @foodtag_potos ==[] %>
+  <%= render partial: 'home/nophotos_stash' %>
+<% else %>
+  <div class="container">
+    <div class="wrap">
+      <div id="tinderslide">
+        <ul>
+          <% @foodtag_photos.each_with_index do |photo, index| %>
+            <li class="pane<%=index%>" data-photoid="<%= photo.id %>">
+              <img class="photo" src="<%=photo.image_url%>" />
+              <div class="like"></div>
+              <div class="dislike"></div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="actions">
+  <%= render partial: 'home/finish_stash' %>
 
-</div>
+  <div id="status"> Start Stashing! </div>
 
-<div id="status"> Start Stashing! </div>
-
-<div class="ps_logos_container">
-  <div class="ps_logo_pass"> </div>
-  <div class="ps_logo_stash"></div>
-</div>
+  <div class="ps_logos_container">
+    <div class="ps_logo_pass"> </div>
+    <div class="ps_logo_stash"></div>
+  </div>
+<% end %>
