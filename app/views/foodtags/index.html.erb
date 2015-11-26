@@ -5,8 +5,11 @@
   </div>
 
   <div class="error">
-    <% render :partial => 'error' %>
+    <% if  @error %>
+      <p><h5><%= @error %></h5></p>
+    <% end %>
   </div>
+
   <% @foodtags.each do |tag| %>
     <button type="button" class="btn btn-info"><%= link_to tag.description, foodtag_path(tag) %></button>
   <% end %>
