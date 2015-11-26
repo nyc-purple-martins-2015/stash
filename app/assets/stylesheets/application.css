@@ -36,15 +36,14 @@
 }
 
 .start_stash {
-  padding-top: 10em;
   text-align: center;
+  margin: 0 auto;
 }
 
-h3 {
-  padding-top: 3em;
+h3 .welcome {
+  /*padding-top: 3em;*/
   text-align: center;
 }
-
 
 
 

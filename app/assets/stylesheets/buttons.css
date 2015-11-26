@@ -74,3 +74,15 @@
     direction: ltr;
     cursor: pointer;
 }
+
+#footer {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#sign_out {
+  text-align: center;
+}

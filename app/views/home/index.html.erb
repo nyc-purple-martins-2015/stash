@@ -1,11 +1,11 @@
 <% if current_user %>
-<div class="start_stash">
-      <h2>Welcome</h2>
+      <h3 class="welcome">Welcome</h2>
       <br />
-      <%= form_tag('/home/show', :method => 'get') do %>
-        <%= submit_tag 'Happy Stashing!', id: "start_stash", class: "app-button" %>
-      <% end %>
+  <div class="start_stash">
+      <div><%= form_tag('/home/show', :method => 'get') do %>
+        <%= submit_tag 'Happy Stashing!', id: "start_sign_out", class: "app-button" %>
+      <% end %></div>
   </div>
-</div>
+<!-- </div> -->
 
 <% end %>
