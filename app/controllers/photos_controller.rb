@@ -12,6 +12,7 @@ class PhotosController < ApplicationController
       @photo.associate_to_foodtags(foodtag_params[:foodtags].split(","))
       redirect_to user_path(current_user)
     else
+      @error = "Please upload your photo!"
       render :new
     end
   end
