@@ -29,6 +29,7 @@ $(document).ready(function() {
         $('#tinderslide').hide();
         $('.wrap').hide();
         $('.finish_stash').toggle();
+        $('.ps_logos_container').hide();
       },
     animationRevertSpeed: 200,
     animationSpeed: 400,
