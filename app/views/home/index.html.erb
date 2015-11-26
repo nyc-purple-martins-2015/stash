@@ -1,6 +1,4 @@
 <% if current_user %>
-      <h3 class="welcome">Welcome</h2>
-      <br />
   <div class="start_stash">
       <div><%= form_tag('/home/show', :method => 'get') do %>
         <%= submit_tag 'Start Stashing!', id: "start_sign_out", class: "app-button" %>

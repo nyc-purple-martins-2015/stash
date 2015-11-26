@@ -5,77 +5,26 @@ figure, figcaption {
 }
 
 #polaroid{
-    height: 300px;
-    width: 300px;
-    padding: 1% 0;
-    margin: 0 auto;
-    display: block;
-/*  display: block;
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  position: relative;
-  top: 0;
-  z-index: 2;
-  left: 0;
-  overflow: hidden;
-  padding: 2px 2px 2px 2px;*/
+  height: 285px;
+  width: 285px;
+  padding: 1% 0;
+  margin: 0 auto;
+  display: block;
   margin-bottom: 10px;
   text-align: center;
-
+  margin-bottom: 16px;
 }
 
 #polaroid figure{
-
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    z-index: 2;
-    left: 0;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-    padding: 5px;
-    background: #eee6d8;
-
-    -webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
-    -moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
-    box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
-    background: -webkit-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
-    background: -moz-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
-    background: -o-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
-    background: -ms-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
-    background: linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
-    -webkit-transform:rotate(-1deg);
-    -moz-transform: rotate(-1deg);
-    -o-transform: rotate(-1deg);
-    -ms-transform: rotate(-1deg);
-    transform: rotate(-1deg);
-    -webkit-backface-visibility:hidden;
-    color: #000;
-    border: 1px solid #fff;
-    border: 1px solid #dfdfdf;
-    border: 1px solid rgba(96, 96, 96, 0.2);
-  /*height: 300px;
-  width: 300px;
-  padding: 1% 0;
-  margin: 0 2px;
-  text-align: center;*/
- /* display: block;
-  position: absolute;
-  width: 290px;
-  height: 290px;
-  overflow: hidden;
-  text-align: center;*/
-  /*margin-right: 15px;*/
-  /*padding: 6px 8px 8px 8px;
+  width: 285px;
+  height: 285px;
+  margin-left: -2px;
+  padding: 5px;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
   background: #eee6d8;
-  margin: 0 auto;*/
 
-  /*-webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
+  -webkit-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
   -moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
   box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
   background: -webkit-linear-gradient(top, #ede1c9, #fef8e2 20%, #f2ebde 60%);
@@ -88,11 +37,12 @@ figure, figcaption {
   -o-transform: rotate(-1deg);
   -ms-transform: rotate(-1deg);
   transform: rotate(-1deg);
-  -webkit-backface-visibility:hidden; /*prevent rotated text being jagged in Chrome and Safari*/
- /* color: #000;
+  -webkit-backface-visibility:hidden;
+  color: #000;
   border: 1px solid #fff;
   border: 1px solid #dfdfdf;
-  border: 1px solid rgba(96, 96, 96, 0.2);*/
+  border: 1px solid rgba(96, 96, 96, 0.2);
+  text-align: center;
 }
 
 #polaroid .flippable {
@@ -181,8 +131,8 @@ figure, figcaption {
 
 #polaroid img {
   background-size: cover;
-  height: 285px;
-  width: 285px;
+  height: 270px;
+  width: 270px;
   margin: 2px auto;
 /*  margin-bottom: 5px;*/
   position: relative;
