@@ -57,7 +57,7 @@
 
 h3 {
   margin-top: 0px;
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;*/
   text-align: center;
 }
 
@@ -190,18 +190,22 @@ div.container-fluid {
 
 .welcome {
   text-align: center;
-  padding-bottom: 2em;
-  padding-top: 7em;
 }
 
 .login {
   text-align: center;
 }
 
+.blurb {
+  padding-top: 7em;
+  margin: 0 auto;
+  text-align: center;
+  width: 75%;
+}
 
 
 .welcome-container {
-  margin-top: 10em;
+  margin-top: 3em;
 }
 
 @-webkit-keyframes flipintoleft {
