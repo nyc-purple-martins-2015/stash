@@ -1,7 +1,3 @@
-We are Team Blue Flame.
-
-http://wallpapers55.com/wp-content/uploads/2013/10/blue-flame.jpg
-
 Welcome to stash, an online web and mobile application. With stash you can scroll through pictures of food taken at restaruants in your area. If the food looks delicious, you can add the photo to your stash. Information about the food depicted in each will be avaiable. You have the ability to see the name restaurant the food was served, the location of the restaurant and the price range of the dish.
 
 If you are on your mobile device, you have the option to take photos of food (must be from a restaurant), tag the location and details of the food and upload the photo to the application so others have the option to add it to their stash.
