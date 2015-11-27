@@ -250,3 +250,9 @@ img.photo {
   width: 9%;
   height: auto;
 }
+
+img#photo_preview {
+  margin: 3px;
+  padding: 3px;
+  background: beige;
+}
