@@ -7,6 +7,7 @@ class PhotosController < ApplicationController
   def create
     @photo = current_user.photos.new(image: photo_params[:image], dish_name: photo_params[:dish_name], lat: photo_params[:lat].to_f, lng: photo_params[:lng].to_f, restaurant_name: photo_params[:restaurant_name], restaurant_rating: photo_params[:restaurant_rating], restaurant_address: photo_params[:restaurant_address], restaurant_phone: photo_params[:restaurant_phone], restaurant_website: photo_params[:restaurant_website])
     if @photo.save
+    #remove debug stuff in master
     # byebug
       @photo.pricetag = Pricetag.find_by(price: params[:photo][:pricetag])
       @photo.associate_to_foodtags(foodtag_params[:foodtags].split(","))
@@ -26,6 +27,8 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     foodtags = []
 
+    #Is "you did not" right here - what about people looking at details later?
+    # You could also use @photo.dish_name ||= 'Some default' rather than an if
     if @photo.dish_name == nil
       @photo.dish_name = "You didn't provide a dish name."
     end
@@ -35,6 +38,8 @@ class PhotosController < ApplicationController
     end
     # byebug
 
+    #I think @photo.foodtags will be either an empty array or a 
+    # collection so the for in doesn't need the guarding if in this case
     if @photo.foodtags
       for tag in @photo.foodtags
         foodtags << tag.description
@@ -46,6 +51,11 @@ class PhotosController < ApplicationController
 
   def update
     @photo = Photo.find(params[:id])
+    #Update attributes does the save. If you want to update in 
+    # memory then save use assign_attributes
+    # In this can you could use just "if @photo.update_attributes" 
+    # which will to update and save in one go - it will return 
+    # false if it fails as save would
     @photo.update_attributes(photo_params)
     if @photo.save
       redirect_to user_path(current_user)

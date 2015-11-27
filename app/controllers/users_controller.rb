@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     end
   end
 
+  # Try follow convention and call this stash_photo  
+  # BUT - why is this in userscontroller? 
   def stashphoto
     @photo = Photo.find(params[:photoid])
     if !current_user.stash.photos.include?(@photo)

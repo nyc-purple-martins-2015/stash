@@ -10,6 +10,7 @@
 
 
   <div class="form">
+   <!-- Can this use your _form partial instead of repeating the form here? -->
     <%= form_for @photo, html: {multipart: true } do |f| %>
 
         <p><%= f.text_field :dish_name, :value => "#{@photo.dish_name}" %></p>
