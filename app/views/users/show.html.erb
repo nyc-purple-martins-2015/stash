@@ -13,7 +13,7 @@
             <img class="photo" src="<%= photo.image_url %>" alt="user_photo" />
           </figure>
 
-          <figure class="back">
+          <figure class="back", id="back">
             <figcaption><%= photo.dish_name %></figcaption>
             <figcaption>Restaurant Info: </figcaption>
             <figcaption><%= photo.restaurant_name %></figcaption>
@@ -22,8 +22,8 @@
             <figcaption><%= photo.restaurant_website %></figcaption>
             <br />
 
-            <button type="button" class="btn btn-warning"><%= link_to 'Edit', edit_photo_path(photo) %></button>
-            <button type="button" class="btn btn-danger"><%= link_to 'Delete', photo_path(photo), method: :delete %></button>
+            <button type="button" class="btn btn-warning" ><%= link_to 'Edit', edit_photo_path(photo) %></button>
+            <button type="button" class="btn btn-danger" class="edits"><%= link_to 'Delete', photo_path(photo), method: :delete %></button>
           </figure>
         </div>
       </div>

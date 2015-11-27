@@ -58,9 +58,17 @@
   padding: 5px;
 }
 
- .fileinput-button {
-    position: relative;
-    overflow: hidden;
+.btn-warning a, .btn-danger a {
+  color: white;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
+}
+
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
 }
 
  .fileinput-button input {
