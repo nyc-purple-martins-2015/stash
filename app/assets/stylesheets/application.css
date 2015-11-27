@@ -232,7 +232,7 @@ div.container-fluid {
 #polaroid figcaption{
   text-align: center;
   font-family: "Lucida Console", Monaco, monospace; /*Reenie Beanie is available through Google Webfonts http://code.google.com/webfonts/specimen/Reenie+Beanie*/
-  font-size:1.3em;
+  font-size:1.0em;
   color:#454f40;
   letter-spacing:0.09em;
 }
