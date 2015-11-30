@@ -16,6 +16,13 @@
 
     <p><%= f.text_field :foodtags, value: nil, :placeholder => "Foodtags" %></p>
 
+    <!-- You might want to think about storing your price ranges in a price_ranges 
+    tablele with a foreign key in photo. The way these are it would be diffcult 
+    for you to (for example)  show only places where cost <$20.  BUT don't you 
+    already have a pricetags table? Could you use that here instead of 
+    hard-coding ranges into the select?
+    -->
+
     <p><%= f.select :pricetag, [['$0..$10', "$" ], ['$10..$15', "$$" ], ['$15..$20', "$$$" ],['$20+', "$$$$" ]] %></p>
   </div>
 
@@ -25,6 +32,8 @@
       <p><input id="searchTextField" id="pac-input" class="controls" type="text" placeholder="search for restaurant here."></p>
 
        <div id="restaurant_test"></div>
+
+       <!-- why are you assigning ids to these fields instead of letting rails do it for you? -->
 
        <%= f.hidden_field :restaurant_rating, id: "restaurant_rating" %>
        <%= f.hidden_field :restaurant_address, id: "restaurant_address" %>

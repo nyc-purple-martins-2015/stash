@@ -14,6 +14,7 @@ class Photo < ActiveRecord::Base
 
   has_attached_file :image, styles: { medium: "300x300#", thumb: "200x200>" },
                     :default_style => :medium
+                    # Remove commments in master
                     # processors: [:thumbnail, :compression],
                     # :convert_options => { :thumb => '-quality 80'}
   validates_attachment :image, presence: true,
