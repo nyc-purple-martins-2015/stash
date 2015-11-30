@@ -58,9 +58,17 @@
   padding: 5px;
 }
 
- .fileinput-button {
-    position: relative;
-    overflow: hidden;
+.btn-warning a, .btn-danger a {
+  color: white;
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-color: transparent;
+  padding: 5px;
+}
+
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
 }
 
  .fileinput-button input {
@@ -79,4 +87,20 @@
 #sign_out {
   display: inline-block;
   text-align: center;
+}
+
+select#photo_pricetag{
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  background-color: #e6e6e6;
+  border-color: transparent;
+  width: 80%;
+  padding: 5px;
+}
+
+button, input, select, textarea{
+  moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  text-align: center;
+  /*text-indent: 40px;*/
 }
