@@ -46,4 +46,27 @@ describe PhotosController do
     expect(assigns(:photo)).to be_a_kind_of(Photo)
   end
 
+  it '#edit/:id' do
+    get :edit, :id => photo.id, :photo => photo
+    expect(assigns(:photo)).to eq(photo)
+  end
+
+  context '#update/:id' do
+    let(:new_attr) do
+      { :restaurant_name => "Updated Restaurant", :restaurant_address => "New Address" }
+    end
+
+    before(:each) do
+      user = FactoryGirl.create(:user)
+      session[:user_id] = user.id
+      put :update, :id => photo.id, :photo => new_attr
+      photo.reload
+    end
+
+    it { expect(photo.restaurant_name).to eql new_attr[:restaurant_name] }
+    it { expect(photo.restaurant_address).to eql new_attr[:restaurant_address] }
+
+  end
+
+
 end
