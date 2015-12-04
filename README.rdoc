@@ -1,4 +1,5 @@
-!['circlestatus'](https://circleci.com/gh/nyc-purple-martins-2015/stash.svg?style=shield&circle-token=:circle-token)
+[![Circle CI](https://circleci.com/gh/nyc-purple-martins-2015/stash.svg?style=svg)](https://circleci.com/gh/nyc-purple-martins-2015/stash)
+[![Circle CI](https://circleci.com/gh/nyc-purple-martins-2015/stash.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/nyc-purple-martins-2015/stash)
 
 Welcome to stash, an online web and mobile application. With stash, you can scroll through pictures of food taken at restaurants in your area. If the food looks delicious to you, add the photo to your stash. Information about the food depicted in each will be available. You have the ability to see the name of the restaurant where the food was served, the location of the restaurant, and the price range of the dish.
 
