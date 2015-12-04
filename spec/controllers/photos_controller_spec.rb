@@ -17,7 +17,6 @@ describe PhotosController do
 
   context '#creates' do
     it 'creates a photo with valid params' do
-      user = FactoryGirl.create(:user)
       session[:user_id] = user.id
       photo_params = {photo: {restaurant: "New Restaurant",
                               restaurant_address: "123 New Street",
@@ -33,7 +32,6 @@ describe PhotosController do
     end
 
     it 'does not create a question with invalid params' do
-      user = FactoryGirl.create(:user)
       session[:user_id] = user.id
       expect {
         post :create, photo: FactoryGirl.attributes_for(:user)
@@ -57,7 +55,6 @@ describe PhotosController do
     end
 
     before(:each) do
-      user = FactoryGirl.create(:user)
       session[:user_id] = user.id
       put :update, :id => photo.id, :photo => new_attr
       photo.reload
@@ -65,7 +62,13 @@ describe PhotosController do
 
     it { expect(photo.restaurant_name).to eql new_attr[:restaurant_name] }
     it { expect(photo.restaurant_address).to eql new_attr[:restaurant_address] }
+  end
 
+  it '#destroy/:id' do
+    session[:user_id] = user.id
+    expect {
+      delete :destroy, :id => photo.id, :photo => photo
+    }.to change(Photo, :count).by(-1)
   end
 
 
