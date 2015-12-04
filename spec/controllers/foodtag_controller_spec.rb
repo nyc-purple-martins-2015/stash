@@ -1,7 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe FoodtagsController do
-  sample_user = FactoryGirl.create(:user)
+
+  it '#index displays 10 random foodtags from all foodtags' do
+    get :index
+    expect(assigns(:foodtags)).to eq(Foodtag.all.sample(10))
+  end
+
 
   context '#create foodtags' do
 
@@ -12,5 +17,5 @@ RSpec.describe FoodtagsController do
     end
 
   end
-  
+
 end
