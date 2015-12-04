@@ -18,6 +18,7 @@ describe PhotosController do
   context '#creates' do
     it 'creates a photo with valid params' do
       user = FactoryGirl.create(:user)
+      session[:user_id] = user.id
       photo_params = {photo: {restaurant: "New Restaurant",
                               restaurant_address: "123 New Street",
                               user: user,
@@ -32,6 +33,8 @@ describe PhotosController do
     end
 
     it 'does not create a question with invalid params' do
+      user = FactoryGirl.create(:user)
+      session[:user_id] = user.id
       expect {
         post :create, photo: FactoryGirl.attributes_for(:user)
       }.to_not change(Photo, :count)
