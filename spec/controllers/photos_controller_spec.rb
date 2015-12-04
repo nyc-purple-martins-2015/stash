@@ -66,6 +66,7 @@ describe PhotosController do
 
   it '#destroy/:id' do
     session[:user_id] = user.id
+    photo.reload
     expect {
       delete :destroy, :id => photo.id, :photo => photo
     }.to change(Photo, :count).by(-1)
