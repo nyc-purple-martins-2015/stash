@@ -5,16 +5,6 @@ Welcome to stash, an online web and mobile application. With stash, you can scro
 
 If you are on your mobile device, you have the option to take photos of food (must be from a restaurant), tag the location and details of the food and upload the photo to the application so others have the option to add it to their stash.
 
-Technologies:
--Ruby on Rails
--Google Places API
--Paperclip
--jQuery plugins
--Amazon S3
--OmniAuth
+Technologies: Ruby on Rails, Google Places API, Paperclip, jQuery plugins, Amazon S3, OmniAuth
 
-Team:
-JiYoon Kim
-Matt LeFurge
-Rachel Lim
-Nick Perri
+Team: JiYoon Kim, Matt LeFurge, Rachel Lim, Nick Perri
