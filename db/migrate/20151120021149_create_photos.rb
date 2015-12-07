@@ -6,7 +6,6 @@ class CreatePhotos < ActiveRecord::Migration
       t.string      :dish_name
 
       t.string      :restaurant_name
-      t.string      :restaurant_rating
       t.string      :restaurant_address
       t.string      :restaurant_phone
       t.string      :restaurant_website

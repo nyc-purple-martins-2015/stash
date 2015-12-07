@@ -64,7 +64,6 @@ $(document).ready(function() {
 
 
             $('#restaurant_name').val(place.name);
-            $('#restaurant_rating').val(place.rating);
             $('#restaurant_address').val(place.vicinity);
             $('#restaurant_phone').val(place.formatted_phone_number);
             $('#restaurant_website').val(place.website);
