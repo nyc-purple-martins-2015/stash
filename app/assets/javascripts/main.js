@@ -7,8 +7,6 @@ $(document).ready(function() {
     // dislike callback
       onDislike: function (item) {
         // set the status text
-
-        // console.log("disliked");
           $('#status').html('Passed');
       },
     // like callback
@@ -16,10 +14,9 @@ $(document).ready(function() {
         // set the status text
         $.ajax({
           method: 'post',
-          url: '/users/stashphoto',
+          url: '/users/stash_photo',
           data: { photoid: $(item).data('photoid')}
         }).done(function(data){
-          // console.log("liked");
           $('#status').html(data);
         });
       },
