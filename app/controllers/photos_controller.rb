@@ -30,12 +30,7 @@ class PhotosController < ApplicationController
   def update
     @photo = Photo.find(params[:id])
     @photo.update_attributes(photo_params)
-    if @photo.save
-      redirect_to user_path(current_user)
-    else
-      @error = "Your was unable to be saved."
-      render :edit
-    end
+    redirect_to user_path(current_user)
   end
 
   def destroy
