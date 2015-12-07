@@ -5,7 +5,6 @@ class PhotosController < ApplicationController
   end
 
   def create
-    # byebug
     @photo = current_user.photos.new(image: photo_params[:image], dish_name: photo_params[:dish_name], lat: photo_params[:lat].to_f, lng: photo_params[:lng].to_f, restaurant_name: photo_params[:restaurant_name], restaurant_rating: photo_params[:restaurant_rating], restaurant_address: photo_params[:restaurant_address], restaurant_phone: photo_params[:restaurant_phone], restaurant_website: photo_params[:restaurant_website])
     if @photo.save
       @photo.pricetag = Pricetag.find_by(price: params[:photo][:pricetag])
@@ -24,35 +23,14 @@ class PhotosController < ApplicationController
 
   def edit
     @photo = Photo.find(params[:id])
-    foodtags = []
+    @photo_foodtags = @photo.foodtags.pluck(:description).join(", ")
 
-    if @photo.dish_name == nil
-      @photo.dish_name = "You didn't provide a dish name."
-    end
-
-    if @photo.restaurant_name == nil
-      @photo.restaurant = "You did not provide the restaurant name for this dish."
-    end
-    # byebug
-
-    if @photo.foodtags
-      for tag in @photo.foodtags
-        foodtags << tag.description
-      end
-    end
-
-    @photo_foodtags = foodtags.join(", ")
   end
 
   def update
     @photo = Photo.find(params[:id])
     @photo.update_attributes(photo_params)
-    if @photo.save
-      redirect_to user_path(current_user)
-    else
-      @error = "Your was unable to be saved."
-      render :edit
-    end
+    redirect_to user_path(current_user)
   end
 
   def destroy

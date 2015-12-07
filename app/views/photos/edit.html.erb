@@ -8,43 +8,14 @@
     </figure>
   </div>
 
-
   <div class="form">
     <%= form_for @photo, html: {multipart: true } do |f| %>
 
-        <p><%= f.text_field :dish_name, :value => "#{@photo.dish_name}" %></p>
-
-        <p><%= f.text_field :foodtags, :value => "#{@photo_foodtags}" %></p>
-
-        <p><%= f.select :pricetag, [['$0..$10', "$" ], ['$10..$15', "$$" ], ['$15..$20', "$$$" ],['$20+', "$$$$" ]], id: "pricetag_field" %></p>
-
-
-
-    <div class="bottom_form">
-      <%= f.hidden_field :restaurant_name, id: "restaurant_name" %>
-      <p><input id="searchTextField" id="pac-input" class="controls" type="text" placeholder="text" value="<%= @photo.restaurant_name %>"></p>
-
-       <div id="restaurant_test"></div>
-
-       <%= f.hidden_field :restaurant_rating, id: "restaurant_rating" %>
-       <%= f.hidden_field :restaurant_address, id: "restaurant_address" %>
-       <%= f.hidden_field :restaurant_phone, id: "restaurant_phone" %>
-       <%= f.hidden_field :restaurant_website, id: "restaurant_website" %>
-
-      <%= f.hidden_field :lat, id:"lat_field" %>
-      <%= f.hidden_field :lng, id:"lng_field" %>
-
-
-    <div class="clear_fix">
-    </div>
-    <!-- </div> -->
-
-    <div class="map_container">
-        <div id="map"></div>
-    </div>
+        <%= render :partial => 'form', :locals => {photo: @photo, f: f} %>
 
       <p><%= submit_tag 'Edit Photo', id: "edit_button" %></br>
-    <% end %>
-  </div>
 
+    <% end %>
+    
+  </div>
 </div>

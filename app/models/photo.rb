@@ -14,14 +14,10 @@ class Photo < ActiveRecord::Base
 
   has_attached_file :image, styles: { medium: "300x300#", thumb: "200x200>" },
                     :default_style => :medium
-                    # processors: [:thumbnail, :compression],
-                    # :convert_options => { :thumb => '-quality 80'}
   validates_attachment :image, presence: true,
                        content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
-                       # size: { in: 0..500.kilobytes }
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-
 
   def associate_to_foodtags(tag_list)
     tag_list.each do |tag_name|

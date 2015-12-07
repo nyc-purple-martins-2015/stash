@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
   get 'home/showall', to: 'home#showall', as: 'show_all'
-  post 'users/stashphoto', to: 'users#stashphoto'
+  post 'users/stash_photo', to: 'users#stash_photo'
 
   resources :sessions, only: [:create, :destroy]
   resources :home, only: [:index, :show]
