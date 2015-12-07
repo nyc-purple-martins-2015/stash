@@ -36,7 +36,7 @@ class FoodtagsController < ApplicationController
   def parse_foodtags(photo, foodtag_params)
     foodtags = foodtag_params[:description].split(/[-,\/]/)
     foodtags = foodtags.map { |tag| Foodtag.find_or_create_by(description: foodtag.strip) }.uniq
-    photo.foodtags.clear unless photo.foodtags.empty?
+    photo.foodtags.clear
 
     foodtags.each do |tag|
       photo.foodtags << tag
