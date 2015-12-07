@@ -12,7 +12,7 @@
   <div class="form">
     <%= form_for @photo, html: {multipart: true } do |f| %>
 
-        <p><%= f.text_field :dish_name, :value => "#{@photo.dish_name}" %></p>
+        <p><%= f.text_field :dish_name, :value => "#{@photo.dish_name}", :placeholder => "Enter Dish Name Here" %></p>
 
         <p><%= f.text_field :foodtags, :value => "#{@photo_foodtags}" %></p>
 
