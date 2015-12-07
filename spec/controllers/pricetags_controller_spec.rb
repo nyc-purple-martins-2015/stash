@@ -11,7 +11,7 @@ RSpec.describe PricetagsController do
                       lat: 13.4241) }
 
   let(:sample_pricetag) { FactoryGirl.create(:pricetag) }
-  # let(:sample_photo_pricetag) { FactoryGirl.create(photo: sample_photo, pricetag: sample_pricetag)}
+
   it '#show the photos with specified pricetag' do
     PhotoPricetag.create(photo: sample_photo, pricetag: sample_pricetag)
     get :show, id: sample_pricetag.id
