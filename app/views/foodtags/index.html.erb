@@ -16,12 +16,9 @@
 
   <h4>or...By Price</h4>
 
-
   <% @pricetags.each do |tag| %>
     <button type="button" class="btn btn-info" id="price"><%= link_to "#{tag.price}", pricetag_path(tag) %></button>
   <% end %>
-
-
 
 
 </div>
