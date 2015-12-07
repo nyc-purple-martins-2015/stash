@@ -13,14 +13,7 @@
           </figure>
 
           <figure class="back">
-            <figcaption><%= photo.dish_name %></figcaption>
-
-            <figcaption>Restaurant Info: </figcaption>
-            <figcaption><%= photo.restaurant_name %></figcaption>
-            <figcaption><%= photo.restaurant_address %></figcaption>
-            <figcaption><%= photo.restaurant_phone %></figcaption>
-            <figcaption><%= photo.restaurant_website %></figcaption>
-            <br />
+            <%= render partial: "photos/info", locals: {photo: photo} %>
             <br />
 
             <button type="button" class="btn btn-danger"><%= link_to 'Remove from Stash', photo_stash_path(photo), method: :delete %></button>
