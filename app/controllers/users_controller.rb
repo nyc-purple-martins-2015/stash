@@ -7,17 +7,17 @@ class UsersController < ApplicationController
     end
   end
 
-  def stashphoto
+  def stash_photo
     @photo = Photo.find(params[:photoid])
     if !current_user.stash.photos.include?(@photo)
       current_user.stash.photos << Photo.find(params[:photoid])
       if @photo.dish_name
-        render text: "You Stashed #{@photo.dish_name}!"
+        render text: "You stashed #{@photo.dish_name}!"
       else
-        render text: "You Stashed that photo!"
+        render text: "You stashed that photo!"
       end
     else
-      render text: "You have already stashed that photo!"
+      render text: "You already stashed that photo!"
     end
   end
 end
