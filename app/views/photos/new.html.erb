@@ -6,9 +6,25 @@
     <% end %>
   </div>
 
-  <%= render :partial => 'form', :locals => {photo: @photo} %>
+  <%= form_for @photo, html: {multipart: true } do |f| %>
+    <div class="top_form">
 
+      <div class="photo_upload">
+        <span class="btn btn-success fileinput-button" class: "app-button">
+        <span>Upload a Photo</span>
+        <%= f.file_field :image, accept: "image/*" %>
+      </div>
 
-  <div class="current_position">
-  </div>
+      <div class="photo_preview_container">
+        <div id="photo_preview" /> </div>
+      </div> 
+      <br />
+
+    <%= render :partial => 'form', :locals => {photo: @photo, f: f} %>
+
+    <p><%= submit_tag 'Share your Dish', id:"add_photo_button", class: "app-button" %></br>
+
+    <div class="current_position"></div>
+
+  <% end %>
 </div>
