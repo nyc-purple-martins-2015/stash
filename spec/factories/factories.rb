@@ -18,3 +18,10 @@ FactoryGirl.define do
     foodtag
   end
 end
+
+FactoryGirl.define do
+  factory(:pricetag) do
+    price ["$", "$$", "$$$", "$$$$"].sample
+  end
+end
+
