@@ -50,7 +50,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'faker'
   gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', :require => false
   gem 'capybara'
   gem 'launchy'
   gem 'database_cleaner'
